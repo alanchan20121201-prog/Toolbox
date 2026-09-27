@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
-  "url": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.1.exe",
-  "notes": "新增：應用程式內建更新功能（設定 → 檢查更新）"
+  "version": "1.0.2",
+  "url": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.2.exe",
+  "notes": "新增：設定頁的意見回饋入口（GitHub Issues）"
 }
