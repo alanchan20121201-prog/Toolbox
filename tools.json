@@ -1,0 +1,52 @@
+[
+  {
+    "id": "image-tools",
+    "name": {
+      "en": "Image Converter",
+      "zh-CN": "图片转档工具",
+      "ja": "画像変換ツール"
+    },
+    "version": "1.0.0",
+    "description": {
+      "en": "Convert images to WebP / JPG / PNG in a snap",
+      "zh-CN": "极速将图片转成 WebP / JPG / PNG",
+      "ja": "画像を WebP / JPG / PNG にすばやく変換"
+    },
+    "icon": "icons/image-tools.png",
+    "downloadUrl": {
+      "en": "dist/image-tools-en.zip",
+      "zh-CN": "dist/image-tools-zh-CN.zip",
+      "ja": "dist/image-tools-ja.zip"
+    },
+    "sha256": {
+      "en": "548f52ee120112412617bb1c383b8fd6cc29c4b3e0613542f22ee3afe6519087",
+      "zh-CN": "bdce6adbde5a7152f44c4cca091a2fce378f18199d77f891b5500b82ce5eec59",
+      "ja": "bbdd1739008a310408c8df2b90da258d39d25dc6ff0d79870411e11d4bb6cd41"
+    }
+  },
+  {
+    "id": "password-generator",
+    "name": {
+      "en": "Password Generator",
+      "zh-CN": "密码生成器",
+      "ja": "パスワード生成ツール"
+    },
+    "version": "1.0.0",
+    "description": {
+      "en": "Generate strong random passwords and copy with one click",
+      "zh-CN": "生成高强度随机密码，一键复制",
+      "ja": "強力なランダムパスワードを生成し、ワンクリックでコピー"
+    },
+    "icon": "icons/password-generator.png",
+    "downloadUrl": {
+      "en": "dist/password-generator-en.zip",
+      "zh-CN": "dist/password-generator-zh-CN.zip",
+      "ja": "dist/password-generator-ja.zip"
+    },
+    "sha256": {
+      "en": "e613e6860272410a793f2090fd8f9a85b7fa22b16d41bf592b16497863c55d75",
+      "zh-CN": "4ddd3fb83f757716bb4c6e1db9c15b0ef391499d3ad0bd7c5a65e46239b63dd8",
+      "ja": "a37cb2d8e8df2cfaaf1550dfe37a69a25cc2e620566348ca41ec942829fef544"
+    }
+  }
+]
