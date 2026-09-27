@@ -17,6 +17,11 @@
       "en": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-en-v1.0.0.zip",
       "zh-CN": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-zh-v1.0.0.zip",
       "ja": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-ja-v1.0.0.zip"
+    },
+    "size": {
+      "en": 5394,
+      "zh-CN": 5397,
+      "ja": 5394
     }
   },
   {
@@ -37,6 +42,11 @@
       "en": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/password-generator-en-v1.0.0.zip",
       "zh-CN": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/password-generator-zh-v1.0.0.zip",
       "ja": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/password-generator-ja-v1.0.0.zip"
+    },
+    "size": {
+      "en": 5456,
+      "zh-CN": 5459,
+      "ja": 5456
     }
   }
 ]
