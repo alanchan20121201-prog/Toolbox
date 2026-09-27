@@ -14,9 +14,9 @@
     },
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEhklEQVR42u3SV1McSRAE4PpdJwPIAhLeSVjhPZLwEuiM/i/jh9dU7BnY4ICZne1pM50Z8T3u9FZVimjOk5/XoIdJE/L0r2uQejw62VeGZ39eg8zh4Ul/EZ7/cQ2yDw9P9RWh5/drkDvUHv9HDnKPkuP3/shB7uru+Jc5yH2Vjt93mYOao/MCXOSg5ujo+C8uclDzlDv+9xzUXIUFePktBzUXj08Pl+DVeQ5qPh6f/l+C12c5yB8sAAtwmzenOcg/bQXIQP65KcDbkwzkn9sCHGcg/9wUoP84A/nntgBHGcg/NwUYOMpA/vnn+IcZyF8yeJiB1GvFhf8pg18zUHc6iW3/Xd59yUDVVYlN/58F0Hh4G4sg7z9noM6ojOlZWACDx7ehBDJ0kIHKqyMm55GhgxRUTp0xNZMM76egYjpiYi4Z3ktBxbQUwMBcMrKXgorpiIm5ZGQ3BRXTUgADc8nobgoqpiMm5pLRnRT0OJ3RPZuM7aSgYjpiYi4Z305BxXTExFwyvpWCimkpgIG5ZGIrBRXTERNzycRmCiqmpQAG5pLJzRRUTp0xNZNMbqSg8mo5vsF5ZGojgY9aqfo71TG5B5laT+CjvxffxW+VHd/wHmR6PYFv2qPiG1Vjwy5kei2BT+49hOLvFR7eon3IzGoCXzyWur6r8p06CI9fz3FsPPa9BfiwksAHZeLLLtoJj+93CeTjcoImq5Km76Sd8Ph+l0BmPyVoIhWxbZ46viuzSwmaRmVsmqmO78rcUoKmURmb5qnj2zK3mKBJ6ohN86j+vswvxmiKOmPLPKrfkPmFGE2gI7bMo/IdWViI4TqdsWEmle/IwnwMl5mIDTOpeksW52K4zERsmEfVe8Lj21MCE/9BlmZjuMiGmJ5HxbvC45svgcn35dPHGC6xMSZn6vZtFsBwAUy/L8sfYrjC5picp5udyvJMDBe4EJPzVN2rrMzEsJ1LMTVP1d3KynQMm7kYU/NU2a+sTkewlcsxMVOVHcvqVARbOV0AQ/N0umNZm4pgoybExDyd7lnWJiPYpkkxMU8nu5b1yQg2YbpPJ/uW9YkItmAUlqDkzmVjPIINGLUpu3fZHI9gA0Z9yuxdNscimMbUVIASu5etsQgmMfWmaP+yNRrBFEZDAQpuINujEUxg9OWxO8j2SAQTGI0FeOQOsjMcQTdGfx66hewMh9CJMVWA++8hu0MhdGHM5r6bCI/veQH23oeoG2NP7t6GBfC9APvvQtSJsS/t95H9wRB1YSwtQNuN5GAwRB0Yu/PfnaSVg4EQKjEOFGDg3+O38nkghCqMO7ktQH8I8s9NAb70hyD/3BbgbQjyz00Bvr4JQf5pK0AA8o+05/B1APKH3A2X4nkBjl4FIH/IfeFiPD5+K8cvA1DzyWPhgjw+fisnLwJQc0mZnPQFoOaRTnLaF4CaQzrNaW8Aag6pkrPeAOQ+6SZnPQHIXaIi5z0ByD2iMufPr0DukDry7dkVyH5Sd7hkTw/fnu9Pr0D2EFPh8j09/N1cPLkC6SM2hwfy8Ohlc/nbFehhuu/xC++Ch96DJah+AAAAAElFTkSuQmCC",
     "downloadUrl": {
-      "en": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/windows/image-tools-en-v1.0.0.zip",
-      "zh-CN": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/windows/image-tools-zh-v1.0.0.zip",
-      "ja": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/windows/image-tools-ja-v1.0.0.zip"
+      "en": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-en-v1.0.0.zip",
+      "zh-CN": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-zh-v1.0.0.zip",
+      "ja": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-ja-v1.0.0.zip"
     }
   },
   {
@@ -34,9 +34,9 @@
     },
     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAD+UlEQVR42u3YZ25jRxAE4D7Bax7SF/E655yz1yIp5rRBXue0zjnnHE5RxgIWRBiiRGnJmZrpKuD7+55UXaAEmiVOa+9ayGpWQ1p7ZyCbR3706yDp6PCSdwiti9dDeCQ+/g0QPgkOfyOE35aOfxOkHBs+/s2Q8uj4cnUjaF24BVK+Ux7/Vkg9TjGA2yD1OOHxb4fUR8cXrDGAOyD1Ovr45++E1O+IAdwFqd+K498NieOQAdwDiUMD0ACWj38vJJ6lAdwHiedgAOfuh8SzNIAHIPFoABrA/gAehMSzNICHIPH8d/yHIXFZa/EIJC5rLR6FxKUBRB+ALx6DxGW+eByRXUnk39988QQiOE0i9GI+fxI120Rq7sd0+NhDMJ8/hdpsM7V1ZT5/GjVJkZr6Mp8/g1qkTC2dmc+fRQ1ypIbezOdnUbqTHS3985iZz86iZGsfiuzZLMxnz6Fk6x2I9/m5mc92UKr1jlPOe3Iwn7VRquOPUua7UjKfdVCi4w9Sxzu3TQMIP4BpFyUpISX1aT7dBbMawtyv+bQHRjWGsWfzaR9sag5b1+bTAZhECFPfGkD4AUyGYBEpLJ2bT0ZgEWsAHJ2bT8ZgEWsAHJ2bTyZgEWsAHJ2bjh97BOaTKRjEHED+3s0nMzCIOYD8vZuP52AQcgAEvZuPF2AQcwD5ezcfnwODmAPI37sGoAGcB4OYA8jfu/n4AhhkO8I1ZzIOIH/v5qOLYJD66Ksk/TkIejcf7YEBw/FTj4Chd/PR82DAcvyUI2DoXQPQAC6BQcwB5O/dfPQCGDAdP9UIGHo3H70IBjE/AfL3bj58CQxCDoCgdw1AA3gZDEJ+D0DQu/nwFTAI+U0gQe/mw1fBIOYA8vduPnwNDGIOIH/v5oPXwSDkAAh61wA0gDfAIOYA8vduPngTDGIOIH/v5oO3wCDmAPL3bj64DAYxB5C/d/P+ZTAIOQCC3s37b4NFpAGwdG7efwcsYg2Ao3Pz/rtgEWsAHJ2b998Di9z/B6T9+8/RuXn/fTCJMACmvsMOYHkIyd9JNYDeB2BTc9i6Nu99CEZ1Hp+vZ/PeR2BWx+F5+7Wm9zFKUkJK6rO4AcjGB/AJJC5rdj+FxGVX0ux+BonH9tPsfg6JZ2kAX0Di0QA0gP0BfAmJ52AA3a8g8SwN4GtIPLacpvsNJA77f1RK+AF8C4nDDkvT/Q5SP1uVpvs9pH52VJrOD5B62XFpOj9C6mXrREUFPv7BCH6C1MNOmqbzM6Qedpo0nV8g5bOrSdP+FVIu20RUZODjH4zgN0g5bBtp2r9D+Nm207T/gPCxlGnaf0J4WK40O39B8jGW6BhBD3/4GP6GbJ7VkGbnH8hqqe/xLzOfCD3BVlCJAAAAAElFTkSuQmCC",
     "downloadUrl": {
-      "en": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/windows/password-generator-en-v1.0.0.zip",
-      "zh-CN": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/windows/password-generator-zh-v1.0.0.zip",
-      "ja": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/windows/password-generator-ja-v1.0.0.zip"
+      "en": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/password-generator-en-v1.0.0.zip",
+      "zh-CN": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/password-generator-zh-v1.0.0.zip",
+      "ja": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/password-generator-ja-v1.0.0.zip"
     }
   }
 ]
