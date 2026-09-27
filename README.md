@@ -5,26 +5,10 @@
 **模組化 · 輕量級 · 可擴展的 Windows 桌面效率中心**<br/>
 A modular, lightweight, extensible **Windows desktop efficiency center**.
 
-[![Version](https://img.shields.io/badge/version-1.0.1-2563EB?style=flat-square)](https://github.com/alanchan20121201-prog/Toolbox/releases)
-[![License](https://img.shields.io/badge/license-MIT-22C55E?style=flat-square)](LICENSE)
-[![Electron](https://img.shields.io/badge/Electron-31-47848F?style=flat-square)](https://www.electronjs.org/)
-[![Platform](https://img.shields.io/badge/platform-Windows-0078D6?style=flat-square)](#)
-[![i18n](https://img.shields.io/badge/i18n-en%20%7C%20zh--CN%20%7C%20ja-EC4899?style=flat-square)](#english)
-
 </div>
 
 > 主程式只負責「框架、導航、工具管理器、本地檔案讀寫」；所有具體功能都透過**獨立的工具（Tool）**動態下載、安裝與載入，隨需即用（On-demand）。<br/>
 > The host app only handles the framework, navigation, tool manager, and local file I/O — every concrete feature is delivered through **independent tools** downloaded and loaded on demand.
-
----
-
-## 📖 Languages · 語言 · 言語
-
-| English | 简体中文 | 日本語 |
-|:---:|:---:|:---:|
-| [English](#english) | [简体中文](#简体中文) | [日本語](#日本語) |
-
----
 
 ## English
 
