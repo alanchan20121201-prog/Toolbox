@@ -1,11 +1,7 @@
-<div align="center">
-
 # 🧰 Toolbox 工具箱
 
 **模組化 · 輕量級 · 可擴展的 Windows 桌面效率中心**<br/>
 A modular, lightweight, extensible **Windows desktop efficiency center**.
-
-</div>
 
 > 主程式只負責「框架、導航、工具管理器、本地檔案讀寫」；所有具體功能都透過**獨立的工具（Tool）**動態下載、安裝與載入，隨需即用（On-demand）。<br/>
 > The host app only handles the framework, navigation, tool manager, and local file I/O — every concrete feature is delivered through **independent tools** downloaded and loaded on demand.
