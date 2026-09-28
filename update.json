@@ -1,5 +1,5 @@
 {
   "version": "1.0.6",
-  "url": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.5.exe",
-  "notes": "改進：語言代碼統一為 zh / jp\n改進：全部工具改為單一 zip（內含三語，自動偵測介面語言）"
+  "url": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.6.exe",
+  "notes": "修復：多個工具按鈕全空、輸入無反應（腳本取元素時誤加 # 前綴導致整支程式崩潰）\n修復：工具市集下載／更新後捲軸彈回頂部\n改進：單位換算器分類標籤補上中文／日文"
 }
