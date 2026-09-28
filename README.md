@@ -1,4 +1,4 @@
-# 🧰 Toolbox 工具箱
+# 🧰 Toolbox 工具箱(beta)
 
 **模組化 · 輕量級 · 可擴展的 Windows 桌面效率中心**<br/>
 A modular, lightweight, extensible **Windows desktop efficiency center**.
