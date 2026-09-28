@@ -1,5 +1,0 @@
-{
-  "version": "1.0.3",
-  "url": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.3.exe",
-  "notes": "修復：安裝後缺少 Chromium 執行檔（ffmpeg.dll 等）導致無法啟動\n新增：工具市集卡片顯示安裝包大小"
-}
