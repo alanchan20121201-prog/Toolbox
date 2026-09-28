@@ -20,9 +20,9 @@
       },
       "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEhklEQVR42u3SV1McSRAE4PpdJwPIAhLeSVjhPZLwEuiM/i/jh9dU7BnY4ICZne1pM50Z8T3u9FZVimjOk5/XoIdJE/L0r2uQejw62VeGZ39eg8zh4Ul/EZ7/cQ2yDw9P9RWh5/drkDvUHv9HDnKPkuP3/shB7uru+Jc5yH2Vjt93mYOao/MCXOSg5ujo+C8uclDzlDv+9xzUXIUFePktBzUXj08Pl+DVeQ5qPh6f/l+C12c5yB8sAAtwmzenOcg/bQXIQP65KcDbkwzkn9sCHGcg/9wUoP84A/nntgBHGcg/NwUYOMpA/vnn+IcZyF8yeJiB1GvFhf8pg18zUHc6iW3/Xd59yUDVVYlN/58F0Hh4G4sg7z9noM6ojOlZWACDx7ehBDJ0kIHKqyMm55GhgxRUTp0xNZMM76egYjpiYi4Z3ktBxbQUwMBcMrKXgorpiIm5ZGQ3BRXTUgADc8nobgoqpiMm5pLRnRT0OJ3RPZuM7aSgYjpiYi4Z305BxXTExFwyvpWCimkpgIG5ZGIrBRXTERNzycRmCiqmpQAG5pLJzRRUTp0xNZNMbqSg8mo5vsF5ZGojgY9aqfo71TG5B5laT+CjvxffxW+VHd/wHmR6PYFv2qPiG1Vjwy5kei2BT+49hOLvFR7eon3IzGoCXzyWur6r8p06CI9fz3FsPPa9BfiwksAHZeLLLtoJj+93CeTjcoImq5Km76Sd8Ph+l0BmPyVoIhWxbZ46viuzSwmaRmVsmqmO78rcUoKmURmb5qnj2zK3mKBJ6ohN86j+vswvxmiKOmPLPKrfkPmFGE2gI7bMo/IdWViI4TqdsWEmle/IwnwMl5mIDTOpeksW52K4zERsmEfVe8Lj21MCE/9BlmZjuMiGmJ5HxbvC45svgcn35dPHGC6xMSZn6vZtFsBwAUy/L8sfYrjC5picp5udyvJMDBe4EJPzVN2rrMzEsJ1LMTVP1d3KynQMm7kYU/NU2a+sTkewlcsxMVOVHcvqVARbOV0AQ/N0umNZm4pgoybExDyd7lnWJiPYpkkxMU8nu5b1yQg2YbpPJ/uW9YkItmAUlqDkzmVjPIINGLUpu3fZHI9gA0Z9yuxdNscimMbUVIASu5etsQgmMfWmaP+yNRrBFEZDAQpuINujEUxg9OWxO8j2SAQTGI0FeOQOsjMcQTdGfx66hewMh9CJMVWA++8hu0MhdGHM5r6bCI/veQH23oeoG2NP7t6GBfC9APvvQtSJsS/t95H9wRB1YSwtQNuN5GAwRB0Yu/PfnaSVg4EQKjEOFGDg3+O38nkghCqMO7ktQH8I8s9NAb70hyD/3BbgbQjyz00Bvr4JQf5pK0AA8o+05/B1APKH3A2X4nkBjl4FIH/IfeFiPD5+K8cvA1DzyWPhgjw+fisnLwJQc0mZnPQFoOaRTnLaF4CaQzrNaW8Aag6pkrPeAOQ+6SZnPQHIXaIi5z0ByD2iMufPr0DukDry7dkVyH5Sd7hkTw/fnu9Pr0D2EFPh8j09/N1cPLkC6SM2hwfy8Ohlc/nbFehhuu/xC++Ch96DJah+AAAAAElFTkSuQmCC",
       "downloadUrl": {
-        "en": "dist/image-tools-en-v1.1.1.zip",
-        "zh-CN": "dist/image-tools-zh-v1.1.1.zip",
-        "ja": "dist/image-tools-ja-v1.1.1.zip"
+        "en": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-en-v1.1.1.zip",
+        "zh-CN": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-cn-v1.1.1.zip",
+        "ja": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-jp-v1.1.1.zip"
       },
       "size": {
         "en": 7379,
