@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Regex Tester</title>
+<style>
+:root{--accent:#d946ef;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--red:#ef4444;--green:#10b981;--mark:#fde68a}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:640px}
+.patrow{display:flex;gap:8px;margin-bottom:10px}
+.patrow input[type=text]{flex:1;padding:10px 11px;border:1px solid var(--border);border-radius:8px;font-family:Consolas,monospace;font-size:14px;background:var(--surface);color:var(--text);min-width:0}
+.patrow input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.patrow .flags{width:90px}
+textarea{width:100%;min-height:120px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:13px;font-family:Consolas,monospace;resize:vertical}
+textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.highlight{margin-top:12px;padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-family:Consolas,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;word-break:break-all;min-height:40px}
+mark{background:var(--mark);border-radius:3px;padding:0 1px}
+.matches{margin-top:12px;font-size:13px}
+.match{padding:6px 10px;border:1px solid var(--border);border-radius:7px;margin-bottom:6px;background:var(--bg);word-break:break-all}
+.match b{color:var(--accent)}
+.status{font-size:13px;margin-top:8px;min-height:18px}
+.status.err{color:var(--red)} .status.ok{color:var(--green)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <div class="patrow">
+    <input type="text" id="pattern" value="\\w+@\\w+\\.[a-z]{2,}" spellcheck="false" />
+    <input type="text" id="flags" value="gi" spellcheck="false" />
+  </div>
+  <textarea id="test" data-i18n-ph="ph" spellcheck="false"></textarea>
+  <div class="highlight" id="hl"></div>
+  <div class="matches" id="matches"></div>
+  <div class="status" id="status"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

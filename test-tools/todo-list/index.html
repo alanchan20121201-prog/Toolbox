@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>To-Do List</title>
+<style>
+:root{--accent:#10b981;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--red:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:560px}
+input[type=text]{flex:1;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;min-width:0}
+input[type=text]:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.row{display:flex;gap:10px;margin-bottom:14px}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer;flex-shrink:0}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.status{font-size:12px;color:var(--dim);min-height:18px;margin-top:10px}
+.meta{font-size:12px;color:var(--dim);margin-bottom:10px}
+.item{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:9px;margin-bottom:8px;background:var(--bg)}
+.item input[type=checkbox]{width:17px;height:17px;flex-shrink:0}
+.item .txt{flex:1;font-size:14px;word-break:break-all}
+.item.done .txt{text-decoration:line-through;color:var(--dim)}
+.item .btn{padding:5px 9px;font-size:12px}
+.empty{text-align:center;color:var(--dim);font-size:13px;padding:16px 0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <div class="row">
+    <input type="text" id="inp" data-i18n-ph="ph" />
+    <button class="btn primary" id="btn-add" data-i18n="add"></button>
+  </div>
+  <div class="meta" id="meta"></div>
+  <div id="list"></div>
+  <div class="row" style="margin-top:6px"><button class="btn" id="btn-clear" data-i18n="clearDone"></button></div>
+  <div class="status" id="status"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

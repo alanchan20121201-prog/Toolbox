@@ -1,0 +1,20 @@
+{
+  "id": "pomodoro-timer",
+  "name": {
+    "en": "Pomodoro Timer",
+    "zh": "番茄钟",
+    "jp": "ポモドーロタイマー"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "25/5 focus timer with desktop notifications — fully offline",
+    "zh": "25/5 专注计时器，结束弹系统通知，完全离线",
+    "jp": "25/5 の集中タイマー、終了時に通知 — 完全オフライン"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "notify"
+  ],
+  "universal": true
+}

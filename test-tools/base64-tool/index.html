@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Base64 Converter</title>
+<style>
+:root{--accent:#0891b2;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--red:#ef4444;--green:#10b981}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:640px}
+label{display:block;font-size:12px;font-weight:600;color:var(--dim);margin:0 0 5px}
+textarea{width:100%;min-height:110px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:13px;font-family:Consolas,monospace;resize:vertical;line-height:1.5}
+textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.status{font-size:13px;min-height:18px;white-space:pre-wrap;word-break:break-all}
+.status.err{color:var(--red)} .status.ok{color:var(--green)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <label data-i18n="inLabel"></label>
+  <textarea id="inp" data-i18n-ph="inPh" spellcheck="false"></textarea>
+  <div class="row">
+    <button class="btn primary" id="btn-enc" data-i18n="encode"></button>
+    <button class="btn primary" id="btn-dec" data-i18n="decode"></button>
+    <button class="btn" id="btn-copy" data-i18n="copy"></button>
+    <button class="btn" id="btn-clear" data-i18n="clear"></button>
+  </div>
+  <label data-i18n="outLabel"></label>
+  <textarea id="out" readonly spellcheck="false"></textarea>
+  <div class="status" id="status"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

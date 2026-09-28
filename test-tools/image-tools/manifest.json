@@ -1,0 +1,23 @@
+{
+  "id": "image-tools",
+  "name": {
+    "en": "Image Converter",
+    "zh": "图片转档工具",
+    "jp": "画像変換ツール"
+  },
+  "version": "1.1.2",
+  "description": {
+    "en": "Convert images to WebP / JPG / PNG / BMP / ICO in a snap",
+    "zh": "极速将图片转成 WebP / JPG / PNG / BMP / ICO",
+    "jp": "画像を WebP / JPG / PNG / BMP / ICO にすばやく変換"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "dialog",
+    "file:read",
+    "file:write",
+    "notify"
+  ],
+  "universal": true
+}

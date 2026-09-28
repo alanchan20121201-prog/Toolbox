@@ -1,0 +1,18 @@
+{
+  "id": "unit-converter",
+  "name": {
+    "en": "Unit Converter",
+    "zh": "单位换算器",
+    "jp": "単位変換ツール"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Convert length, weight, temperature, data size, area and speed instantly",
+    "zh": "长度、重量、温度、数据量、面积、速度即时换算",
+    "jp": "長さ・重さ・温度・データ量・面積・速度を即座に変換"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [],
+  "universal": true
+}

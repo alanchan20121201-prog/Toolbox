@@ -1,0 +1,18 @@
+{
+  "id": "timestamp-tool",
+  "name": {
+    "en": "Timestamp Converter",
+    "zh": "时间戳转换",
+    "jp": "タイムスタンプ変換"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Unix timestamp ⇄ date, live current-time stamp, seconds & milliseconds",
+    "zh": "Unix 时间戳与日期互转、实时当前时间戳（秒/毫秒）",
+    "jp": "Unix タイムスタンプ ⇄ 日付、現在時刻のライブ表示（秒/ミリ秒）"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [],
+  "universal": true
+}

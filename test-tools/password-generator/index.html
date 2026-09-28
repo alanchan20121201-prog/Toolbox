@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Toolbox</title>
+  <style>
+    :root { --accent: #10b981; --bg: #f5f6f8; --surface: #fff; --border: #e3e5ea; --text: #1f2329; --dim: #6b7280; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 28px; font-family: "Segoe UI", "Microsoft JhengHei", "PingFang SC", "Noto Sans TC", system-ui, sans-serif;
+      background: var(--bg); color: var(--text); height: 100vh; overflow: auto;
+    }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    p.sub { color: var(--dim); margin: 0 0 18px; font-size: 14px; }
+
+    .tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+    .tab {
+      padding: 9px 16px; border-radius: 9px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--dim); font-size: 14px; cursor: pointer;
+    }
+    .tab.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; max-width: 560px; }
+    [hidden] { display: none !important; }
+
+    .output {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;
+    }
+    .output .pw { flex: 1; font-family: Consolas, monospace; font-size: 18px; word-break: break-all; letter-spacing: 1px; }
+    .row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .row label { flex: 1; font-size: 14px; }
+    input[type="range"] { flex: 2; }
+    .len-val { min-width: 36px; text-align: right; font-size: 14px; font-weight: 600; }
+    input[type="checkbox"] { width: 18px; height: 18px; }
+    .strength { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin: 4px 0 18px; }
+    .strength .bar { height: 100%; width: 0; border-radius: 3px; transition: width .2s, background .2s; }
+    .btn { padding: 11px 18px; border-radius: 9px; border: none; cursor: pointer; font-size: 14px; }
+    .btn.primary { background: var(--accent); color: #fff; flex: 1; }
+    .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn.small { padding: 6px 10px; font-size: 12px; border-radius: 7px; background: var(--bg); border: 1px solid var(--border); color: var(--text); }
+    .btn.danger { color: #ef4444; border-color: #fca5a5; background: #fff; }
+    .actions { display: flex; gap: 10px; }
+    .status { font-size: 13px; color: var(--dim); min-height: 20px; margin-top: 12px; word-break: break-all; }
+    .status.err { color: #ef4444; }
+
+    input[type="text"], input[type="password"] {
+      flex: 1; padding: 10px 12px; border: 1px solid var(--border); border-radius: 9px;
+      background: var(--surface); color: var(--text); font-size: 14px; min-width: 0;
+    }
+    input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+    .field-label { font-size: 13px; font-weight: 600; margin: 0 0 6px; }
+
+    .vault-item {
+      display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+      border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; background: var(--bg);
+    }
+    .vault-item .info { flex: 1; min-width: 0; }
+    .vault-item .user { font-weight: 600; font-size: 14px; word-break: break-all; }
+    .vault-item .masked { font-family: Consolas, monospace; font-size: 13px; color: var(--dim); word-break: break-all; }
+    .vault-item .btns { display: flex; gap: 6px; flex-shrink: 0; }
+    .empty-tip { color: var(--dim); font-size: 13px; text-align: center; padding: 18px 0; }
+
+    .check-result { margin-top: 16px; }
+    .check-verdict { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .check-meta { font-size: 13px; color: var(--dim); margin-bottom: 10px; }
+    ul.tips { margin: 8px 0 0; padding-left: 20px; font-size: 13px; color: var(--dim); }
+    ul.tips li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <h1 data-i18n="title">🔑 Password Toolbox</h1>
+  <p class="sub" data-i18n="subtitle">Generate · local encrypted vault · strength check — everything stays on your computer</p>
+
+  <div class="tabs">
+    <button class="tab active" id="tab-gen" data-i18n="tabGen">🎲 Generator</button>
+    <button class="tab" id="tab-vault" data-i18n="tabVault">🔐 Vault</button>
+    <button class="tab" id="tab-check" data-i18n="tabCheck">🛡️ Strength check</button>
+  </div>
+
+  <!-- ============ 生成 ============ -->
+  <div class="panel" id="panel-gen">
+    <div class="output">
+      <span class="pw" id="pw">Click "Generate"</span>
+    </div>
+
+    <div class="row">
+      <label data-i18n="length">Length</label>
+      <input type="range" id="length" min="6" max="64" value="16" />
+      <span class="len-val" id="len-val">16</span>
+    </div>
+
+    <div class="row"><label data-i18n="upper">Uppercase A-Z</label><input type="checkbox" id="upper" checked /></div>
+    <div class="row"><label data-i18n="lower">Lowercase a-z</label><input type="checkbox" id="lower" checked /></div>
+    <div class="row"><label data-i18n="digits">Digits 0-9</label><input type="checkbox" id="digits" checked /></div>
+    <div class="row"><label data-i18n="symbols">Symbols !@#$…</label><input type="checkbox" id="symbols" checked /></div>
+
+    <div class="strength"><div class="bar" id="strength-bar"></div></div>
+
+    <div class="actions">
+      <button class="btn primary" id="btn-gen" data-i18n="generate">🎲 Generate</button>
+      <button class="btn ghost" id="btn-copy" data-i18n="copy">📋 Copy</button>
+      <button class="btn ghost" id="btn-to-vault" data-i18n="toVault">💾 Save</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <!-- ============ 保存庫 ============ -->
+  <div class="panel" id="panel-vault" hidden>
+    <p class="field-label" data-i18n="vaultHint">Stored encrypted on this computer (Windows user account bound). Nothing is uploaded.</p>
+
+    <div class="row">
+      <input type="text" id="vault-user" data-i18n-ph="vaultUserPh" placeholder="Username / site name" />
+    </div>
+    <div class="row">
+      <input type="password" id="vault-pass" data-i18n-ph="vaultPassPh" placeholder="Password" />
+      <button class="btn small" id="btn-vault-eye" title="👁">👁</button>
+      <button class="btn primary" id="btn-vault-save" data-i18n="vaultSave" style="flex:0 0 auto;">💾 Save</button>
+    </div>
+
+    <div class="row" style="margin-top:20px;">
+      <input type="text" id="vault-search" data-i18n-ph="vaultSearchPh" placeholder="🔍 Search by username…" />
+    </div>
+    <div id="vault-list"></div>
+    <div class="status" id="vault-status"></div>
+  </div>
+
+  <!-- ============ 強度檢測 ============ -->
+  <div class="panel" id="panel-check" hidden>
+    <div class="row">
+      <input type="password" id="check-pass" data-i18n-ph="checkPh" placeholder="Type a password to check" />
+      <button class="btn small" id="btn-check-eye" title="👁">👁</button>
+    </div>
+
+    <div class="check-result" id="check-result" hidden>
+      <div class="check-verdict" id="check-verdict"></div>
+      <div class="strength"><div class="bar" id="check-bar"></div></div>
+      <div class="check-meta" id="check-meta"></div>
+      <ul class="tips" id="check-tips"></ul>
+    </div>
+    <div class="status" id="check-status"></div>
+  </div>
+
+  <script src="lang.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

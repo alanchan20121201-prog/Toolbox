@@ -1,0 +1,55 @@
+{
+  "name": "toolbox",
+  "version": "1.0.6",
+  "description": "Toolbox - 模組化、輕量級、可擴展的 Windows 桌面效率中心",
+  "author": "Toolbox",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "smoke": "electron . --smoke",
+    "smoke:window": "electron . --smoke-window",
+    "build:tools": "node scripts/build-tools.js",
+    "verify:unpacked": "node scripts/verify-unpacked.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.18"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.toolbox.app",
+    "productName": "Toolbox",
+    "artifactName": "Toolbox-Setup-${version}.${ext}",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "tool-preload.js",
+      "index.html",
+      "renderer.js",
+      "css/**/*",
+      "locales/**/*",
+      "dev-server/tools.json",
+      "icon.png",
+      "icon.ico"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

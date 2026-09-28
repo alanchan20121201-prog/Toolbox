@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Color Converter</title>
+<style>
+:root{--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:520px}
+.preview{height:110px;border-radius:12px;border:1px solid var(--border);margin-bottom:16px}
+.field{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.field label{width:52px;font-size:12px;font-weight:700;color:var(--dim)}
+.field input{flex:1;padding:9px 11px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:Consolas,monospace;background:var(--surface);color:var(--text);min-width:0}
+.field input:focus{outline:2px solid var(--accent,#6366f1);outline-offset:-1px}
+.field .btn{padding:7px 10px;font-size:12px;border-radius:7px;border:1px solid var(--border);background:var(--surface);cursor:pointer;flex-shrink:0}
+.row{display:flex;align-items:center;gap:12px;margin-top:14px}
+input[type=color]{width:52px;height:38px;border:1px solid var(--border);border-radius:8px;background:var(--surface);padding:2px;cursor:pointer}
+.status{font-size:12px;color:var(--dim);min-height:18px;margin-top:8px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <div class="preview" id="preview"></div>
+  <div class="field"><label>HEX</label><input id="hex" value="#3B82F6" /><button class="btn" data-copy="hex">📋</button></div>
+  <div class="field"><label>RGB</label><input id="rgb" /><button class="btn" data-copy="rgb">📋</button></div>
+  <div class="field"><label>HSL</label><input id="hsl" /><button class="btn" data-copy="hsl">📋</button></div>
+  <div class="row"><input type="color" id="picker" value="#3B82F6" /><span class="status" id="status"></span></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

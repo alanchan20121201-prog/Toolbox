@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Unit Converter</title>
+<style>
+:root{--accent:#6366f1;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:560px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{padding:8px 13px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--dim);font-size:13px;cursor:pointer}
+.tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.conv{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.conv input,.conv select{padding:10px 11px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:15px;font-family:inherit}
+.conv input{width:150px}
+.conv input:focus,.conv select:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.swap{font-size:18px;color:var(--dim);border:none;background:none;cursor:pointer;padding:4px 8px}
+.result{margin-top:16px;font-size:22px;font-weight:700;word-break:break-all}
+.result small{display:block;font-size:12px;color:var(--dim);font-weight:400;margin-top:4px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <div class="tabs" id="tabs"></div>
+  <div class="conv">
+    <input type="number" id="val" value="1" step="any" />
+    <select id="from"></select>
+    <button class="swap" id="btn-swap" title="⇄">⇄</button>
+    <select id="to"></select>
+  </div>
+  <div class="result" id="out">—</div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

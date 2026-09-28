@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Timestamp Converter</title>
+<style>
+:root{--accent:#0ea5e9;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--green:#10b981}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:560px}
+.now{background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:14px 16px;margin-bottom:16px;font-family:Consolas,monospace;font-size:15px}
+.now b{color:var(--green)}
+label{display:block;font-size:12px;font-weight:600;color:var(--dim);margin:12px 0 5px}
+input{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;font-family:inherit}
+input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.row{display:flex;gap:10px}
+.row input{flex:1}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer;white-space:nowrap}
+.out{margin-top:10px;font-size:14px;word-break:break-all;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 12px;min-height:20px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <div class="now"><span data-i18n="now"></span><br /><b id="now-s"></b><br /><b id="now-ms"></b></div>
+  <label data-i18n="s2dLabel"></label>
+  <div class="row">
+    <input type="text" id="stamp" data-i18n-ph="stampPh" />
+    <button class="btn" id="btn-s2d" data-i18n="convert"></button>
+  </div>
+  <div class="out" id="out-s2d"></div>
+  <label data-i18n="d2sLabel"></label>
+  <div class="row">
+    <input type="datetime-local" id="dt" />
+    <button class="btn" id="btn-d2s" data-i18n="convert"></button>
+  </div>
+  <div class="out" id="out-d2s"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

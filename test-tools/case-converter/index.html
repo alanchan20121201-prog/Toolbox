@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Case Converter</title>
+<style>
+:root{--accent:#64748b;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--green:#10b981;--red:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:600px}
+textarea{width:100%;min-height:90px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;font-family:Consolas,monospace;resize:vertical}
+textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.conv{display:flex;align-items:center;gap:10px;margin-top:12px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
+.conv .name{width:130px;font-size:12px;font-weight:700;color:var(--dim);flex-shrink:0}
+.conv .val{flex:1;font-family:Consolas,monospace;font-size:13px;word-break:break-all}
+.conv .btn{padding:5px 9px;font-size:12px;border-radius:7px;border:1px solid var(--border);background:var(--surface);cursor:pointer;flex-shrink:0}
+.status{font-size:13px;margin-top:10px;min-height:18px}
+.status.ok{color:var(--green)} .status.err{color:var(--red)}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <textarea id="inp" data-i18n-ph="ph" spellcheck="false"></textarea>
+  <div id="out"></div>
+  <div class="status" id="status"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

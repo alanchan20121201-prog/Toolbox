@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Quick Notes</title>
+<style>
+:root{--accent:#f59e0b;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--red:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:620px}
+input,textarea{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;font-family:inherit}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+textarea{min-height:200px;resize:vertical;line-height:1.6}
+.row{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer;flex-shrink:0}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.status{font-size:12px;color:var(--dim);min-height:18px;margin-top:10px}
+.status.err{color:var(--red)}
+.notes{margin-top:16px}
+.note{padding:10px 12px;border:1px solid var(--border);border-radius:9px;margin-bottom:8px;background:var(--bg);display:flex;align-items:center;gap:10px}
+.note .ttl{flex:1;font-size:14px;font-weight:600;word-break:break-all;cursor:pointer}
+.note .ttl:hover{color:var(--accent)}
+.note .dt{font-size:11px;color:var(--dim)}
+.note .btn{padding:5px 9px;font-size:12px}
+.empty{text-align:center;color:var(--dim);font-size:13px;padding:14px 0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <div class="row"><input type="text" id="ttl" data-i18n-ph="ttlPh" /></div>
+  <textarea id="body" data-i18n-ph="bodyPh"></textarea>
+  <div class="row" style="margin-top:12px">
+    <button class="btn primary" id="btn-save" data-i18n="save"></button>
+    <button class="btn" id="btn-new" data-i18n="new"></button>
+    <button class="btn" id="btn-del" data-i18n="del"></button>
+  </div>
+  <div class="status" id="status"></div>
+  <div class="notes" id="notes"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

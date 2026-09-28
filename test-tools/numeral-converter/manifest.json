@@ -1,0 +1,18 @@
+{
+  "id": "numeral-converter",
+  "name": {
+    "en": "Radix Converter",
+    "zh": "进制转换",
+    "jp": "進数変換ツール"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Binary / octal / decimal / hex conversions with bitwise view, live as you type",
+    "zh": "二、八、十、十六进制实时互转，附位查看",
+    "jp": "2 / 8 / 10 / 16 進数をリアルタイム変換、ビット表示つき"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [],
+  "universal": true
+}

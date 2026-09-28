@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Random Picker</title>
+<style>
+:root{--accent:#a855f7;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--red:#ef4444;--green:#10b981}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:520px;margin-bottom:14px}
+h2{font-size:14px;margin:0 0 10px}
+textarea{width:100%;min-height:110px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;font-family:inherit;resize:vertical}
+textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.row{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.row input{width:70px;padding:8px;border:1px solid var(--border);border-radius:8px;font-size:13px}
+.row select{padding:8px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.winner{margin-top:12px;font-size:16px;font-weight:700;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:12px 14px;min-height:24px;word-break:break-all}
+.winner b{color:var(--accent)}
+.big{font-size:40px;text-align:center;padding:14px}
+.big small{display:block;font-size:12px;color:var(--dim);font-weight:400}
+.status{font-size:12px;color:var(--red);min-height:16px;margin-top:6px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <h2 data-i18n="drawTitle"></h2>
+  <textarea id="names" data-i18n-ph="namesPh"></textarea>
+  <div class="row">
+    <label data-i18n="winners"></label> <input type="number" id="n" value="1" min="1" />
+    <button class="btn primary" id="btn-draw" data-i18n="draw"></button>
+  </div>
+  <div class="winner" id="winners"></div>
+  <div class="status" id="status"></div>
+</div>
+<div class="panel">
+  <div class="row" style="margin:0">
+    <button class="btn primary" id="btn-dice" data-i18n="dice"></button>
+    <select id="dice-n"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+    <button class="btn primary" id="btn-coin" data-i18n="coin"></button>
+  </div>
+  <div class="big" id="big"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

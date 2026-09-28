@@ -1,0 +1,20 @@
+{
+  "id": "color-tool",
+  "name": {
+    "en": "Color Converter",
+    "zh": "颜色工具",
+    "jp": "カラー変換ツール"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "HEX ⇄ RGB ⇄ HSL with live preview and one-click copy",
+    "zh": "HEX / RGB / HSL 互转，实时预览，一键复制",
+    "jp": "HEX / RGB / HSL の相互変換、ライブプレビュー、ワンクリックコピー"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "clipboard"
+  ],
+  "universal": true
+}

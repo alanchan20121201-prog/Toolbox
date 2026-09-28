@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>JSON Formatter</title>
+<style>
+:root{--accent:#8b5cf6;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--red:#ef4444;--green:#10b981}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:640px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+textarea{width:100%;min-height:170px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:13px;font-family:Consolas,monospace;resize:vertical;line-height:1.5}
+textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.status{font-size:13px;margin-top:10px;min-height:18px;white-space:pre-wrap;word-break:break-all}
+.status.ok{color:var(--green)} .status.err{color:var(--red)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <textarea id="inp" data-i18n-ph="ph" spellcheck="false"></textarea>
+  <div class="row" style="margin-top:12px">
+    <button class="btn primary" id="btn-fmt" data-i18n="format"></button>
+    <button class="btn" id="btn-min" data-i18n="minify"></button>
+    <button class="btn" id="btn-copy" data-i18n="copy"></button>
+    <button class="btn" id="btn-clear" data-i18n="clear"></button>
+  </div>
+  <div class="status" id="status"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

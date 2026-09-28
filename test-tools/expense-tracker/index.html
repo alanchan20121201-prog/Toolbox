@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Simple Expense Tracker</title>
+<style>
+:root{--accent:#3b82f6;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--red:#ef4444;--green:#10b981}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:560px}
+input,select{padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;font-family:inherit}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.row{display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.row input[type=text]{flex:1;min-width:120px}
+.row input[type=number]{width:120px}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.danger{color:var(--red);border-color:#fca5a5}
+.status{font-size:12px;color:var(--dim);min-height:18px;margin-top:10px;word-break:break-all}
+.status.err{color:var(--red)}
+.totals{display:flex;gap:10px;margin:14px 0;flex-wrap:wrap}
+.totals div{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:10px 12px;font-size:13px;color:var(--dim)}
+.totals b{display:block;font-size:16px;margin-top:2px}
+.item{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:9px;margin-bottom:8px;background:var(--bg)}
+.item .info{flex:1;min-width:0}
+.item .note{font-size:14px;font-weight:600;word-break:break-all}
+.item .date{font-size:11px;color:var(--dim)}
+.item .amt{font-weight:700;font-variant-numeric:tabular-nums}
+.amt.in{color:var(--green)} .amt.out{color:var(--red)}
+.empty{text-align:center;color:var(--dim);font-size:13px;padding:16px 0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <div class="row">
+    <select id="type"><option value="out" data-i18n="expense"></option><option value="in" data-i18n="income"></option></select>
+    <input type="text" id="note" data-i18n-ph="notePh" />
+    <input type="number" id="amount" data-i18n-ph="amountPh" step="0.01" min="0" />
+    <button class="btn primary" id="btn-add" data-i18n="add"></button>
+  </div>
+  <div class="totals">
+    <div><span data-i18n="totalIn"></span><b class="amt in" id="t-in">0</b></div>
+    <div><span data-i18n="totalOut"></span><b class="amt out" id="t-out">0</b></div>
+    <div><span data-i18n="balance"></span><b id="t-bal">0</b></div>
+  </div>
+  <div class="row"><input type="text" id="search" data-i18n-ph="searchPh" style="flex:1" /></div>
+  <div class="list" id="list"></div>
+  <div class="status" id="status"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

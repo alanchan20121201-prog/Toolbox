@@ -1,0 +1,20 @@
+{
+  "id": "quick-notes",
+  "name": {
+    "en": "Quick Notes",
+    "zh": "快速记事本",
+    "jp": "クイックメモ"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Jot down notes that are saved locally — never lose a thought",
+    "zh": "随手记事，自动保存在本机，灵感不再丢失",
+    "jp": "サッと書いて自動保存 — メモは端末に残ります"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "storage"
+  ],
+  "universal": true
+}
