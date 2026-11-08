@@ -29,3 +29,6 @@ desktop.ini
 # 生成的副本（release/ 壓縮成品與 repo 自複本，不進 repo）
 github-source/
 publish/
+
+# 內部 agent 工作筆記，非專案程式碼
+.workbuddy/
