@@ -1,0 +1,18 @@
+{
+  "id": "world-clock",
+  "name": {
+    "en": "World Clock",
+    "zh": "世界时钟",
+    "jp": "世界時計"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Live clocks for cities around the world with day/night badges",
+    "zh": "全球主要城市实时时钟，附白天/黑夜标记",
+    "jp": "世界の主要都市のライブ時計、昼夜バッジつき"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [],
+  "universal": true
+}

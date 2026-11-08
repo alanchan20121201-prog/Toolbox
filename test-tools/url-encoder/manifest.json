@@ -1,0 +1,20 @@
+{
+  "id": "url-encoder",
+  "name": {
+    "en": "URL Encoder / Decoder",
+    "zh": "URL 编解码",
+    "jp": "URL エンコード / デコード"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Percent-encode / decode URLs and query components, plus a query-string parser",
+    "zh": "URL 与查询参数编解码，附带查询字符串解析表",
+    "jp": "URL とクエリのパーセントエンコード / デコード、クエリ解析表つき"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "clipboard"
+  ],
+  "universal": true
+}

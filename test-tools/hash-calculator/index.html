@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Hash Calculator</title>
+<style>
+:root{--accent:#dc2626;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--red:#ef4444;--green:#10b981}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:640px}
+textarea{width:100%;min-height:100px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:13px;font-family:Consolas,monospace;resize:vertical}
+textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.row{display:flex;gap:10px;margin:12px 0;flex-wrap:wrap}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.hash{margin-top:10px;font-size:12px}
+.hash .alg{font-weight:700;color:var(--dim);margin-bottom:3px}
+.hash .val{font-family:Consolas,monospace;word-break:break-all;background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:8px 10px}
+.cmp{margin-top:14px;display:flex;gap:10px;align-items:center}
+.cmp input{flex:1;padding:9px 11px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:Consolas,monospace}
+.cmp input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.status{font-size:13px;margin-top:10px;min-height:18px;font-weight:600}
+.status.match{color:var(--green)} .status.diff{color:var(--red)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <textarea id="inp" data-i18n-ph="ph" spellcheck="false"></textarea>
+  <div class="row">
+    <button class="btn primary" id="btn-calc" data-i18n="calc"></button>
+    <span class="status" id="cmp-status"></span>
+  </div>
+  <div id="hashes" hidden></div>
+  <div class="cmp">
+    <input type="text" id="expect" data-i18n-ph="cmpPh" spellcheck="false" />
+    <button class="btn" id="btn-cmp" data-i18n="cmp"></button>
+  </div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

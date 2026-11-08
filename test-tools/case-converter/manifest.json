@@ -1,0 +1,20 @@
+{
+  "id": "case-converter",
+  "name": {
+    "en": "Case Converter",
+    "zh": "命名格式转换",
+    "jp": "ケース変換ツール"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE and more",
+    "zh": "驼峰、帕斯卡、下划线、中划线、常量等命名格式互转",
+    "jp": "キャメル・パスカル・スネーク・ケバブ・定数など命名形式を相互変換"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "clipboard"
+  ],
+  "universal": true
+}

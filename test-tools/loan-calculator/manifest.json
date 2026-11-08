@@ -1,0 +1,18 @@
+{
+  "id": "loan-calculator",
+  "name": {
+    "en": "Loan Calculator",
+    "zh": "贷款计算器",
+    "jp": "ローン計算ツール"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Monthly payment, total interest and yearly schedule for any loan",
+    "zh": "计算月供、总利息与逐年还款计划",
+    "jp": "月々の返済額・総利息・年別返済計画を計算"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [],
+  "universal": true
+}

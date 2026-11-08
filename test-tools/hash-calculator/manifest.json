@@ -1,0 +1,20 @@
+{
+  "id": "hash-calculator",
+  "name": {
+    "en": "Hash Calculator",
+    "zh": "哈希计算器",
+    "jp": "ハッシュ計算ツール"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "SHA-1 / SHA-256 / SHA-384 / SHA-512 of any text, with checksum comparison",
+    "zh": "计算文本的 SHA-1 / 256 / 384 / 512，并可比对校验和",
+    "jp": "テキストの SHA-1 / 256 / 384 / 512 を計算しチェックサム比較も可能"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "clipboard"
+  ],
+  "universal": true
+}

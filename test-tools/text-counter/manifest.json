@@ -1,0 +1,18 @@
+{
+  "id": "text-counter",
+  "name": {
+    "en": "Text Statistics",
+    "zh": "文字统计",
+    "jp": "文字数カウンター"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Characters, words, lines and reading time — counts update as you type",
+    "zh": "字符、字数、行数与阅读时间，边打字边统计",
+    "jp": "文字数・単語数・行数・読了時間を入力しながらリアルタイム集計"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [],
+  "universal": true
+}

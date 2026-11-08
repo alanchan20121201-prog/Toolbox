@@ -1,0 +1,20 @@
+{
+  "id": "base64-tool",
+  "name": {
+    "en": "Base64 Converter",
+    "zh": "Base64 转换",
+    "jp": "Base64 変換"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Encode / decode Base64 text (UTF-8 safe) and copy with one click",
+    "zh": "文本 Base64 编解码（支持中文），一键复制",
+    "jp": "テキストの Base64 エンコード / デコード（UTF-8 対応）、ワンクリックコピー"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "clipboard"
+  ],
+  "universal": true
+}

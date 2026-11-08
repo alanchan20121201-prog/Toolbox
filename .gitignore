@@ -1,0 +1,31 @@
+# 依賴套件
+node_modules/
+
+# 打包產物（exe 安裝程式、green 版目錄等）
+release/
+release*/
+release*-installer/
+release*-portable/
+
+# 建置暫存與 log
+*.log
+rc.txt
+builder-debug.yml
+.eb/
+dist/
+
+# 工具打包輸出（zip 是上傳到 Release 用的，不進 repo）
+dev-server/dist/
+dev-server/icons/
+
+# 系統檔
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 注意：根目錄的 tools.json / update.json 是「已上線」的清單與更新資訊，
+# 不能被忽略（GitHub raw 就是抓這兩份）。
+
+# 生成的副本（release/ 壓縮成品與 repo 自複本，不進 repo）
+github-source/
+publish/

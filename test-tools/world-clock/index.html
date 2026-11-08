@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>World Clock</title>
+<style>
+:root{--accent:#0284c7;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;max-width:520px}
+.city{display:flex;align-items:center;gap:12px;padding:12px 6px;border-bottom:1px solid var(--border)}
+.city:last-child{border-bottom:none}
+.city .name{flex:1;font-size:14px;font-weight:600}
+.city .name small{display:block;font-weight:400;font-size:11px;color:var(--dim)}
+.city .time{font-family:Consolas,monospace;font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
+.city .badge{font-size:17px}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel" id="list"></div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

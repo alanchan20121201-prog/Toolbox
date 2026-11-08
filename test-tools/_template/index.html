@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My New Tool</title>
+  <style>
+    :root {
+      --accent: #4f7cf7; --bg: #f5f6f8; --surface: #fff;
+      --border: #e3e5ea; --text: #1f2329; --dim: #6b7280;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #141519; --surface: #1c1e24; --border: #2c2f38; --text: #e8eaed; --dim: #9aa1ad; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 28px; height: 100vh; overflow: auto;
+      font-family: "Segoe UI", "Microsoft JhengHei", "PingFang SC", "Noto Sans TC", system-ui, sans-serif;
+      background: var(--bg); color: var(--text);
+    }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    p.sub { color: var(--dim); margin: 0 0 20px; font-size: 14px; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; max-width: 760px; }
+    textarea {
+      width: 100%; height: 220px; resize: vertical; padding: 12px 14px;
+      border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text);
+      font-family: Consolas, monospace; font-size: 14px; line-height: 1.6;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .btn { padding: 10px 16px; border-radius: 9px; border: none; cursor: pointer; font-size: 14px; }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .status { font-size: 13px; color: var(--dim); min-height: 20px; margin-top: 12px; }
+    .status.err { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <h1 data-i18n="title">🧩 My New Tool</h1>
+  <p class="sub" data-i18n="subtitle">Replace this line with a short description</p>
+
+  <div class="panel">
+    <textarea id="input" data-i18n-ph="inputPlaceholder" placeholder="Paste text here, or open a file…"></textarea>
+
+    <div class="actions">
+      <button class="btn ghost" id="btn-open" data-i18n="open">📂 Open file</button>
+      <button class="btn primary" id="btn-run" data-i18n="run">⚡ Run</button>
+      <button class="btn ghost" id="btn-copy" data-i18n="copy">📋 Copy</button>
+      <button class="btn ghost" id="btn-save" data-i18n="save">💾 Save</button>
+    </div>
+
+    <div class="status" id="status"></div>
+  </div>
+
+  <!-- 語系由主程式建置時注入，順序不可調換 -->
+  <script src="lang.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+{
+  "update": {
+    "version": "1.0.6",
+    "url": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.6.exe",
+    "notes": "修復：多個工具按鈕全空、輸入無反應（腳本取元素時誤加 # 前綴導致整支程式崩潰）\n修復：工具市集下載／更新後捲軸彈回頂部\n改進：單位換算器分類標籤補上中文／日文"
+  },
+  "tools": [
+    {
+      "id": "age-calculator",
+      "name": {
+        "en": "Date Calculator",
+        "zh": "日期计算器",
+        "jp": "日付計算ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Age from birthdate, days between dates, and date add/subtract",
+        "zh": "根据生日算年龄、两个日期相差天数、日期加减天数",
+        "jp": "誕生日から年齢、日数差、日付の加減算をまとめて計算"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE10lEQVR42u2SeVfXVRDG55WECMgmCMoiKNo7a7E9TTEracHSRNOKUjZBBVxQcQFUcO21PB1O8ZMS6t7vMnfunfmc8/n33plnHiJm3nrzD5ibSylgh1RYjrf3v4TJpx3eDFuEd/a/hClH5uO/gCnP0g//7r4XMOVrxzeLLcGBfc9hxqcd38xXggN9z2HGb6bjv9f3DGY6WgGsAO683/cMZnq6HX/vU5jp+r8F+GDvU5jpasc3Ny/Bh3uewExfO775egk+2vMEph43KMAKTD3+8/i9KzD1WSnAx70rMPW5rgDLMPVZKcAnvcsw9fmqAD3LMPVZKcCnPY8Rq6GJObuoChAb0RTgYM9jSDUVJGdMB3c/gjRTRWLWZMfXXQI6tPsRpKgFSZnToe6HCK1WJGRPn3U/REi1Ezp/K4D2AhzuXkIojb8IeQM63LWEEBYeos2fSTrStQRu8xJi5lT3oiNdi+A2e0CLURjTftTftQhOs8I9p5Y9qb9zEZxmCoV5Rk27Un/nAjj1D2QhaqXvS0c7F8ClL5yzad2bjnYsgEuvEBjn0rw7fd7xAFz6wDmX5t1FFiC140ven451PACXrnDOpH1/OrbrPrh0DoBxJu370xe77oNDH7hm4lZiBlYAK8A9cOi+eNg5tOSwJn258x44dCXUv9Lm4bpLsgUommQL8NXOu+DQFc6/fIktBxeTK0DZJFeA4+13waErXP9kJZYcXKXj7fPg0H3x8v/IXwLZOfhIA+3z4NAVjj/yIj0HH2mgbR4cOi/O8EfuAgjPwUcaaLsDDt0XL/+P/AWQnYOP9HXbHXDoStnvF4XUHHy1AmgvwDc7boNDV8p+vyik5uCrFUB7Ab7dcRsculL2+0UhNQdfrQDaC/Bd6y1w6ErZ7xeF1Bx8tQJoL8Bg6y1w6ArHH3mRnoOPNNg6Bw7dFy//j/wFkJ2DjzTYMgcOnRdn+CN3AYTn4COdaJkDh65w/JEX6Tn4SCdaboJD98V5/sl+/DhycJW+334THLrC9U9WYsnB1eQKUGYJYsvBqQA/bL8BDl3h/k/qXFx3SbYARRUhlRw2LcDJ5hvg0JXQc2jJYU062XwdHPrANRO3EjOwAmgvwKnm6+DSFc6ZtO9Pp5qugUvnABhn0r4//dh0DVy6wjmT9v1FFiDFEkjdnU43zYJLHzjn0rw7nW6cBZe+cM6mdW8aapwFp75wz6dtXxpqnAGnWeCeUdOuNNQwA06zwj2nlj3pTMMMuM1KiFlT34/ONEyD27yEmDnVvehswzRCWDQ2fzbpbP00Qmn8ffyAN6Cf6q8ipNoJnb8VQHsBztVfRWi1IiF7OrftCqSo5vCCMqfz265AkqkjLW9xBUi5BBKzpvN1lyHVZA4vOGNa5ee6y5BubMSQKa0Rw7BSixFzdpUC/FI3BVOfrwpQOwVTn5UC/Fo7BVOf6wowCVOflQIM107C1CetZ7hmEqYe6d8M11yCqcfXCvBbzSWYeqSNsGAUH3+V37dOwExf+i8sIMXHX+XC1gmY6UouXKgeh5me5MPF6nGY6Ui+WGjKC7DKSPUYzPilPIxsGYMZr1QEFqTi468xumUUZjxSGViwio+/nrGqUZjyJE7GqkZgypFCMV41AjOcJAU7htLDb8TEGxdhFi+lgB1S1pH/BDNRIhh5DfG4AAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/age-calculator-v1.0.1.zip",
+      "size": 5124
+    },
+    {
+      "id": "base64-tool",
+      "name": {
+        "en": "Base64 Converter",
+        "zh": "Base64 转换",
+        "jp": "Base64 変換"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Encode / decode Base64 text (UTF-8 safe) and copy with one click",
+        "zh": "文本 Base64 编解码（支持中文），一键复制",
+        "jp": "テキストの Base64 エンコード / デコード（UTF-8 対応）、ワンクリックコピー"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE6UlEQVR42u2Sa1uWVRCF55ckCAgKAoKCgGC/q4NZZplZlpmpmVmWmeUhszINwkOagJoiVmq/ZXV14JCA7f2+z7Oe2XtmXdf9de+ZNbcIOX888zSc5ZEc4oc0KMejZzfD4eGHd6oV4dFzm+HowY/vlC/Bw+dH4OjHj+8UK8HDLSNw0qOQ4z/YMgInXeo7/gvDcNLHj+/ES/Bg6zCcfIg6/u9bh+HkR9jxX9wEJ19cABdg+fz20iY4+fMEAYbg5M/Sx982BMcOiwT4ddsQHDssFuDlITh2eOz4g3DsMS/A9kE49pgT4P72QTj2mBfglUE49lggwAAce8wJMPPqAFKl6qTcXVICpJZkBJjZMQCt5BLNHcvMjo3QRq7R2LXce20jNJF7tPUtfnzbEsi9nf2oGqvR0L1M7+xHlVhP1f3L9Ov9qBLzAlTcv/jxbUsg07v6UAWFl+jz14Tc3dUHNvWmiplz3UvuvtEHNjUXVMGsue8nXo7tPeXOmxvApJawZ7S0q3oBUj1+KvvKnd0bwCK6DOJsVveWX3avB4uYMOeyvLsLYF6At9aDRXABxJms7+8CWBfg9tu9YBEa5kzW9xdty7sA3A7k9p5eMIhanjQTG40dyK09vWAQmqrnsNLDLHLrnR4wCF68on+1zcO6S7YCFJ18BdjbAwbBixP/ipYgsR5CkJt7e8AgNKx/ak0qPYQiN99dBwbBi5P+qVmARHoIJSsBWMlKgKl968AgNIw/6o32HmKQqX3dYBC+ePl/1C+A7h5ikKn3usEgeHHCH3ULoLyHGLIRgJ1sBJjc3w0GoSn7/aKitYdYZHJ/FxiEL17u+8UJoLOHWGTyQBcYBC9e8vuFCaC0h1hk4kAXGISm7PeLitYeYpGJg11gELx4ye8XJoDSHmKRiYOdYBC+eLnvFyeAzh5ikRvvd4JBaMp+v6ho7SGWbARgSqC9hzgBDnWCQfDihD/qFkB5DzHIjUNrwSB88fL/qF8A3T3EID9/sBYMQsP4o95o7yGGrARgSJBKD+ECHO4Ag+DFSf/ULEAiPYQi1w93gEFomH/FJrUeQpDrH3aAQfDi5P+0zsW6S7YCFCVCLj0sL8CRdjAIXrziOaz0MItcO9IOBjFhzcRGYwdy7aN2MIhanjQTG40diMYCrAvAnEl++ngNWISGOZP1/V0A8wIcXQMWMWHOZXl3F8C6AFePrgaL2DBns7q3XP1kNZhEl0Gez9q+6gVIWYIUdpUrn7aBSa1hz2llT/FybO8nV461gU29qWLmXPeSy8faUAVFx+evDbn8WSuqwvPv8Su8QaUCuATVHv8fAY63okrMC1Bx/3LpeCuqxmo0dC+XPl8FLZg5vKLOVQlgQQJtfcv4iVXQRq7R2LWMn2iBVvI5vN6O5a+Mf9EC7SR39AQ6ldmkMKxWMVLubk6AH79sgWOPBQI0w7HHvAAnm+HYY06AsZPNcOwxL8CpZjj2kIUZO9UExw7yeMZON8GxwyIBRk83wbGDLJXRM01w8keWy+iZlXDyR56UH75aCSdf5P/iJRkX4G8JzjbCyQ+JycWzjXDyQWJz8etGOPkgtcSLM3z8OQnONcBJFykiF841wEkPKTIXvmmAkw5SRrxYw8dfmO+/XQFHH8KMF274+P8R4bsVcKpDtMSPYfTwS+X8+afgFI/kED+kriP/CemrIhgtsgcWAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/base64-tool-v1.0.1.zip",
+      "size": 4690
+    },
+    {
+      "id": "case-converter",
+      "name": {
+        "en": "Case Converter",
+        "zh": "命名格式转换",
+        "jp": "ケース変換ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE and more",
+        "zh": "驼峰、帕斯卡、下划线、中划线、常量等命名格式互转",
+        "jp": "キャメル・パスカル・スネーク・ケバブ・定数など命名形式を相互変換"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEyElEQVR42u2S+VYXRxCF60kiLsgq4AK4m7dLTMymQWNiBHdFVllEcUfcQDREY4zJs9wcguRAjpju+c3U1HTd75zv3+6qW1dEmc8+/Qt0fSUFeEiH5fj80J+gevLwtNwiHD70DtSOPD4tvgSHD74DtW8hx//i4B+g1ZHHp8jp+G9Bq2tNx//ywFvQ6svj0/gSHDnwO2g68vg0rARH9r8BTdf/LcBX+9+ApiuPT9cvwdf7fgNNXx6fggVgAdbyzb7XoH5ce/y9r0H9uaoAr0D9+W8Bvt37CtSfLAALsMx3e34F9WcSBSibRAqwCOtWjSpk+s/xj+5ZhFVTwXLGcnT3IqyZKhazlmO7f4ElU8da3sLj+y6BHOt+ibL1ioXs5fvulyhT75SdPwvgvQA93S9QlmSZMm8gPV0vUIa5h8j5Myk9XQvQtvawFkxaxb3keNcCtM1KGbOmvp8wHN97yvHO59A0UyjKM3raVU50PoemsWjP521fOdE5Dy3jw5hPQst7yw+75qFlDJpzed6dBWAB5qBleABzSWpxfzm5aw5ahqI5k/f95eTOZ9AyOADFmbzvLz/ufAYNY9CaSVuLGbAALMBTaBi+eLlzeMlhRflpx1NoGEpZ/1qbR+suyRYgbxIuwBNoGL643l/xJahWDiHKqR1PoGEoWv9kpSo5hCqntj+GhsGLK/2TuQAVySFU+Xn7Y2gYisYftWI9hxhZAPcF6HgEDYMXV/ij5gIYzyFGOd3xCBqGovFHrVjPIUY53TELDcMXL/b9/EpgM4dYpbdjFhqGUvT7eWE1h1ilt30WGgYvXvD7uRXAaA6xSm/7Q2gYvnix7+dXAJs5xCp97Q+hYShFv58XVnOIVfraZ6Bh+OLFvp9fAWzmEKv0tc1Aw+DFC34/twIYzSFWOdM2Aw1DKfr9vLCaQ6xypu0BNAxfvPg/aj++7RxilLNtD6BhKBp/1Ir1HGKUs9vuQ8PgxRX+qLkAxnOIkQXwXoBz2+5Dw1C0/slKVXIIVc613oOGwYsr/ZO5ABXJIVQ533oPGoai+VcsVcshRDnfehcahi+u+5/VubTukmwB8ipCKjmsW4ALLXehYShlz+ElhxXlQssdaBiD1kzaWsyABfBegIstd6BlKJozed9fLjbfhpbBASjO5H1/udR8G1qGojmT9/3lUvMtaBmD5lyed2cBvBfgctMtaBmL5mxe95bLTdPQND6M6UprfV+50jQNTbOgPaOnXeVK401omhXtOb3sKQzH937S33gT2tZKGTOnupf0N95AGeYN58+m9DfcQFmS98cv8QZytWEKZeqdsvNnAbwXYKBhCmXrFQvZy8DW67Cim8MbytxUATyUwFreMrh1EtZMFYtZy2D9JKyazOENZyxLDNVPwrpVowqZygpD9ROoquUfurrZJVEAmkMBhreMg/qTBWABlhnZMg7qz1UFGAP1p6xmZPMYqB/lv4xuvgbqRxaABRCWgMdfy7VNo6DpKx+DATk+/hJjm0ZB01VCGNs4ApqeEgMDc3z8JcY3DoOmo2SBwTk+/goTdcOg1VXyYKJuCLR6Sp4wUMfHX2GybhDUvlI0kxsGQe0pmjBwx8dfzfUNA6DlKVbgMZwe/kNMfXIVNH8lBXhIW0f+GyzxIhhMFZVmAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/case-converter-v1.0.1.zip",
+      "size": 4790
+    },
+    {
+      "id": "color-tool",
+      "name": {
+        "en": "Color Converter",
+        "zh": "颜色工具",
+        "jp": "カラー変換ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "HEX ⇄ RGB ⇄ HSL with live preview and one-click copy",
+        "zh": "HEX / RGB / HSL 互转，实时预览，一键复制",
+        "jp": "HEX / RGB / HSL の相互変換、ライブプレビュー、ワンクリックコピー"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFmUlEQVR42u3S9XKWRxQG8HMlRCDuHihW96m7Tt116q5Td526XAQhEEIghEAIgRACIVzL0+lQ+NpCYPf93u/Z8+6eZ+b37+4xEXLW/3kUZmkSQ9b/cRQmf6qXvu73RRgePYv/bREmnHCL/3URRg/u8n9ZhNGn4otf+/MRGP0qs/yfjsAUR77L//EITPHks/wfFmCKq6zlr/l+Aab4si3/uwWYePgfwLcLMPHwW/43h2Hi47T81V8fhonXmQ/gq8Mw8Tr98r88BBO/JQ/grC8OwcTv1Mv//BBMOk4+gM/mYdJx8gF8Og+Tjv8sf9Un8zDpKR3Ax/Mw6SkdwEcHYdJTOoAPD8Kk58QBrPzgIEx6Sgfw/hyKKnSKPLvSAbw3B+2KliLM9Njy352DVrFE84xl8J05aBNrNM5aBt8+AE1ij7Z5y+BbB6BFKtE0cxl48wBCSzUaZi8Db8wipNQTev4y8PosQkr+AALPXwZem0Uoln+OIOAOpP/VWYSQd6z+bKT/lf1gK3tYAWqOtS/pf3k/2DIPKECtsfcn/S/tB1Pm4ZDrTKVP6XtxH5iyhF1jSr1K3wv7wOQ9EHJ9qfUrfc/vA4v3MIi1pdq39D43AxafMOtKuXfpfXYGLF5DINaVcu/S+8wMWJwHQKwp9f6l9+kZsDgPgFhT6v1Lz1N7weIaZk2p9y89T+4Fg09YNbFpnIH0PLEXDF7Nk2pi0zgD6Xl8GgzOjQeuI5U5HCfdj02DwTWh/tVWD2sv0v3oNBicGyf/p7Uu1l6k+5FpMDg3TvzL+wgKNgcX0v3wHjA4N076J/MRFGQOrqTroT1gcA3rn6wpyhxcSdeDe8Dg3Djhj7KPQPkcfEjXA1NgcG6c8EfZB6B8Dj6k8/4pMLiG8Ue50T4HH9J53xQYnBsn/FH2ASifgw/pvHcKDM6NV/j93I5A6Rx8Sec9u8Hg3HiF38/tAJTOwZd03L0bDK6p9Pt5RescfEnHXbvB4Nx4hd/P7QCUzsGXdNy5CwzOjVf4/dwOQOkcfEnHHbvA4Nx4hd/P7QCUzsGXtN++CwyuqfT7eUXrHHxJ+22TYHBuvMLv53YASufgS9pvnQSDc+OEP8pevvI5+JD2WybB4Nw44Y+yD0D5HHxI282TYHAN449yo30OPqTtpp1gcG6c8EfZB6B8Dj6k7cadYHBunPRP5uUXZA6upPWGnWBwDeufrCnKHFxJ6/UTYHBunPiX9/ILNgcX0nrdBBicGyf/p7Uu1l6k9doJMDg3HuhfbfWw9iIt10yAwTWh60hlDsdJy9U7wOATVk1sGmcgLVftAINX86Sa2DTOQFqu3AEW5+aJNaXevzRfMQ4W1zBrSr1/ab58HCzOAyDWlHr/0nzZOFh8wqwr5d6l+dJxsHgNgVhXyr1L0yXbweIbZm2p9i1NF28Hk/cwyPWl1q80XbQdTFnCrjGlXqXxwm1gyhp2nan0KY0XbANb5uEEqDX2/qTx/G1gKzchao61L2k8bwwh5B2rPxtpOHcMoViOJeQOpOGcMYSU/PIDz18azh5DSMkfQOD5S8P6rQgt2eUrmL3Ur9sKLVKJpplL/dqt0CT65Subt9SvGYU20S5f4aylbvUotIolmmcsf6du1Si0K9zSCzBTOZ66laMoquCLLvDsSgcwuAUmPScOYMXAFpj0lA6gfwtMekoH0DcCk57SAfSOwKRH/p3lPSMw6ZD/Z3n3CEw6Tj6Ars0w6ZBTZXnnZpj4yVKp7dgMEz85XWrbN8HES86U2rZNMPESl9S0boKJj/ikpmUYJh7im5rmYZh4SJbUNA3DFJ+Uk+qGYZjikjxSXb8Rpngkz1TXbYQpDqlEqldshNFPKp2q5UMw+ggzVbVDMHpIqFTVDMGEI1pSVT0EwyOas6xqA0z+JIYsW7YBZmnsffwFgb1kM4dQQaQAAAAASUVORK5CYII=",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/color-tool-v1.0.1.zip",
+      "size": 4953
+    },
+    {
+      "id": "expense-tracker",
+      "name": {
+        "en": "Simple Expense Tracker",
+        "zh": "简易记账",
+        "jp": "簡易家計簿"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Track income & expenses locally, with totals — data stays on your PC",
+        "zh": "本机记录收支与合计，数据保存在你的电脑上",
+        "jp": "収支をローカル記録して合計まで — データは端末内だけ"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFkUlEQVR42u3S5XIdRxAF4H4SS7JjSZZkMTjs1whzhTkOU4WZucLMXImYGS0GJ89yUilHvkls2TN7957p3elT9f2daRIh5+CfR2B2JnnIwT+OwKRP9dLPPbIFw6Nn8VtbMOGEW/zmFowe3OVvbMHoU/LFn7O+CaNfaZa/tgmTHekuf3UTJnvSWf7KJkx2FbX8s5c3YLIv2fKXNmDyw/8AFjdg8sNv+QvrMPnjtPyz5tdh8uvUBzC3DpNfJ1/+7DpM/u14AGfOrMHk34mXP70GE4/jD2BqDSYexx/A5CpMPP6z/DMmVmHiUziA8VWY+BQOYGwVJj6FAxhdgYnPsQM4fWQFJj6FAxheQVaFTpZnVziAoRVol7VkYaZHlz+4DK3yEs0zlgMDy9Amr9E4aznQvwxN8h5t85YDfUvQIpZomrl09C4htFijYfbS0bOEkGJP6PlLR/cSQor+AALPXzq6FhGK5Z8jCLgDae9cRAhpx+pPRtp/XwRb0cMKUHNe+5L23xbBlnhAAWrNe3/S/uthMCUeDrnOWPqUtl8OgylJ2DXG1Ku0/XwYTN4DIdcXW7/S9tMCWLyHQawt1r6l9ccFsPiEWVfMvUvrDwtg8RoCsa6Ye5fW7xfA4jwAYk2x9y+t382DxXkAxJpi719avp0Hi2uYNcXev7R8Mw8Gn7BqYtM4A2n5eg4MXs2TamLTOANp+WoODM6NB64jljlsk+Yv58DgmlD/aquHtRdp/mIODM6Nk//TWhdrL9L8+SwYnBsn/uV9BBmbgwtp/mwWDM6Nk/5JfAQZmYMrafp0FgyuYf2TNFmZgytp+mQWDM6NE/4o+giUz8GHNH08Awbnxgl/FH0AyufgQxo/mgGDaxh/FBvtc/AhjR/OgMG5ccIfRR+A8jn4kMYPpsHg3HiJ30/tCJTOwZc0vj8NBufGS/x+agegdA6+pOG9aTC4ptTvpxWtc/AlDe9Og8G58RK/n9oBKJ2DL2l4ZwoMzo2X+P3UDkDpHHxJw9tTYHBuvMTvp3YASufgS+rfmgKDa0r9flrROgdfUv/mFBicGy/x+6kdgNI5+JL6NybB4Nw44Y+il698Dj6k/vVJMDg3Tvij6ANQPgcfsv+1STC4hvFHsdE+Bx+y/9UJMDg3Tvij6ANQPgcfsv+VCTA4N076J/HyMzIHV1L38gQYXMP6J2myMgdXUvfSBBicGyf+5b38jM3BhdS9OA4G58bJ/2mti7UXqXthHAzOjQf6V1s9rL1I7fPjYHBN6DpimcM2qX1uHAw+YdXEpnEGUvvsGBi8mifVxKZxBlL7zBhYnJsn1hR7/1Lz9BhYXMOsKfb+peapUbA4D4BYU+z9S82To2DxCbOumHuXmidGweI1BGJdMfcu+x4fBYtvmLXF2rfse2wETN7DINcXW7+y79ERMCUJu8aYepXqR0bAlDTsOmPpU6ofHgZb4uEEqDXv/Un1Q8NgKzYhas5rX1L94DBCSDtWfzJS9cAwQrEcTcgdSNX9Qwgp+uUHnr9U3TeEkKI/gMDzl6p7hxBatMtXMHupvGcIWsQSTTOXyrsHoUnul69s3lJ51yC0ye3yFc5a9t45CK3yEs0zlr+z99AAtMvc0jMwU9nO3jsGkFXBF53h2RUO4PYBmPgcO4DTbhuAiU/hAG7th4lP4QBu6YeJT+EAbu6HiY/8O3tu6oeJh/w/e27sg4nH8QdwQx9MPORE2XN9H0z+yU7ZfV0vTP7JybL72l6Y/JJTZfc1vTD5JS6puLoXJn/EJxVX9cDkh/im4soemPyQJKm4ogcm+6SYlF/eDZNdkkbKL+uGyR5JM+WXdsNkh5Qi5Zd0w+gnpU7ZxV0w+ggzZRd1weghoVJ2YRdMOKIlZRd0wfCI5uw6vxMmfZKH7DqvE2Zn7H38BWPBUzBQT02ZAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/expense-tracker-v1.0.1.zip",
+      "size": 6068
+    },
+    {
+      "id": "hash-calculator",
+      "name": {
+        "en": "Hash Calculator",
+        "zh": "哈希计算器",
+        "jp": "ハッシュ計算ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "SHA-1 / SHA-256 / SHA-384 / SHA-512 of any text, with checksum comparison",
+        "zh": "计算文本的 SHA-1 / 256 / 384 / 512，并可比对校验和",
+        "jp": "テキストの SHA-1 / 256 / 384 / 512 を計算しチェックサム比較も可能"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE60lEQVR42u2S53IWRxBF+0mMjXPO2Dju7M4645yNAzbOOccHQxIoIoQCQiiCJJ7lurBKn8qWBTP77fb0zPSpOn9num9fImb+ulhA3VtKgT8vFlDbV/bRNwuofIo5/B+bBdRwBjv875sFVDmyHv+3zQKqPLs//EYBVb6dHP/XjQJqPLZ6/F82Cqjx2crxf14voMarHl9tVoKf1guo6ehdgB/XC6jp6HX8Hy4YqOmpx1evXILvLxio6XrZ43933kBN3z0L8O15AzV99fjq7hJ8s2ag5uOuAny9ZqDm47+O/9WagZqfWgAtwBZfrhqo+dkrwBerBmp+9grw+aqBmp87BVgxiNXQxJxdrwCfrRhINzZiyPSf43+6YiDVVJCcMenh8y4CfbJsIMnUkZY3fbxsIMVckJQ5HV02CG2uSMieji4ZhDR3QudPHy0ZhDR3QudPHy4ZhFLZIuQN6MiSQQjbRudvJh1ZNOC277ACzJzqXvTBogG3TQkxa+r70fuLJThtCvecuexJ750rwWkTuGfMaVfxBYj1+LHsS++eK8GlL5yz5bo3HV4owaUPnHPlvDu9s1CCSx8458p5d5EFSO34kventxdKcOkK50y5709vnS3BpSucM+W+P715tgSHPnDNxK3EDLQAuRfgjfkSHLoSeo5cctiWXp8vwaErof6VNg/XXZItQNskW4DX5ktw6ArnX77EloOL9OqZEhy6wvVPU2LJwVV65UwJDl3h+qcpseTgalIF4CKpArw8V4JDVzj+6BfpOfhIL82V4NAVjj/6RXoOPtKLcyU4dIXjj36RnoOPyRSAm2QK8MJsCQ5d6fr9tpCag6/0/GwJDl3p+v22kJqDr3RotgSHrnT9fltIzcFXOjRTgUPnxTt+v7UCCM3BV3pupgKHrnT9fltIzcFXenamAoeudP1+W0jNwVd6ZroCh650/X5bSM3B12QKwFkC6Tl4FeDp6QocusLxR79Iz8FHemq6AoeucPzRL9Jz8JGePF2BQ1c4/ugX6Tn4mFQBOEoQSw7OBXjidAUOXeH6pymx5OAq1VMVOHSF8y9fYsvBRbJTFTh0hfs/qXNx3SXZArRVhFRy2LMA1VQFDl0JPUcuOWxL5akKHPrANRO3EjPQAuReAHOqApeucM6U+/5UTFbg0hXOmXLfnx6frMClK5wz5b6/yAKkWAKpu9NjkxW49IFzrpx3p0dPVuDSF87Zct2bHjlZgVNfuOfLbV/xBYi5BDHsSg9PVOC0Kdxz5rInPTRhwW1TQsya+n50cMKC234JMXOqe9HBcYsQto3O30x6cNwilMoWIW9AD4xbhDR3QudPB8YtQpo7ofOnA2MWoc32+AKyp/vHLKSYC5Iyp/vGLCSZOtLypntHLaSZKhKzFlmA1IogOWO6xD2jFtKNjRgypW3uHrWI1dDEnN1OAUYs1PzsFeCuEQs1P3sFuHPEQs3PXgHuGLZQ81MLoAXY4fZhCzUf6b/cNmyh5uOuAtx6wkLNR/o/NJiMj3+JW05YqOlLl+Pm4xZqutKVuOm4hZqu5IIGlfHxt7lxqIaajuTLDUM11HSkJlw/VEONX+oHDTDj429z3WANNT6pTa4drKHGI3XB/sEaqnypa/YP1FDlSZxcM1BDlSOF4uqBGmo4SQr7BmqofJJk9h2robYvpcBVx2qoe8t9j78Bji5Lp8rnmgUAAAAASUVORK5CYII=",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/hash-calculator-v1.0.1.zip",
+      "size": 4841
+    },
+    {
+      "id": "image-tools",
+      "name": {
+        "en": "Image Converter",
+        "zh": "图片转档工具",
+        "jp": "画像変換ツール"
+      },
+      "version": "1.1.2",
+      "description": {
+        "en": "Convert images to WebP / JPG / PNG / BMP / ICO in a snap",
+        "zh": "极速将图片转成 WebP / JPG / PNG / BMP / ICO",
+        "jp": "画像を WebP / JPG / PNG / BMP / ICO にすばやく変換"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEhklEQVR42u3SV1McSRAE4PpdJwPIAhLeSVjhPZLwEuiM/i/jh9dU7BnY4ICZne1pM50Z8T3u9FZVimjOk5/XoIdJE/L0r2uQejw62VeGZ39eg8zh4Ul/EZ7/cQ2yDw9P9RWh5/drkDvUHv9HDnKPkuP3/shB7uru+Jc5yH2Vjt93mYOao/MCXOSg5ujo+C8uclDzlDv+9xzUXIUFePktBzUXj08Pl+DVeQ5qPh6f/l+C12c5yB8sAAtwmzenOcg/bQXIQP65KcDbkwzkn9sCHGcg/9wUoP84A/nntgBHGcg/NwUYOMpA/vnn+IcZyF8yeJiB1GvFhf8pg18zUHc6iW3/Xd59yUDVVYlN/58F0Hh4G4sg7z9noM6ojOlZWACDx7ehBDJ0kIHKqyMm55GhgxRUTp0xNZMM76egYjpiYi4Z3ktBxbQUwMBcMrKXgorpiIm5ZGQ3BRXTUgADc8nobgoqpiMm5pLRnRT0OJ3RPZuM7aSgYjpiYi4Z305BxXTExFwyvpWCimkpgIG5ZGIrBRXTERNzycRmCiqmpQAG5pLJzRRUTp0xNZNMbqSg8mo5vsF5ZGojgY9aqfo71TG5B5laT+CjvxffxW+VHd/wHmR6PYFv2qPiG1Vjwy5kei2BT+49hOLvFR7eon3IzGoCXzyWur6r8p06CI9fz3FsPPa9BfiwksAHZeLLLtoJj+93CeTjcoImq5Km76Sd8Ph+l0BmPyVoIhWxbZ46viuzSwmaRmVsmqmO78rcUoKmURmb5qnj2zK3mKBJ6ohN86j+vswvxmiKOmPLPKrfkPmFGE2gI7bMo/IdWViI4TqdsWEmle/IwnwMl5mIDTOpeksW52K4zERsmEfVe8Lj21MCE/9BlmZjuMiGmJ5HxbvC45svgcn35dPHGC6xMSZn6vZtFsBwAUy/L8sfYrjC5picp5udyvJMDBe4EJPzVN2rrMzEsJ1LMTVP1d3KynQMm7kYU/NU2a+sTkewlcsxMVOVHcvqVARbOV0AQ/N0umNZm4pgoybExDyd7lnWJiPYpkkxMU8nu5b1yQg2YbpPJ/uW9YkItmAUlqDkzmVjPIINGLUpu3fZHI9gA0Z9yuxdNscimMbUVIASu5etsQgmMfWmaP+yNRrBFEZDAQpuINujEUxg9OWxO8j2SAQTGI0FeOQOsjMcQTdGfx66hewMh9CJMVWA++8hu0MhdGHM5r6bCI/veQH23oeoG2NP7t6GBfC9APvvQtSJsS/t95H9wRB1YSwtQNuN5GAwRB0Yu/PfnaSVg4EQKjEOFGDg3+O38nkghCqMO7ktQH8I8s9NAb70hyD/3BbgbQjyz00Bvr4JQf5pK0AA8o+05/B1APKH3A2X4nkBjl4FIH/IfeFiPD5+K8cvA1DzyWPhgjw+fisnLwJQc0mZnPQFoOaRTnLaF4CaQzrNaW8Aag6pkrPeAOQ+6SZnPQHIXaIi5z0ByD2iMufPr0DukDry7dkVyH5Sd7hkTw/fnu9Pr0D2EFPh8j09/N1cPLkC6SM2hwfy8Ohlc/nbFehhuu/xC++Ch96DJah+AAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/image-tools-v1.1.2.zip",
+      "size": 7554
+    },
+    {
+      "id": "json-formatter",
+      "name": {
+        "en": "JSON Formatter",
+        "zh": "JSON 工具",
+        "jp": "JSON フォーマッター"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Format, minify and validate JSON with helpful error positions",
+        "zh": "格式化、压缩与校验 JSON，错误精确提示",
+        "jp": "JSON を整形・圧縮・検証。エラー箇所もわかりやすい"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFpUlEQVR42u3Sd1NVVxQF8P1JBDQKAgICgqmaOum9THovk97LpPcy6b1Mmull0ov0DqKIKCIK+FlWJmPwJVH0nPvuW2ffe/aa+f17zm4i5Kwd3g2zMMlD1g7thkmf6qWvGZyD4dGz+IE5mHDCLb5/DkYP7vL75mD0Kfnij+qdhdGvNMvvmYXJjnSX3zULkz3pLL9zBia7ilr+kR0zMNmXbPntMzD54X8AbTMw+eG3/PW7YPLHaflH/LkLJr8OfgB/7ILJrwMv//edMPm34AEc/ttOmPzb//J/3QkTj30P4JdpmHjsewA/T8PE4z/LP+ynaZj4FA7gx2mY+BQO4IcdMPEpHMD3O2Dis/cADv1uB0x8Cgfw7RSyKnSyPLvCAXwzBe2ylizMdM/yv56CVnmJ5hnL6q+moE1eo3HWsvrL7dAk79E2b1n9xXZoEUs0zVxaP9+O0GKNhtlL62eTCCn2hJ6/tK6bREjRH0Dg+Uvrp5MIxfLPEQTcgbR8MokQ0o7Vn4y0fLwNbEUPK0DNee1LWj7aBrbEAwpQa977k5YPt4Ep8XDIdcbSp6z6YCuYkoRdY0y9yqr3t4LJeyDk+mLrV1a9txUs3sMg1hZr39L87gRYfMKsK+bepfmdCbB4DYFYV8y9S/PbE2BxHgCxptj7l+a3JsDiPABiTbH3L01vbgGLa5g1xd6/NL2xBQw+YdXEpnEG0vT6FjB4NU+qiU3jDKTptXEwODceuI5Y5jBPGl8dB4NrQv2rrR7WXqTxlXEwODdO/k9rXay9SOPL42Bwbpz4l/cRZGwOLqTxpc1gcG6c9E/iI8jIHFzJyhc3g8E1rH+SJitzcCUrX9gMBufGCX8UfQTK5+BDVj4/Bgbnxgl/FH0AyufgQxqeGwODaxh/FBvtc/AhDc+OgcG5ccIfRR+A8jn4kIZnxsDg3HiJ30/tCJTOwZc0PL0JDM6Nl/j91A5A6Rx8Sf1Tm8DgmlK/n1a0zsGX1D+5CQzOjZf4/dQOQOkcfEn9ExvB4Nx4id9P7QCUzsGX1D++EQzOjZf4/dQOQOkcfEndYxvB4JpSv59WtM7Bl9Q9OgoG58ZL/H5qB6B0Dr6k7pFRMDg3Tvij6OUrn4MPqXt4FAzOjRP+KPoAlM/Bh6x4aBQMrmH8UWy0z8GHrHhwAxicGyf8UfQBKJ+DD1nxwAYwODdO+ifx8jMyB1dSe/8GMLiG9U/SZGUOrqT2vhEwODdO/Mt7+RmbgwupvXcEDM6Nk//TWhdrL1J7zwgYnBsP9K+2elh7kZq7R8DgmtB1xDKHeVJz1zAYfMKqiU3jDKTmzmEweDVPqolN4wyk5o5hsDg3T6wp9v6l+vYhsLiGWVPs/Uv1bUNgcR4AsabY+5fqW4fA4hNmXTH3LtW3DIHFawjEumLuXZbfPAgW3zBri7VvWX7TIJi8h0GuL7Z+ZfmNg2BKEnaNMfUqVTcMgClp2HXG0qdUXT8AtsTDCVBr3vuTqusGwFZsQtSc176k6tp+hJB2rP5kpPKafoRi2ZOQO5DKq/sRUvTLDzx/qbyqHyFFfwCB5y+VV/YhtGiXr2D2suyKPmgRSzTNXJZd3gdNcr98ZfOWZZf1QpvcLl/hrGXppb3QKi/RPGP5O0sv6YV2mVt6BmYq81l6cS+yKviiMzy7wgFc1AMTn70HcMiFPTDxKRzABT0w8SkcwPndMPEpHMB53TDxkX9nybndMPGQ/2fJOd0w8dj3AM7ugomH7C9LzuqCyT9ZKIvP7ILJPzlQFp/RCZNfcrAsPr0TJr/EJRWndcLkj/ik4tQOmPwQ31Sc0gGTH5IkFSd3wGSfFJPykzpgskvSSPmJ7TDZI2mm/IR2mOyQUqT8+HYY/aTUKTuuDUYfYabs2DYYPSRUyo5pgwlHtKTs6DYYHtGcRWvXw6RP8pBFa9bDLIy9j78A9+jRMTQl9BMAAAAASUVORK5CYII=",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/json-formatter-v1.0.1.zip",
+      "size": 4807
+    },
+    {
+      "id": "loan-calculator",
+      "name": {
+        "en": "Loan Calculator",
+        "zh": "贷款计算器",
+        "jp": "ローン計算ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Monthly payment, total interest and yearly schedule for any loan",
+        "zh": "计算月供、总利息与逐年还款计划",
+        "jp": "月々の返済額・総利息・年別返済計画を計算"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE50lEQVR42u2S+VrXRRTGz5UkCAiyySYICHYPZuaSZWa5m2mammZm7tlyNaVBuJC4gChipXYtr08LP0hAZ77LmTNzzvs8n39nzrsQMeuvtW/CWBxKQVakwnE8f2sNDD6seCPsEJ6vWwNDDla+Uf4Inr09CEM+Vr5R7AierR+EER+FlP90/SCMeMlX/jsDMOLHyjf8R/B0wwCMdPAq/88NAzDSw638jathpIsNwAawuP7YtBpG+rxiAP0w0mfh8jf3w9DDvAH8vrkfhh7mD+Ddfhh6eKn8Phj6mB3Alj4Y+qgM4MmWPhj6mB3Ae30w9DFnAL0w9FEZwPT7vYiV0Io5u6gGEJuiGcD01l5IJRVJzpimt66CNFKVxKzp8QerIInUJS1vsvJ1j4Aeb+tBaLRKQvY0ta0HIdGu0PnT1Ic9CIn6AQTOn6x83SOgqe3dCEHhIdr9maBH27vBTV6FuDlVX/Too25wkzmgALem7o8sHN0+6eHHK8FJFnHfqMmr+AHEWn4sfunhjpXgwjsMxtu0+qbJHV3gwkecd2n2TpM7u8CFVwiMd2n2LnIAqZUv2T9N7uoCF84BMN6k3T892NUJLlzFeZN2//Rgdyc48BHXTdxIzMAGoH0AE3s6wYGrQt+hJYcZaGJPBzhwNx7mX2n3cPVCE3s7wIGzceb/pN7F1UuSAyhLSQ5gfF8HOHAV1z9ZFUsOrtD4vnZw4G6c55/sA4gjB1dofH87OHA2zvBH7hEIz8EHur+/HRy4iuOPvJKegw90/5M2cOBsnOGP3AMQnoMPNgD1AzjQBg6cjZf8fmEjEJqDL3TvQBs4cFXZ7xclqTn4Qvc+XQEOnI2X/H5hAxCagy82AO0DuHtwBThwVdnvFyWpOfhiA1A/gEOt4MDZeMnvFzYAoTn4QncOtYIDV5X9flGSmoMvdOezVnDgbJzhj9zlC8/BBxuA+gEcbgEHzsYZ/sg9AOE5+EBjh1vAgas4/sgr6Tn4QGNHWsCBs3GmfzKXH0kOrtDYkWZw4G6c55/sA4gjB1fo9ufN4MBVnH/5KrYcXEhyAGWMINYcXj+Ao83gwNl4oH+l3cPVC90+2gQO3I2HvUNLDjPQb8eawIGPuG7iRmIGNgD1AzjeBC6czTPepN0/jR5vBBeu4rxJu38a/aIRXDgHwHiTdv8iB5DiCKR6p9ETjeDCKwTGuzR7p1snloMLX3HeptU33Tq5HJx4h8F8nza/4gcQ8whi8Eo3v2wAJ1nFfacWn2Th6PZHN081gJu8CnFzqr7oxqkGhKBo2f3ZoBtf1SMUpv/KD9hB0AHYCMKW/+8ATtcjJOoHEDh/un66HqHRKgnZ0/Wvl0EKaooXlLmoAWgYgbS8aeTMMkgjVUnMmkbO1EEq6RQvN2P6WyPf1EE60ZUeQaY0oxiOlTqMmLOrDODXs3Uw9DFnALUw9DE7gHO1MPRRGcDwuVoY+pgdwPlaGPqguRo+XwNDD/Syhi/UwNDDvAEMXaiBoQdaSEMXa2CkDy2moYtLYaQPvUq/XFoKI13odbKQlA/gnxFcroaRHuSja5erYaQD+erat9Uw0oGyyIJTXH5lBFeqYMQLFaGrV6pgxAcVqavfVcGIBypDFqzi8ufq5++XwJAHccoCV1z+/4bwwxIY4SApsjKUFr+QfvrxDRjFQynIipRV8gurlL+EkyDRJQAAAABJRU5ErkJggg==",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/loan-calculator-v1.0.1.zip",
+      "size": 5066
+    },
+    {
+      "id": "numeral-converter",
+      "name": {
+        "en": "Radix Converter",
+        "zh": "进制转换",
+        "jp": "進数変換ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Binary / octal / decimal / hex conversions with bitwise view, live as you type",
+        "zh": "二、八、十、十六进制实时互转，附位查看",
+        "jp": "2 / 8 / 10 / 16 進数をリアルタイム変換、ビット表示つき"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFjUlEQVR42u3S95JXRRAF4H4SNuecFxaWtYwoIoKhzDmHUlFAEIxlzlnLnJ6BjW7OeRczz3Isq9hlFRZn7u/enp6ZPlXfv/dOn24i5pzq+glqcxRCTnX9CJU+0Uv/a+cPUHwELf57KHccLv47KDmYl/8tlDyZL/7Pzm+g5Mto+V9D+SPl5X8F5Z9Ulv9H55dQ/spt+Tu+gPJfwuV/DhWOBAfwGVQ4rJb/+45PocJjtvztn0CFy+AAPoYK13mX/9v2j6DCt/kBdHwIFb5Nlv8BVDzOOoBfO96Hisc5DuA9qHj8e/nb3oWKz4YDeAcqPusH8Mu2t6His+EA3oKKz5kD2PomVHzWD+Dk1jfgK9fxubsNB/A6pPMtPnR6evmvQapQIrljOtn+KqQJNRK7ptX2VyBJ6JHWN622vwwpYomkzmm17SW4FmskdE8rbS/Cpdjjun9aaXsBLukBuO2fVtqehyuatSNwtwNaaX0OLqReor4/EVpufRbcco2LN4c6Fy23Hge35AUd94JP89Fy6zFwSl7OMa/4MicttTwDTknC/caYZqWllqPgZF/IUa9Jn5eWWo6Ai30ZR4IgeW5abH4aXGzC+a6YZ6fF5sPgYlfC4aBInZ0Wmw+Bi3kBh4IkcX5abD4ILuYFHAySxPlpoekpcDEN55tin58Wmp4EB5twvYmbxA5ooekAONgNfyBIEjug+aYnwME0rt8RSw9raL7xcXAwHtzRf6W9h2svNN/4GDiYD877P6nv4toLzTc+Cg7mg/P9y/4I/OrBBM01PgIOpuH6T9L40oMpmmt4GByMB2f6T+ID8KQHUzTX8BA4mA+e/T9yPwLZPdig2YYHwcE0HP/INdJ7sEGz9Q+Ag/HgDP/I+QCE92CDZuvvBwfzwbP/R+4HILsHGzRbfx84mA+e7ffTOwKZPdiimfp7wcE0WX8/rUjtwRbN1N0DDsaDZ/z91A5AaA+2aKbubnAwHzzb76d3ADJ7sEXTdXeBg2my/n5akdqDLZquuxMczAfP9vvpHYDMHmzRdO0d4GA8eMbfT+0AhPZgi6ZqbwcH02T9/bQitQdbNFV7GziYD579P3JfvuwebNBU7a3gYD549v/I/QBk92CDpmpuAQfjwRn+kfMBCO/BBk3W3AwOpuH4R66R3oMNmqy5CRzMB+f5T/Ll+9GDKZqsvhEcjAdn+k/iA/CkB1M0UX0DOJiG81+28a0HEzRRfT04mA/O+z+p7+LaC01UXwcO5oO7+a+093DthSaqrgUH48EdvyOWHtbQeNU14GATrjdxk9gBjVftBwe74fcHSWIHNF61D1zMh98XJInz01jl1eBiGs43xT4/jVXuBRfzAvYGSeL8NFZ5FbjYhPNdMc9OY5V7wMWuhD1BkTo7jVZcCS624XxbrHPTaMVucLIvY7fXpM9LoxVXgFOScL8xpllppPxycEoa7nfGMieNlO8Ct+Tl7PKCT/PRSPll4JZrXLw51LlouPxSuJB29P3J0HDZJXBFc3r5DndAw2UXwyVdvtv+abjsIrikB+C2fxoquxCuxRoJ3dNQ6QWQIprFC+qchkq7IEn4y5fVNw2W7oQ0oUZi1zRY0gmpglm84I7pnwyW7IB0/i1dfqe0lsGS7fCV+0X72936Afxc0gEVnzMHULwNKj4bDmArVHzWD2CguB0qPhsOoA0qPrQxA0WtUPGg/2agqAUqHmcdQH9RM1Q86FzpL2qCCh9tlv7CRqjw0fnSV9gAFS76v/QV1kOFi0zSV1AHFR6ySW9BLVQ4yDa9BTVQ4aAk6S2ogvIf5ZLe/Eoof1Ea6cmvgPIPpZme/HIof1AW6ckvg5KPsk53XimUPMSZ7rwSKDnIVbrziqHcISnpziuC4kOSc2JLIVT6KISc2FIAtTnuffwNfQje7+T/1lMAAAAASUVORK5CYII=",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/numeral-converter-v1.0.1.zip",
+      "size": 4648
+    },
+    {
+      "id": "password-generator",
+      "name": {
+        "en": "Password Toolbox",
+        "zh": "密码工具箱",
+        "jp": "パスワードツールボックス"
+      },
+      "version": "1.1.1",
+      "description": {
+        "en": "Generate passwords, keep a local encrypted vault, and check password strength",
+        "zh": "生成密码、本机加密保存库、密码强度检测，三合一",
+        "jp": "パスワード生成・暗号化ボールト・強度チェックの三合一ツール"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAD+UlEQVR42u3YZ25jRxAE4D7Bax7SF/E655yz1yIp5rRBXue0zjnnHE5RxgIWRBiiRGnJmZrpKuD7+55UXaAEmiVOa+9ayGpWQ1p7ZyCbR3706yDp6PCSdwiti9dDeCQ+/g0QPgkOfyOE35aOfxOkHBs+/s2Q8uj4cnUjaF24BVK+Ux7/Vkg9TjGA2yD1OOHxb4fUR8cXrDGAOyD1Ovr45++E1O+IAdwFqd+K498NieOQAdwDiUMD0ACWj38vJJ6lAdwHiedgAOfuh8SzNIAHIPFoABrA/gAehMSzNICHIPH8d/yHIXFZa/EIJC5rLR6FxKUBRB+ALx6DxGW+eByRXUnk39988QQiOE0i9GI+fxI120Rq7sd0+NhDMJ8/hdpsM7V1ZT5/GjVJkZr6Mp8/g1qkTC2dmc+fRQ1ypIbezOdnUbqTHS3985iZz86iZGsfiuzZLMxnz6Fk6x2I9/m5mc92UKr1jlPOe3Iwn7VRquOPUua7UjKfdVCi4w9Sxzu3TQMIP4BpFyUpISX1aT7dBbMawtyv+bQHRjWGsWfzaR9sag5b1+bTAZhECFPfGkD4AUyGYBEpLJ2bT0ZgEWsAHJ2bT8ZgEWsAHJ2bTyZgEWsAHJ2bjh97BOaTKRjEHED+3s0nMzCIOYD8vZuP52AQcgAEvZuPF2AQcwD5ezcfnwODmAPI37sGoAGcB4OYA8jfu/n4AhhkO8I1ZzIOIH/v5qOLYJD66Ksk/TkIejcf7YEBw/FTj4Chd/PR82DAcvyUI2DoXQPQAC6BQcwB5O/dfPQCGDAdP9UIGHo3H70IBjE/AfL3bj58CQxCDoCgdw1AA3gZDEJ+D0DQu/nwFTAI+U0gQe/mw1fBIOYA8vduPnwNDGIOIH/v5oPXwSDkAAh61wA0gDfAIOYA8vduPngTDGIOIH/v5oO3wCDmAPL3bj64DAYxB5C/d/P+ZTAIOQCC3s37b4NFpAGwdG7efwcsYg2Ao3Pz/rtgEWsAHJ2b998Di9z/B6T9+8/RuXn/fTCJMACmvsMOYHkIyd9JNYDeB2BTc9i6Nu99CEZ1Hp+vZ/PeR2BWx+F5+7Wm9zFKUkJK6rO4AcjGB/AJJC5rdj+FxGVX0ux+BonH9tPsfg6JZ2kAX0Di0QA0gP0BfAmJ52AA3a8g8SwN4GtIPLacpvsNJA77f1RK+AF8C4nDDkvT/Q5SP1uVpvs9pH52VJrOD5B62XFpOj9C6mXrREUFPv7BCH6C1MNOmqbzM6Qedpo0nV8g5bOrSdP+FVIu20RUZODjH4zgN0g5bBtp2r9D+Nm207T/gPCxlGnaf0J4WK40O39B8jGW6BhBD3/4GP6GbJ7VkGbnH8hqqe/xLzOfCD3BVlCJAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/password-generator-v1.1.1.zip",
+      "size": 11775
+    },
+    {
+      "id": "pomodoro-timer",
+      "name": {
+        "en": "Pomodoro Timer",
+        "zh": "番茄钟",
+        "jp": "ポモドーロタイマー"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "25/5 focus timer with desktop notifications — fully offline",
+        "zh": "25/5 专注计时器，结束弹系统通知，完全离线",
+        "jp": "25/5 の集中タイマー、終了時に通知 — 完全オフライン"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFSklEQVR42u3S93ZVVRAG8HkSG3YRb++5uYiK2HtFwYKgIPbexS62tyHVJCQkJCQkJLHzLJ/LtUzWXcTEvc89Z/bsvedb6/fvOXu+GSLmnO/8BLU5CiHnOz9CpU/00v/q/ADFR9Div4dyx93i+7+DkoN5+ceh5Ml88X/2H4eSL6Plfwvlj5SX/w2Uf1JZ/h/9X0P5q8flfwXlv4TL/xIqHPYH0P4CKhxWy/+9/TlUeAyX/xlUuAwO4BhUuLZc/m/tY1Dh2+IAPoUK3ybL/wQqHhsO4Nf2x1Dx2HgAfR9BxeOC5X8IFZ+uA/gAKj7rB/BL3/tQ8ek6gPeg4tN1AO9CxWf9AFb73oGvXMfn7rw6AN/izQGstt6GVKFEcse02noL0oQaiV3TSutNSBJ6pPVNK603IEUskdQ5rbReh2uxRkL3tNx6DS7FHtf903LrVbikB+C2f1puvQJXNGtH4G4HtNx8GS6kXqK+PxE613wJ3HqNizeHOpdXByB18T7PR+eaR8EpeTlHveLLnLTUfBGckoT7jTHNSkvNI+BkX8gRr0mfl5aah8HFvozDQZA8Ny02XwAXm3C+K+bZabHxPLhYlcD4rphnp8XGIXAxL+BQkCTOT4uNg+BiXsDBIEmcn842ngMX03C+Kfb5SdrwegC8HdDZxgFwsBv+QJAkdkALjWfBwTSu3xFLD2toofEMOJgP7ua/0t7DtRdaqD8NDsaDM/9P6ru49kIL9afAwXxwvn/ZH4FfPZig+fp+cDAN13+SxpceTNF8fR84mA/O85/kB+BHD6Zovv4kOJgPnv0/ej8C2T3YoDP1J8DBNBz/6DXSe7BBZ+p7wcF88Oz/0fsByO7Bhh5A9AdQexwcjAfP+PupHYHQHmzRXO0xcDBN1t9PK1J7sEVztUfBwXzwbL+f3gHI7MEWzdUeAQfzwbP9fnoHILMHWzRbexgcTJP199OK1B5s0WztIXAwHzzb76d3ADJ7sEWztQfBwXzwbL+f3gHI7MEWna49AA6myfr7aUVqD7bodPV+cDAenOEfPS9feA829AD0AO4DB/PBs/9H7wcguwcbNFO9FxxMw/GPXiO9Bxs0U70HHMwH5/lP8uX70YMpmqneDQ7mg/P8J/kB+NGDKZqu3gUOpuH8l21868EETVfvBAfzwXn/J/VdXHuh6cod4GA8uKP/SnsP115ounI7OJgP7vYdsfSwhk5VbgMHm3C9iZvEDuhUZQ842A2/J0gSOyCJBcR+AJxvoqnKreBiGs43xT4/TVV2g4t5AbuDJHF+mqrcAi424XxXzLPTVPlmcLEqgfFdMc9Ok+WbwMU2nG+LdW6aLO8CJ/sydnlN+rw0Wb4RnJKE+40xzUonyzvBKWm43xnLnHSy3AG35OV0vODTfF4dgPRD8HEumij3w4W0o+9PhiZKbbii+Xf5DndAE6U+uKTLd9s/TZRacEkPwG3/NF5qwrVYI6F7Gi81IEU8i5fTOY2X6pAk/OXL6pvGSjVIE2okdk1jpSqkCmfxcjumfzJWrEA675buQae0Fh8eK/UwfO5u/QB+Lpah4tN1ACWo+HQdQBEqPusHMFosQMWn6wDyUPGh7owWc1DxoAszWrgBKh4bDmCksAMqHvRfGSlcDxU+2iwjhe1Q4aOtMlzYDhUu+r8MF66DCheZZLhwLVR4yCZDhWugwkG2GcpfDRUOSpKh/FVQ/qNeMpS/EspflEYG81dA+YfSzGD+cih/UBYZzG+Dko+yzkB+G5Q8xJmB/GVQcpCrDOQuhXKHpGQgdwkUH5KcE7mLodJHIeRE7iKozXHv42/46UunNWWTnQAAAABJRU5ErkJggg==",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/pomodoro-timer-v1.0.1.zip",
+      "size": 5022
+    },
+    {
+      "id": "quick-notes",
+      "name": {
+        "en": "Quick Notes",
+        "zh": "快速记事本",
+        "jp": "クイックメモ"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Jot down notes that are saved locally — never lose a thought",
+        "zh": "随手记事，自动保存在本机，灵感不再丢失",
+        "jp": "サッと書いて自動保存 — メモは端末に残ります"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEq0lEQVR42u3SeXdURRAF8PokLCIQElwgIaAi8C3Jvs1kn0z2xV1kUUTcRUT8LNcjEJIjRrrfvLld3VX3nN+/73VVXRFybvx1E+5oUkJuPL0JVz/VR7/+dAiOR8/h/xyCS8cP7/hFuP5kCE6frh/+2pNhOP26c/w/huHy4cd39ZTg2uNhuHx1dPwPH4/A5a/a8X8fgSuHF8ALEHH8RyNw5Qk6/tVHo3Dlen0BfhuFK5cf3x1dgg9+HYUr3xHHH4Oz49UC/DIGZ4cXwAtwkPd/HoOz51ABxuHsOSjAT+Nw9ngBvADP896P43D2HCrABHKVOjnv7qAAP0xAu9ySw07VH7+UqC7Ble8noU2p0bhr8ePbLoFceTgJLaxE087l8sNJpGY1GnYvl7+bQkrWk3r/XgDzBXgwhVQ8L0qQ8AYy+GAKKdQdf381MvjtNNg6XlaCN5c6V1YF0Hr4nOeTwfvTYKq8HPI7rcwpl+5Pg6lK2G+0NKtc+mYGTNELIb/P2rziy7A9twx8PQOWmDDfZXl2Gbg3A5aoJRDfZXl2GbjXAEv4AhpF0ji/DNxtgCV4AcQ3WZ9f+u82wBIa5puszy/9dxpgiAnrTWwadyD9d5pgiBu+WSSNO5D+200wBA+e+B1W9rBPLt5ugiE0qf6r7T2su8jFr2bBEDw4+X9a38W6S5EF6FbKLMCtWTAED076T+USZLKHUHLh1iwYQsP6T9XksodQcuHLOTAED074R8clUL6HGF4A6wV494s5MISG8Y9Oo30PMbwA5gvw+TwYggfv8vdrK4HSPcTyAlgvwDufzYMhNN3+fl3RuodYXgDzBfh0AQzBg3f5+7UVQOkeYnkBrBfg7U8WwBCabn+/rmjdQywvgPkCfLwIhuDBCf/o+PjK9xDDC2C9AG99tAiG0DD+0Wm07yGGF8B8AfaWwBA8OOk/lY+fyR5Cyfm9JTCEhvWfqsllD6Hk/O4SGIIHJ/4r+viZ7SFEkQXoRgly3cPrC7CzDIbgwRP9V9t7WHeRvp1lMIQm9Tus7GGf9G0vgyEmrDexadyB9G23wBA3fKtIGncgfVstsAQPT3yT9fmld6sFltAw32R9fundbIEleAHEN1mfX3o3V8ASE+a7LM8uvRsrYIlaAvFdlmeXc+srYIkN821W5xZfhu155dxaG0xVwn6jpVmlZ60Npqphv9PKnNKz2gZb5eUkeGvp82VVAO1FyHEu6WmvIoW64++vRs62V5GK53lS3kDOrqwiJfPHT7x/L4D5ArTWkJrZ4yvYvZxprUELK9G0czmzvAZNij++sn2rK0DJJdC4azm9tA6tSonmHcs/0fzAXMuQw05lP6cX15Gr5IfOeHeHCrABZ8/LAry5sAFnjxfAC/CiAPMbcPYcKsAmnD1yOKfmNuHskH/Hl2K9ALObcHbIf+XU7BZc+eSovNHcgiuf/F98QYaP/6wAjS24cklITja24cojMTk5sw1XDomNL814AZ6VYHobLn/SSU5M78DlS+rIiakduPxInfGFGj7+yxJM7sDpJ93O8cldOH2EmeMTu3B6SKr48o0e/pUijO/C8YjmHBvfg6uflJBjY3twR2Pf429b8DqkECt8EQAAAABJRU5ErkJggg==",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/quick-notes-v1.0.1.zip",
+      "size": 5326
+    },
+    {
+      "id": "random-picker",
+      "name": {
+        "en": "Random Picker",
+        "zh": "随机抽选",
+        "jp": "ランダム抽選ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Draw winners from a list, roll dice, flip a coin — crypto-random",
+        "zh": "从名单抽奖、掷骰子、抛硬币，密码学级随机",
+        "jp": "リストから抽選、サイコロ、コイン投げ — 暗号学的ランダム"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE3UlEQVR42u3S+1pWVRAG8LmSAklFFBJF0MrsJqzMPGWmIZlmmaaImZmnzA4XUyKIBxJUEEU8dy1vj08hnwk2a397z5q1Zt7n+f2795qZl0g47/y1Fm5ulEP8kAbLsebJu3By/PAubhHWPHkPTg8/vqu+BG8/fh9OPz++Q8nHXweXnnKO/2gdXLrqOv7qRx/Apc+P71CgAOvh8hF2/Ifr4fLDOv5bDz+Ey5cXwAvwkuM/2ACXvzkL8OaDDXD5m+P4G+HseLEA9zfC2TFLATbB2fHc8d+4vwnOnpoCbIazZ6YA9zbD2VNTgC1w9jwrwKp7W+DsmSnA1EdIVeykvLukCpBakinAqqmt0CqXaN4xrZzaCm1yjcZd08q7H0OT3KNt3+THt10C6rq7DbFZjYbdU9fkNsRkPbH3T12TnyAmL0Dc/ZMf33YJqHNyO2IoO/7+YqjzznZIq3tZEd6c61zUeWcHpBVf0I4kpDQf+XJsz0krbn8KSUUi/UZLs6ovQKrHT2VeWnG7G1LCl9GdBc1zU8dEN6SERPJdlmenjomdkBK2hJ1Z0Tq7ygLkdnzN81PHRA+k8BfQkyWN89PyWz2Qwo3km6zPT8tvfQYJIZF6kzSNO/ACmC/A+C5IYA8e+R1W9jCNlo3vggRuYv1X23uk7kLLxj+HBP7gsv/T+i6pu2RZgKqSZwHGdkMCe3Ch/xQuQSJ74KL2sd2QwI3Uf4omlT1wUfvYHkjgD179P+ovge49hKD2m3sggT24wD/qLoDyPYSgpTe/gARuJP5Rb7TvIYQXwAuwFxL4g1f7/fJKoHMPoWjpjb2QwB684u+XVgClewhFr9/4EhK4qfr7ZUXrHkJ5AcwX4PpXkMAevOLvl1YApXsI5QWwXoC26/sggZuqv19WtO4hFLWN7oME9uAVf7+0AijdQyhqG/0aEviDV/+P+o+vew8hvADWC9A6uh8SuJH4R73RvocQ1DqyHxLYgwv8o+4CKN9DCGodOQAJ/MFl/lP8+GnsgYuWjByABG6k/lM0qeyBi5Zc+wYS2IML/iv4+IntgSPLAlRRglT3wCjAQUjgDx7nv9reI3UXWnztICRwE/sdVvYwjRb/eQgSQiL1Jmkad+AF8AL0Qgp/+N4saZyfWoZ7IYUbyTdZn59ahg9DCn8Bh7OkcX6VBcixBFpnp5bhPkgJW0JfVrTOTouu9kFKaCTfZnVuWnT1CCSFL+NI0rTPq74AKZcghVmp+cq3kFQ00u+0Mif5cmzPR81XjkJavYnx5lznoubLRxFD2fH3F0MLL3+HWDz/JOYNohbASxD3+P8W4Bhi8gLE3T8tvHQMsZk9voLd04JL30MLK9G0c1UFsFACbfumBUPHoU22x1e4a5o/dBxa5RLNO6anmT/0A7RL7+j6d0rTSeGxWouR8u5mCnDxBJw9zwrw2sUTcPbUFOAknD0zBRg8CWdPTQFOwdlDtWkaPAVnB/03TYOn4ex4sQADp+HsoNnSNHAGLn80V+YNnIHLH70s8y78CJcv+r/4kowX4GkaL5yFyw+FpLH/LFw+KDSN/T/B5YOKxBdn+PjTaeg/B5cuKiMN58/BpYfKTMP5n+HSQVXEF2v4+LV59Y9f4PQhyfjCDR//+SL8ChcPaYkfw+jhZ8srv/8GVz7KIX5IXUf+GyIbIcPAxUndAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/random-picker-v1.0.1.zip",
+      "size": 5098
+    },
+    {
+      "id": "regex-tester",
+      "name": {
+        "en": "Regex Tester",
+        "zh": "正则测试器",
+        "jp": "正規表現テスター"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Test regular expressions with live highlighting and match lists",
+        "zh": "实时测试正则表达式，高亮匹配并列出结果",
+        "jp": "正規表現をライブでテスト、マッチ箇所のハイライトと一覧表示"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEw0lEQVR42u2SdXfWRxCF55NAQgrEkBKSQFvki9XdvaXu7razdXd3/yy3hwMhlBK6+76/967M3HOef3dn7jwi5Bz+O8DZGOkhh/8KcIan6qMf+jPA4eGHd8qKcOiPAKceuMf/PcCpj4kf/uBvAU79+PGdYSU4+GuA0x7DHP+XAKddxjr+gZ8DnPbx4zv5Ehz4KcDph7zj/xjg9EfS8c/7IcDpFxfABTjD8b8PcPpnQwHO/S7A6Z/TH//bAMcOLoALcIoA3wQ4dvjX8c/5OsCxx7oAXwU49nABXIDjAnwZ4NjjhAD7vwhw7LEuwOcBrVI6LXfXlACtpRkB9n8WUCu9pOaOZd+nAbXRa2rsWvZ9ElATvae2vsWPb1sCWf1YURqrqaF7Wf1IURLrKd2/rH6oKIl5AQr3L3582xLIygeKEgwdn380ZOV9BZuxyyowc697ycp7CjYjF1Rg1t73Ey/H9p6y/K6CyShhz2hpV1l+R8EkuxDyfNb2leW3FSyyyyDOZnVv2fuWgkVOmHNZ3t0FMC/AmwoWyQUQZ7K+v+x9Q8EiuQDiTNb3l6XXFSxSw5zJ+v5S2/IuALcDWYoKBlnLk2ZiU2MHsqQKBsmLF57DSg9ryJ6gYJCaUv/WNg/rLt0KMHT6FeA1BYPkxYl/ZUvQWA8pyJ5XFQySFyf9M7IEjfSQipz9ioJBalj/jJpWekilKwFY6UuAlxUMkhcn/DG2AJX3kIPsfknBIDWMP8ZN7T3kILtfVDBIXpzwx9gCVN5DDt0IwE4/ArygYJC8+ITfH0yASnvIRXY9r2CQmkm/P1Rq7SEX2fWcgkHy4hN+fzABKu0hFxfAvADPKhgkLz7h9wcToNIecpGdzygYpGbS7w+VWnvIRXY+rWCQvPiE3x9MgEp7yKUbAZgS1N5DngBPKRgkL074Y2wBKu8hB9nxpIJBahh/jJvae8hBdjyhYJC8OOGPsQWovIccuhKAIUErPSQLsPi4gkFqWP+MmlZ6SEUWH1MwSF6c+Ff28RvrIQVZfFTBIHlx8n+1zsW6S7cCDCVCLz1sKMDCIwoGqSk9h5Ue1pCFhxUMcsKaiU2NHcjCQwoGWcuTZmJTYwdSYwHWBWDOJPMPKlikhjmT9f1l/gEFi+QCiDNZ31/m71ewyAlzLsu7uwDWBZi7T8EiN8zZrO4tc/cqmGSXQZ7P2r4yd4+CyShhz2hpV5m9W8Fk1LDntLKneDm295PZuxRsxk2JmXvdS2aPKEowdHz+0ZDtdypK4TmWkjcoKoBLUPb4xwS4Q1ES8wIU7l+2364ojdnjV9C9bLstohaspKbOqxLAggS19S3bbo2ojW6PX2HXsvWWiFrpJTV3LEez9eaI2mnu6A10KmtpYdhaxWi5u3UBbopw7HFCgLNujHDssS7ADRGOPVwAF+C4ANdHOPaQkzNzXYRjBzk1M9dGOHZwAVyA/2bmmginf2SjbLk6wukfOVO2XBXh9Iv8X7wk4wIczfSVEU5/SE6mr4hw+kFyM315hNMPMkq8OMPHX8vUZRFOu8gQmbo0wmkPGTJTl0Q47SCTiBdr+PgnZ/PFEU59CDObL4pw6kFKZfOFEU45pJb4MYwe/nTZdEGEMzzSQzadH+FsDPse/wBqMDqk1BKk5gAAAABJRU5ErkJggg==",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/regex-tester-v1.0.1.zip",
+      "size": 4930
+    },
+    {
+      "id": "text-counter",
+      "name": {
+        "en": "Text Statistics",
+        "zh": "文字统计",
+        "jp": "文字数カウンター"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Characters, words, lines and reading time — counts update as you type",
+        "zh": "字符、字数、行数与阅读时间，边打字边统计",
+        "jp": "文字数・単語数・行数・読了時間を入力しながらリアルタイム集計"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE3UlEQVR42u3Sa1dXVRAG8PkkBZKKKCSKoJXZeyszb5lpSKZZpiliZuYts8snKhHECwkqiCLe+yxPy1XI3wSbff7nzJ69Z561fm/P2TPzEAnnnb/Wws2Ncogf0mA51jx5F06OH97FLcKaJ+/B6eHHd9WX4O3H78Pp58d3KPn46+DSU87xH62DS1ddx1/96AO49PnxHQoUYD1cPsKO/3A9XH5Yx3/r4Ydw+fICeAFecvwHG+DyN2cB3nywAS5/cxx/I5wdLxbg/kY4O2YpwCY4O547/hv3N8HZU1OAzXD2zBTg3mY4e2oKsAXOnmcFWHVvC5w9MwWY+gipip2Ud5dUAVJLMgVYNbUVWuUSzTumlVNboU2u0bhrWnn3Y2iSe7Ttm/z4tktAXXe3ITar0bB76prchpisJ/b+qWvyE8TkBYi7f/Lj2y4BdU5uRwxlx99fDHXe2Q5pdS8rwptznYs67+yAtOIL2pGElOYjX47tOWnF7U8hqUik32hpVvUFSPX4qcxLK253Q0r4MrqzoHlu6pjohpSQSL7L8uzUMbETUsKWsDMrWmdXWYDcjq95fuqY6IEU/gJ6sqRxflp+qwdSuJF8k/X5afmtzyAhJFJvkqZxB14A8wUY3wUJ7MEjv8PKHqbRsvFdkMBNrP9qe4/UXWjZ+OeQwB9c9n9a3yV1lywLUFXyLMDYbkhgDy70n8IlSGQPXNQ+thsSuJH6T9Gksgcuah/bAwn8wav/R/0l0L2HENR+cw8ksAcX+EfdBVC+hxC09OYXkMCNxD/qjfY9hPACeAH2QgJ/8Gq/X14JdO4hFC29sRcS2INX/P3SCqB0D6Ho9RtfQgI3VX+/rGjdQygvgPkCXP8KEtiDV/z90gqgdA+hvADWC9B2fR8kcFP198uK1j2EorbRfZDAHrzi75dWAKV7CEVto19DAn/w6v9R//F17yGEF8B6AVpH90MCNxL/qDfa9xCCWkf2QwJ7cIF/1F0A5XsIQa0jByCBP7jMf4ofP409cNGSkQOQwI3Uf4omlT1w0ZJr30ACe3DBfwUfP7E9cGRZgCpKkOoeGAU4CAn8weP8V9t7pO5Ci68dhARuYr/Dyh6m0eI/D0FCSKTeJE3jDrwAXoBeSOEP35sljfNTy3AvpHAj+Sbr81PL8GFI4S/gcJY0zq+yADmWQOvs1DLcBylhS+jLitbZadHVPkgJjeTbrM5Ni64egaTwZRxJmvZ51Rcg5RKkMCs1X/kWkopG+p1W5iRfju35qPnKUUirNzHenOtc1Hz5KGIoO/7+Ymjh5e8Qi+efxLxB1AJ4CeIe/98CHENMXoC4+6eFl44hNrPHV7B7WnDpe2hhJZp2rqoAFkqgbd+0YOg4tMn2+Ap3TfOHjkOrXKJ5x/Q084d+gHbpHV3/Tmk6KTxWazFS3t1MAS6egLPnWQFeu3gCzp6aApyEs2emAIMn4eypKcApOHuoNk2Dp+DsoP+mafA0nB0vFmDgNJwdNFuaBs7A5Y/myryBM3D5o5dl3oUf4fJF/xdfkvECPE3jhbNw+aGQNPafhcsHhaax/ye4fFCR+OIMH386Df3n4NJFZaTh/Dm49FCZaTj/M1w6qIr4Yg0fvzav/vELnD4kGV+44eM/X4Rf4eIhLfFjGD38bHnl99/gykc5xA+p68h/A/GENrXxbzkSAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/text-counter-v1.0.1.zip",
+      "size": 4412
+    },
+    {
+      "id": "timestamp-tool",
+      "name": {
+        "en": "Timestamp Converter",
+        "zh": "时间戳转换",
+        "jp": "タイムスタンプ変換"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Unix timestamp ⇄ date, live current-time stamp, seconds & milliseconds",
+        "zh": "Unix 时间戳与日期互转、实时当前时间戳（秒/毫秒）",
+        "jp": "Unix タイムスタンプ ⇄ 日付、現在時刻のライブ表示（秒/ミリ秒）"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAExUlEQVR42u2T6VZUVxCF60miScxs5snEDCB2QzM0Q5PZRM1kEpP3E1FABRFFBhVQxGfZWSELmwwk5/S9vU/dU7XX+v7eU7XruyLk9Pz2CM7BSA7p+fURnPJRfvQdODz0HP78Dpx0JDt87/kdOHrgHv+XHTj66P7hf34IRz9+fKdcCXp/eginepRz/HPbcKpLoeOfOLcNp/p0dvwft+HkgwvgAkQc/4cHcPIj7PjfP4CTLy6AC3Bw+r67Dyd/Dhbg2/tw8seP7/xTgr6zW3Ds4AK4APuOf2YLjj3aApzegmOPxwKcPL0Jxx5tAb7ZhGOPtgBfb8Kxxz4BNlBVUqfK3bUFOLUB7VQtVehU/fFziWoJal9tQBu5RmPXUvvyHjSRe7T1LX582xJI7Yt7SI3VaOheap/fRUqsJ3X/LoB1Aeqf3UUqPH8m5Q0kl+P7/J0K8OkdsClcVoKZc91L6p/cAZuOC0owa+77iZdje0+pT66DSUelkGe0tKvUW+tgEl0IeT5r+0p/ax0sYsOczere0j+xBhZRJRDnsry7C2BegPE1sAgugDiT9f2lf2wNLIILIM5kfX/pH1sFi/ACVrNE4/4yMLoKBjFhzcRGYwcugHkBmitgELx44jms9LCHDIysgEHw4one1TYP6y7ZClB28hVgeAUMghcnvhUtQcV6CEEaQ7fBIDSsdzpNVXoIxQUwL8DgbTAIXpzwRmEJlPcQgzQGl8EgfPHuv1FcAN09xCCNxjIYBC9OeKOwAMp7iEEaA8tgELw44Y3CAijvIYZsBGAnGwEG+2+BQWi6/f2yorWHWGSwfgsMghfv8vdLE0BpD7G4AOYFqN0Eg+DFu/z90gRQ2kMsLoB5AU7eBIPgxbv8/dIEUNpDLDLUtwQGoen298uK1h5iyUYApgTae4gT4MQSGAQvTnijsADKe4hBhnqXwCB4ccIbhQVQ3kMMMtR7AwzCF+/+G8UF0N1DDDLUcwMMghcnvdPx8SvSQygugHUBhj9eBIPQMN+KTdV6CEGGP1oEg+DFye9pnYt1l2wFKEuEXHo4WIAPF8EgePHEc1jpYQ8Z/uA6GET9daSZ2GjswAWwLsDI8etgERrmTNb3l5HjC2ARXsBClmjcX0beXwCL4AKIM1nfX0beWwCLmDDnsry7C2BegGPzYBEb5mxW95bmsXkwiQ17Pmv7SvPdeTDpJOwZLe0qzXeugUmnYc9pZU/xcmzvJ823r4FN0aSYOde9pPnWVaSg7Pj8nZFMgG6UWNWkvIGMvnkVKbGe1P27AOYFeOMKUmP2+Aq6l9HXr0ALZg6vqHNVAliQQFvfMvraHLSR7fEVdi1jr85BK7lEc8fyRzQPWFUZqtCp7GXslTlUleSHrnB3+wSYhWOPtgAvz8KxR1uAo7Nw7PFYgPGjM3Ds0RbgpRk49pD9GX9xBo4d5O/xUqwL8MJlOHaQf4sXY/j4uwI8fxlO/sh/ZeK5S3DyRf4vXpJxAXYlePYSnPyQmEw8Mw0nHyQ2XppxAXYlODINp/pIkbSOTMOpLlJGWk9fhFM9pMy0nroIpzpIN+LFGj7+X0R4cgqOPoSZ1uEpOHqQVJk8PAUnHaIlk4em4PAQzZk8dAFO+UgOmXziApyDYd/jd7NuS6dSiIyZAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/timestamp-tool-v1.0.1.zip",
+      "size": 4769
+    },
+    {
+      "id": "todo-list",
+      "name": {
+        "en": "To-Do List",
+        "zh": "待办清单",
+        "jp": "ToDo リスト"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "A persistent to-do list — tasks are saved locally and survive restarts",
+        "zh": "持久化待办清单——任务保存在本机，重启后仍在",
+        "jp": "永続化 ToDo リスト — タスクは端末に保存、再起動後も残ります"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE5ElEQVR42u2S+XaPVxSG95XIQAZCEgkZyOAGqjrooFR1UBRV1UGV6kBV9X6oVJNQKgmK6Mi1vF1Fkq5qOOf3+7732+fs/a71/HvO3u9+RMi599QGOIsjOeTexg1wikf10e9uHIXDQ8/hnx6FUx1+eIcvwt1No3D0Ufrh/9o0Akc/5Rz/mRE46eDHd4qR4M9nR+CkS53HH4aTPrUd/7lhOPngArgA4fnj+WE4+RF4/CE4+fJkATYPwcmXxx7/981DcPJncQFeWA8nf/z4zqMS/Pbiejh2cAFcgH8d/6V1cOzhArgAD/Lry+vg2MMFcAEeCrBlEI495gW4s2UQqVJ1Uu5uQYBXBqGd1JJCp+qPn0tUS3Bn6wC0kWs0di2zWwegidyjrW+Z3TYALViJps5ldls/qsZqNHQvt1/tR5VYT9X9uwDmBdjej6rwPJSgwhvI7e19qILiS/T5a0FuvdYHNvWmiplz3SspAbQePuX95NaOPjCpuRzynFb2lJs71oJJLWHPaGlXufn6WjCJLoQ8n7V9xcuwvbf88sYasIgJcy7Lu7sA5gV4cw1YBBdAnMn6/i6AdQFuvNULFqFhzmR9f9G2vAvA7UBu7OwFg6jlSTOx0diBXN/ZCwahqXoOKz3MIdff7gGD4MUr+lfbPKy7ZCtA0clXgF09YBC8OPGvaAkS6yEEubarBwxCw/qn1qTSQyhybfdqMAhenPRPzQIk0kMoWQnASlYCzOxZDQahYfxRb7T3EIPM7OkGg/DFy/+jfgF09xCDzLzTDQbBixP+qFsA5T3EkI0A7GQjwPTebjAITdnvFxWtPcQi03u7wCB88XLfL04AnT3EItP7usAgePGS3y9MAKU9xCJT+7rAIDRlv19UtPYQi0zt7wKD4MVLfr8wAZT2EItM7e8Eg/DFy32/OAF09hCLXH23EwxCU/b7RUVrD7FkIwBTAu09xAlwoBMMghcn/FG3AMp7iEGuHlgFBuGLl/9H/QLo7iEG+fm9VWAQGsYf9UZ7DzFkJQBDglR6CBfg4EowCF6c9E/NAiTSQyhy5eBKMAgN86/YpNZDCHLl/ZVgELw4+T+tc7Hukq0ARYmQSw+LC3CoAwyCF694Dis9zCGXD3WAQUxYM7HR2IFc/qADDKKWJ83ERmMHorEA6wIwZ5KfPlwBFqFhzmR9fxfAvAAfrQCLmDDnsry7C2BdgEsfLweL2DBns7q3eBm295VLh5eDSS1hz2hpV7l4uB1Mag17Tit7ysVP2sGm5nIqmDX3/ZISQLsIKe4lk0faUQVFx+evDZk80oaq8Mwdv7obyOSnbagS88evuH8XwLoAE0fbUDVWo6F7mTjaCi3YObyezmXiWCs0kf3xlfUt48daoY1co7FrGf+sBVrJ5vCKO5Z/onnAVGVIoVOZy/jxFqRK5YdOuLt5AX483gLHHgsCfL4Mjj1cABfgQS58sQyOPVwAF2AhF75cCscO8t94KcYF+OGrpXDsIP8XL8bw8e8LcKIZTv7I4zJ2ohlOvsiTMnayGU6+SEjGTjbByQ+Jyfmvm+Dkg8TGSzMuwH0JTjXBSR+pJ+dPNcJJFyki33/TCCc9pMh4oYaPPy/B6UY4+pGyc+50Axx9CDPnvm2AowepKl6+0cM/IsKZBjg8RHPOnlkCp3gkh5z9bgmcxWHf42+RkbFxrefY+wAAAABJRU5ErkJggg==",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/todo-list-v1.0.1.zip",
+      "size": 5217
+    },
+    {
+      "id": "unit-converter",
+      "name": {
+        "en": "Unit Converter",
+        "zh": "单位换算器",
+        "jp": "単位変換ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Convert length, weight, temperature, data size, area and speed instantly",
+        "zh": "长度、重量、温度、数据量、面积、速度即时换算",
+        "jp": "長さ・重さ・温度・データ量・面積・速度を即座に変換"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE8UlEQVR42u3Sd3dXRRAG4Pkk9t7FrsAMAvaCvaAgBLti791PRSRgSIUEU8EKn+X1cDDxdyDR3VtmZ3fnPef5996dmZdIOaflR7j1UQk5LT/Adc/00U/J93B6/PAubRFOyXdwdigf/1s4e3o//F/yDZx9PR3/a7h8+PFdNyX4U76Cy1fL438Jl7+Gx/8CrhxeAC9AeP6Qz+HKE3j8z+DKFVCAT+HK9Z/H/10+gSufF8ALsNbxP4arx3kF+E0+gqvHGgX4EK4e5xz/A7j6eAG8AGfzq7wPV5+BArwHV5+BAuyHq89qAU7KfuQqdXLe3UAB3oV1uSWHnf5z/HdgVSmxvGM6KW/DmlJjcdd0Qt6CJaXH2r7Jj193CeiEvInUao2F3dOyvIGUak/q/dOyvI6UvABp90/L8hpS8ayUIN0NqJTj+/sbFmBJXoW2tknx5lLnoiXZB23NF7QvCznNR0syBE3NlzOUlVzmpEUZgqYm0X5jTbPSouyFpviF7M2a9XlpUfZAS/wy9hTB8ty0IK9AS0w031Xz7LQgu6Elbgm7i2J1dpMFKO34luenBdkFLeEL2FUki/PTvLwMLaHRfFPt89O8vAQNMdF6kzaLO6B52QkNccPvLJLFHdCc7ISG0KR+Ry17WEFz8iI0hA+e5r/W3qN1F5qTF6AhfHDd/1l9l9ZdaE6eh4bwwfX+FV+CvPYQgn6R56AhNFr/aZpc9hDKC+AFeBYawgfv/x/tS2B7DzHouDwDDaHR+EfbWN9DDDouT0ND+OD9/6N9AWzvIYYXwAvwFDSED97v97srgc09xKJZeRIaQtP397uK1T3Eoll5AhrCB+/3+90VwOYeYtGs7ICG8MH7/X53BbC5h1g0wzugITR9f7+rWN1DLJrhx6EhfPB+v99dAWzuIRbN8GPQED54v9/vrgA29xCLjvGj0BCavr/fVazuIRYd40egIXzw/v/R/vi29xDDC+AFeBgawgfv/x/tC2B7DzHoKD8EDaHR+EfbWN9DDDrKD0JD+OA6/2l+/Dz2EMoLUHsBpvkBaAiN5r9ik9seQtA03w8N4YPr/s/qu7TuQtN8HzSED57mv9beo3UXmubt0BA+eNp31LKHFTTF26EhJlpv0mZxBzTF26AhbvhtRbK4A5rirdASPvzWIlmcnyb5XmgJjeabap+fJnkLtIQvYEuRLM5vsgAllsDq7DTJAi1xS5CiWJ2dJpihJTaab6t1bprgzdAUv4zNWbM+L03wJmhqEu031jQrjfMmaGoa7XfWMieN80Zoa76cjVnIaT4a53ugrW1SvLnUuWiM70YKXcff30yyAvSxxFyT8gY0xnchJT9+2v3TGN+JlLwAafdPR/gOpFZrLOyejvDtsKKew9vZuakC1FACa/umUb4N1pQai7umUb4VVpVzeLs7pjMZ5VtgXX5Ht79TWskob0Cu0h86392tFuBn3gBXn4EC3AxXn4EC3ARXn9UCHOYb4erjBfAC0EAJboCrB52bw3w9XD3OK8Ahvg6uHrRWDvG1cOWj9eLLqbwAZzLC18CVi/4vI3w1XLkoJCN8FVx5KCYH+Uq4clBsfGmVF+BsCa6Ayx+1yUG+HC5f1EV+4svg8kNdxhda8fH/LcGlcPZR3xnmS+DsIc0M88VwdlCqDPNFcOmQlfgxKj38WjnAF8J1j0rIAb4Abn3a9/gbPpxLp/WT5AIAAAAASUVORK5CYII=",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/unit-converter-v1.0.1.zip",
+      "size": 5568
+    },
+    {
+      "id": "url-encoder",
+      "name": {
+        "en": "URL Encoder / Decoder",
+        "zh": "URL 编解码",
+        "jp": "URL エンコード / デコード"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Percent-encode / decode URLs and query components, plus a query-string parser",
+        "zh": "URL 与查询参数编解码，附带查询字符串解析表",
+        "jp": "URL とクエリのパーセントエンコード / デコード、クエリ解析表つき"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFH0lEQVR42u3Zd1dWRxAG8Pkk6cU003vu7mu66aab3jW9914+lAjSBOkI0gTxszw5yRFeEkR3b5mduzNzzu/fu1MeDucAEXN1/joNszPKoTp/noapn+yj/7EOw8cOb9IGofP7OowcvMf/bR1GnuYP/+spGPmaOf4vp2Daw45v6glB5+c1mPaqdvyf1mDar9zxf1yDyUd8AH5Yg8lH5PFXYfITdvzvV2Hydf4AfLcKk69zH//bkzD52zkA35yEyZ8d32wPQefrFRg9tgfgqxUYPf57/C9XYPTZDID/YgVGny0BWIbRpxuAz5dh9OkG4LNlGH26Afh0CW2Vutq8u24APlmCdG2rNuxU/PFzKdEh8B8vQZpcS+KuyX+0CElyL2n7Jv/hIqTQUpJ2Tv6DRaSmtSTsnvz7C0hJe6XevwVAfQAOLiAVqzMhSHgD8gcWkELtS7T+SyH/3glwq7ysBD3nOhf5d0+AW+kFJeg19/nIlqN7TvLvzINTqaUw96hpVvJvz4NT9EKY+9M2L/m35sElehmMvWmdm/ybc+AStQTGvjTPbgFQH4A35sAleAGMPWmfn/zrc+ASvADGnrTPT/614+ASvADGnrTPT/7V4+AQ9TuQqSduEndgAVAfgFdmwSF48MR9aNnDBvIvz4JD8OCJ3pXWD9ddyL80Cw7BgzO/J7UvrruQ3z8LDsGDM74VHYKW7SEE+f0z4BA+OM875UPQjj2EIv/iDDgED870TukAtGQPoci/MAMOwYMzvFE5BML3EIP889PgEDw4wxuVAyB8DzHIPzcNDsGDM7xROQDC9xDDAqA+AM9Og0Pw4A1/v7YQCN1DLPLPTIFD8OANf7+2AAjdQyzyT0+BQ/DgDX+/tgAI3UMs8vumwCF48Ia/X1sAhO4hFrl9k+AQWk1/v66SuodY5J6aBIfgwRv+fm0BELqHWOSenASH4MEb/n5tARC6h1jknpgAh+DBG/5+bQEQuodY5B6fAIfgwRneqHx84XuIYQFQH4DHJsAheHCGNyoHQPgeYpB7dBwcggdneKNyAITvIQa5R8bBIXhwpndKH78lewhFbu84OAQPzvRO6QC0ZA+hyO0dA4fwwfneij9+u/YQgtzDY+AQPDjze1L74roLuYfGwCF48ETvSuuH6y7kHhwDh+DBE/ehZQ8byD1wDByifuqYeuImcQcWAPUBuP8YuAQPz9iT9vnJ3TcKLsELYOxJ+/zk7h0Fl+AFMPakfX5ye0bBJep3IGNfmme3AKgPQGcEXKL/CMPYm9a5yfkRcIpeBnN/2uYl50bAqdSfY5l71DQrueIoOJX+mzxzn1rmJFuO7vnI3XMU3Cr/hy5Bz7nORe7uYaRQ+//rrf9SyN01jFSszhw/4Q3I3TmMlNQfP/H+LQDqA3DHEFJTe3wBuyd3+xCkUHN4QTsnd9sQJMn++ML2Te7WQUiT7fEF7prcLYOQKpvDC94x/VOSG2xrGNqwU9ood/Mg2ir5oVu8u24AbhqA0acbgBsHYPTpBuCGARh9tgSgH0afzQAU1/fD6ENbq9jdD6MH/b+K6/ph9NgegGuPwOhBZytbjOLj/xuAa47A5I/OVcXVfTD5ovNVcVUfTL4opIpdfTD5oZgqdvXC5INiq7iyFyYfVKaKK3ph2o+qVHF5L0x7UR1VXHYYpn2ozrKFKj7+ZgguPQwjHzVdxSU9MPIQZxUX98DIQamquKgHJh2SUnYMpYc/axguPARTP8qhigsOweyM+x5/AzXOS6dyl2dqAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/url-encoder-v1.0.1.zip",
+      "size": 5062
+    },
+    {
+      "id": "uuid-generator",
+      "name": {
+        "en": "UUID Generator",
+        "zh": "UUID 生成器",
+        "jp": "UUID 生成ツール"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Generate UUID v4 and short IDs in bulk, copy with one click",
+        "zh": "批量生成 UUID v4 与短 ID，一键复制",
+        "jp": "UUID v4 とショート ID を一括生成、ワンクリックコピー"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE60lEQVR42u2S+1qXVRCF50oSBAQFAUFBQLAb6mCWWWaWZWpqZpZlZnnI7HADpUF4SBNQU6SD2rWsng4cErC9f7/vW9/sPbOe5/1375k1rwg5fzz1JJzlkRzihzQox8OnN8Ph4Yd3qhXh4TOb4ejBj++UL8GDZ0fg6MeP7xQrwYMtI3DSo5Dj398yAidd6jv+c8Nw0seP78RLcH/rMJx8iDr+71uH4eRH2PGf3wQnX1wAF2D5/PbCJjj58xgBhuDkz9LH3zYExw6LBPh12xAcOywW4MUhOHZ45PiDcOwxL8D2QTj2mBPgl+2DcOwxL8BLg3DssUCAATj2mBNg5uUBpErVSbm7pARILckIMLNjAFrJJZo7lpkdG6GNXKOxa7n3ykZoIvdo61v8+LYlkHs7+1E1VqOhe5ne2Y8qsZ6q+5fpV/tRJeYFqLh/8ePblkCmd/WhCgov0eevCbm7qw9s6k0VM+e6l9x9rQ9sai6ogllz30+8HNt7yp3XN4BJLWHPaGlX9QKkevxU9pU7uzeARXQZxNms7i0/714PFjFhzmV5dxfAvABvrAeL4AKIM1nf3wWwLsDtN3vBIjTMmazvL9qWdwG4HcjtPb1gELU8aSY2GjuQW3t6wSA0Vc9hpYdZ5NZbPWAQvHhF/2qbh3WXbAUoOvkKsLcHDIIXJ/4VLUFiPYQgN/f2gEFoWP/UmlR6CEVu7lsHBsGLk/6pWYBEegglKwFYyUqAqf3rwCA0jD/qjfYeYpCp/d1gEL54+X/UL4DuHmKQqbe7wSB4ccIfdQugvIcYshGAnWwEmDzQDQahKfv9oqK1h1hk8kAXGIQvXu77xQmgs4dYZPJgFxgEL17y+4UJoLSHWGTiYBcYhKbs94uK1h5ikYlDXWAQvHjJ7xcmgNIeYpGJQ51gEL54ue8XJ4DOHmKRG+90gkFoyn6/qGjtIZZsBGBKoL2HOAEOd4JB8OKEP+oWQHkPMciNw2vBIHzx8v+oXwDdPcQgP727FgxCw/ij3mjvIYasBGBIkEoP4QIc6QCD4MVJ/9QsQCI9hCLXj3SAQWiYf8UmtR5CkOvvdYBB8OLk/7TOxbpLtgIUJUIuPSwvwNF2MAhevOI5rPQwi1w72g4GMWHNxEZjB3Lt/XYwiFqeNBMbjR2IxgKsC8CcSX78YA1YhIY5k/X9XQDzAhxbAxYxYc5leXcXwLoAV4+tBovYMGezurdc/XA1mESXQZ7P2r7qBUhZghR2lSsftYFJrWHPaWVP8XJs7ydXjreBTb2pYuZc95LLx9tQBUXH568NufxxK6rC8+/xK7xBpQK4BNUe/x8BTrSiSswLUHH/culEK6rGajR0L5c+WQUtmDm8os5VCWBBAm19y/jJVdBGrtHYtYyfbIFW8jm83o7lr4x/2gLtJHf0BDqV2aQwrFYxUu5uToAfPmuBY48FAjTDsce8AKea4dhjToCxU81w7DEvwOlmOPaQhRk73QTHDvJoxs40wbHDIgFGzzTBsYMsldGzTXDyR5bL6NmVcPJHHpfvP18JJ1/k/+IlGRfgbwnONcLJD4nJxXONcPJBYnPxi0Y4+SC1xIszfPw5Cc43wEkXKSIXzjfASQ8pMhe+bICTDlJGvFjDx1+Y775aAUcfwowXbvj4/xHh6xVwqkO0xI9h9PBL5dtvnoBTPJJD/JC6jvwnX26js9jl8zIAAAAASUVORK5CYII=",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/uuid-generator-v1.0.1.zip",
+      "size": 4838
+    },
+    {
+      "id": "world-clock",
+      "name": {
+        "en": "World Clock",
+        "zh": "世界时钟",
+        "jp": "世界時計"
+      },
+      "version": "1.0.1",
+      "description": {
+        "en": "Live clocks for cities around the world with day/night badges",
+        "zh": "全球主要城市实时时钟，附白天/黑夜标记",
+        "jp": "世界の主要都市のライブ時計、昼夜バッジつき"
+      },
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEtklEQVR42u3SeVeWVRQF8PNJcqJSM9QG0wwVZBYKEc0yFdE0BzTqy4WA4QBoDuCUE32W3bLWS6xEvPcd9j33nrPX+v37PPecs0XI6f9rH9zbSQnxQxosR99iKxyPH96lLULfYhucHtTjH1hsg9On8Yd/1QanX0OO3/tqP1w+/PiuPiXofdkOl6+ajt/zsh0uf358hyoK0AFXjqjjd7/ogCtP4PE74cr1zgJ0veiEK9fqx3/eCVe+VQrQBVe+FY/f+bwLzo43C/CsG84OL4AX4L90POuGs2dZAXrg7FkqQPufPXD2LCtAL5w9XgAvwL/Z/7QXuUqdnHe3rAAHoF1uyWGn6o9fSlSXoO1pH7QpNRp3LW1P+qBJ6dG2b/Hj2y6BtD7pR2pWo2H30vq4HylZT+r9y77HXyMl60m9f/Hj2y6BlHJ8f3+VBdj76Buw1ZoUby51rqwKoPXwOc8nex8NgKn65QxkJZc5Zc/DATBVE/YbLc2qvgC5Hj+XeaXl4UGwxIb5NqtzS8vCQbBELYH4LsuzS8vCIFjiljBYFK2zy1cLg2AJDfNN1uf3ApgvwPwhsAQvgPgm6/PL7vlDYIgJ601sGncgu+eHwBA3/FCRNO5AvnwwBIbQpH6HlT1UFF+AWmOgAIfBED44939a38W6i+x6cBgMoWH+Kza57SGE7Lp/BAzBg5P+U3UJMtlDKC+A9QLsvH8EDKFh/KPWaN9DDNl571swBA9O+EfNBVC+hxheAOsF+OLeUTCEhvGPWqN9DzGKKQA7xRRgx92jYAhNo79fr2jdQyzZcfc7MIQP3tjv168AOvcQywtgvQCf//E9GELT6O/XK1r3EMsL4AU4BobwwRv7/foVQOceYslnd46BITSN/n69onUPsYopALME2vcQVYBP7/wAhtAw/lFrtO8hhhfAfAFuHwdD8OCEf9RcAOV7iCGf3D4OhtCw/lNtctlDKC+A+QLMnQBD8ODEf0UfP7M9hJDtcyfAEBr2/7S+i3UX2T53Egzhg6f5r7b3sO5SfAFi32FlD0sF2DZ7EgwxYb2JTeMOZNvsMBjihh8uksYdyNbZYbCEhvkm6/PL1plTYAleAPFN1uf3AlgvQPPMKbDEhPkuy7NL88wIWOKWMFIUrbNL860RsMSG+Tarc8vHt06DKTbs91mbV30Bci5BDrPKlpunwVRt2O+0MqdsuXkGbNUv50wWcpovqwJoL0KOc8lHN35ECvWOv786yQrQiCXmmpQ3SFoAL0Ha4/9TgM03ziIl60m9f9l8/SxSM3t8BbuXTdfPQQsr0bRzVQWwUAJt+5ZN0+egTbHHV7hr2Tj9E7QqJZp3LK+j+YG5liGHnUolG6fPI1fpD53v7pYK8OHv5+Hs8QJ4ASoFuABnz1IBPrh2Ac6eZQW4CGePLM/71y7C2SH/jy/FegGmLsHZISulaeoSXPnkbWmaGoUrn6yWpslRuHLJu7JhchSuXBKSDZOX4cojMVk/cRmuHBKb9RNX4Moh1cQXZ/j4laybuAKXL6lH1l39GS4/Us/4Qg0fv5K1V8fg9JNGZ+34GJw+wsya8TE4PSRV1oz/ApeOaIkfw+jhV8p7v/0KV39SQvyQuo78N59PMxvLdNhSAAAAAElFTkSuQmCC",
+      "downloadUrl": "https://github.com/alanchan20121201-prog/Toolbox/releases/download/tool/world-clock-v1.0.1.zip",
+      "size": 4533
+    }
+  ]
+}

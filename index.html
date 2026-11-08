@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Toolbox</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    /* 錯誤僅記錄到 console，不顯示在畫面上 */
+    window.onerror = function (msg, src, line) { console.error('[Toolbox]', msg, (src || '') + ':' + line); };
+    window.addEventListener('unhandledrejection', function (e) { console.error('[Toolbox]', e.reason); });
+  </script>
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- 左側工作列 -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img class="brand-logo" src="icon.png" alt="" />
+        <div class="brand-name">Toolbox</div>
+      </div>
+
+      <nav class="nav-fixed">
+        <button class="nav-item" data-view="shop" id="nav-shop">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-label" data-i18n="nav.shop">Tool Shop</span>
+        </button>
+        <button class="nav-item" data-view="mytools" id="nav-mytools">
+          <span class="nav-icon">📦</span>
+          <span class="nav-label" data-i18n="nav.myToolsPage">My Tools</span>
+        </button>
+        <button class="nav-item" data-view="settings" id="nav-settings">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label" data-i18n="nav.settings">Settings</span>
+        </button>
+      </nav>
+
+      <div class="divider"></div>
+
+      <div class="my-tools">
+        <div class="section-label" data-i18n="nav.myTools">My Tools</div>
+        <div id="tool-list" class="tool-list"></div>
+        <div id="tool-list-empty" class="tool-list-empty" data-i18n="nav.noTools">No tools installed yet</div>
+      </div>
+
+      <div class="sidebar-footer">
+        <span class="version" id="version-label">v1.0.0</span>
+      </div>
+    </aside>
+
+    <!-- 右側主畫面 -->
+    <main class="content" id="content"></main>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

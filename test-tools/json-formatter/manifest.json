@@ -1,0 +1,20 @@
+{
+  "id": "json-formatter",
+  "name": {
+    "en": "JSON Formatter",
+    "zh": "JSON 工具",
+    "jp": "JSON フォーマッター"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Format, minify and validate JSON with helpful error positions",
+    "zh": "格式化、压缩与校验 JSON，错误精确提示",
+    "jp": "JSON を整形・圧縮・検証。エラー箇所もわかりやすい"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "clipboard"
+  ],
+  "universal": true
+}

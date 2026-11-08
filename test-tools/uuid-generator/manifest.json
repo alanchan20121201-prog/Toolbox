@@ -1,0 +1,20 @@
+{
+  "id": "uuid-generator",
+  "name": {
+    "en": "UUID Generator",
+    "zh": "UUID 生成器",
+    "jp": "UUID 生成ツール"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Generate UUID v4 and short IDs in bulk, copy with one click",
+    "zh": "批量生成 UUID v4 与短 ID，一键复制",
+    "jp": "UUID v4 とショート ID を一括生成、ワンクリックコピー"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "clipboard"
+  ],
+  "universal": true
+}

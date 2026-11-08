@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>UUID Generator</title>
+<style>
+:root{--accent:#7c3aed;--bg:#f5f6f8;--surface:#fff;--border:#e3e5ea;--text:#1f2329;--dim:#6b7280;--green:#10b981;--red:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Segoe UI","Microsoft JhengHei","PingFang SC","Noto Sans TC",system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:auto}
+h1{font-size:20px;margin:0 0 4px}
+p.sub{color:var(--dim);margin:0 0 16px;font-size:13px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:600px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+label{font-size:13px;font-weight:600}
+select{padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;background:var(--surface);color:var(--text)}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+textarea{width:100%;min-height:220px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:13px;font-family:Consolas,monospace;resize:vertical}
+.status{font-size:13px;min-height:18px;margin-top:8px}
+.status.ok{color:var(--green)} .status.err{color:var(--red)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="subtitle"></p>
+<div class="panel">
+  <div class="row">
+    <label data-i18n="count"></label>
+    <select id="count"><option>1</option><option selected>5</option><option>10</option><option>20</option><option>50</option></select>
+    <label data-i18n="type"></label>
+    <select id="type">
+      <option value="v4">UUID v4</option>
+      <option value="upper">UUID v4 (UPPER)</option>
+      <option value="short">Short ID (8)</option>
+      <option value="nanoid">Nano ID (21)</option>
+    </select>
+    <button class="btn primary" id="btn-gen" data-i18n="gen"></button>
+    <button class="btn" id="btn-copy" data-i18n="copy"></button>
+  </div>
+  <textarea id="out" readonly spellcheck="false"></textarea>
+  <div class="status" id="status"></div>
+</div>
+<script src="lang.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "id": "regex-tester",
+  "name": {
+    "en": "Regex Tester",
+    "zh": "正则测试器",
+    "jp": "正規表現テスター"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Test regular expressions with live highlighting and match lists",
+    "zh": "实时测试正则表达式，高亮匹配并列出结果",
+    "jp": "正規表現をライブでテスト、マッチ箇所のハイライトと一覧表示"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [],
+  "universal": true
+}

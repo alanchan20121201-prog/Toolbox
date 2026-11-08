@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Converter</title>
+  <style>
+    :root { --accent: #3b82f6; --bg: #f5f6f8; --surface: #fff; --border: #e3e5ea; --text: #1f2329; --dim: #6b7280; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 28px; font-family: "Segoe UI", "Microsoft JhengHei", "PingFang SC", "Noto Sans TC", system-ui, sans-serif;
+      background: var(--bg); color: var(--text); height: 100vh; overflow: auto;
+    }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    p.sub { color: var(--dim); margin: 0 0 24px; font-size: 14px; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; max-width: 560px; }
+    .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    label { font-size: 13px; font-weight: 600; }
+    select, input[type="range"] { padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); font-size: 14px; }
+    input[type="range"] { flex: 1; }
+    .preview { display: block; max-width: 100%; max-height: 260px; margin: 16px 0; border-radius: 10px; border: 1px solid var(--border); background: #fff; }
+    /* 修正：hidden 屬性會被 .preview 的 display:block 蓋掉，導致還沒選圖就顯示破圖 */
+    [hidden] { display: none !important; }
+    .btn { padding: 10px 18px; border-radius: 9px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 14px; cursor: pointer; }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status { font-size: 13px; color: var(--dim); min-height: 20px; margin-top: 12px; word-break: break-all; }
+    .status.err { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <h1 data-i18n="title">🖼️ Image Converter</h1>
+  <p class="sub" data-i18n="subtitle">Select an image and convert it to WebP / JPG / PNG / BMP / ICO (100% local)</p>
+
+  <div class="panel">
+    <div class="row">
+      <button class="btn" id="btn-open" data-i18n="open">📂 Choose image</button>
+      <span id="file-name" style="color:var(--dim);font-size:13px;"></span>
+    </div>
+
+    <div class="row">
+      <label for="format" data-i18n="format">Output format</label>
+      <select id="format">
+        <option value="webp">WebP</option>
+        <option value="jpg">JPG</option>
+        <option value="png">PNG</option>
+        <option value="bmp">BMP</option>
+        <option value="ico">ICO</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="quality" data-i18n="quality">Quality</label>
+      <input type="range" id="quality" min="10" max="100" value="90" />
+      <span id="quality-val" style="min-width:48px;font-size:13px;color:var(--dim);">90%</span>
+    </div>
+
+    <img id="preview" class="preview" hidden alt="preview" />
+
+    <button class="btn primary" id="btn-convert" data-i18n="convert" disabled>Convert &amp; Save</button>
+    <div class="status" id="status"></div>
+  </div>
+
+  <script src="lang.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

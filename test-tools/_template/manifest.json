@@ -1,0 +1,23 @@
+{
+  "id": "TOOL_ID",
+  "name": {
+    "en": "My New Tool",
+    "zh": "我的新工具",
+    "jp": "新しいツール"
+  },
+  "version": "1.0.1",
+  "description": {
+    "en": "Describe what this tool does in one line",
+    "zh": "用一句话描述这个工具的用途",
+    "jp": "このツールの用途を一言で説明"
+  },
+  "entry": "index.html",
+  "icon": "logo.png",
+  "permissions": [
+    "dialog",
+    "file:read",
+    "file:write",
+    "clipboard",
+    "notify"
+  ]
+}
