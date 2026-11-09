@@ -3,12 +3,14 @@
   "name": {
     "en": "Quick Notes",
     "zh": "快速记事本",
+    "zh-TW": "快速記事本",
     "jp": "クイックメモ"
   },
   "version": "1.0.1",
   "description": {
     "en": "Jot down notes that are saved locally — never lose a thought",
     "zh": "随手记事，自动保存在本机，灵感不再丢失",
+    "zh-TW": "隨手記事，自動儲存在本機，靈感不再遺失",
     "jp": "サッと書いて自動保存 — メモは端末に残ります"
   },
   "entry": "index.html",

@@ -3,12 +3,14 @@
   "name": {
     "en": "To-Do List",
     "zh": "待办清单",
+    "zh-TW": "待辦清單",
     "jp": "ToDo リスト"
   },
   "version": "1.0.1",
   "description": {
     "en": "A persistent to-do list — tasks are saved locally and survive restarts",
     "zh": "持久化待办清单——任务保存在本机，重启后仍在",
+    "zh-TW": "持久化待辦清單——工作儲存在本機，重啟後仍在",
     "jp": "永続化 ToDo リスト — タスクは端末に保存、再起動後も残ります"
   },
   "entry": "index.html",

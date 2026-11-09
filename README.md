@@ -11,7 +11,7 @@ A modular, lightweight, extensible **Windows desktop efficiency center**.
 [![License](https://img.shields.io/badge/license-MIT-22C55E?style=flat-square)](LICENSE)
 [![Electron](https://img.shields.io/badge/Electron-31-47848F?style=flat-square)](https://www.electronjs.org/)
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D6?style=flat-square)](#)
-[![i18n](https://img.shields.io/badge/i18n-en%20%7C%20zh--CN%20%7C%20ja-EC4899?style=flat-square)](#english)
+[![i18n](https://img.shields.io/badge/i18n-en%20%7C%20zh--CN%20%7C%20zh--TW%20%7C%20ja-EC4899?style=flat-square)](#english)
 
 </div>
 
@@ -22,9 +22,9 @@ A modular, lightweight, extensible **Windows desktop efficiency center**.
 
 ## 📖 Languages · 語言 · 言語
 
-| English | 简体中文 | 日本語 |
+| English | 简体中文 | 繁體中文 | 日本語 |
 |:---:|:---:|:---:|
-| [English](#english) | [简体中文](#简体中文) | [日本語](#日本語) |
+| [English](#english) | [简体中文](#简体中文) | 繁體中文 | [日本語](#日本語) |
 
 ---
 
@@ -38,7 +38,7 @@ Toolbox is a **modular, lightweight, extensible desktop efficiency center** for 
 - 💸 **Zero cost** — the whole ecosystem (host app, `tools.json`, tool `.zip`) is hosted on free GitHub repositories and GitHub Releases.
 - 🔒 **Local-first** — all data and computation stay on your disk; after download, tools work **100% offline**.
 - 🛡️ **Secure sandbox** — tools run inside a `<webview>` with `nodeIntegration=off`; they can only reach system resources through a **permission-gated Tool API**.
-- 🌐 **Trilingual** — UI and tools support **English (en) / Simplified Chinese (zh-CN) / Japanese (ja)**. Installing a tool automatically downloads the **language-matching zip**.
+- 🌐 **Four UI languages** — the shell supports **English (en) / Simplified Chinese (zh) / Traditional Chinese (zh-TW) / Japanese (jp)**; tool names and descriptions are translated into all four. Installing a tool automatically downloads the **language-matching zip**.
 - 🔄 **In-app updates** — from v1.0.1, you can check for and install new versions directly from **Settings → App Update**.
 
 ### 🏗️ Architecture
@@ -77,7 +77,7 @@ Any failure rolls back automatically — no half-installed tools.
 2. Run the installer and launch **Toolbox**.
 3. Open the **Tool Shop**, click **Install** on any tool — it downloads the language-matching zip from GitHub and is ready to use immediately.
 
-> The default language is **English**. You can switch to 简体中文 / 日本語 at any time in **Settings → Language**.
+> The default language is **English**. You can switch to 简体中文 / 繁體中文 / 日本語 at any time in **Settings → Language**.
 
 ### 🛠️ Development (local, no GitHub needed)
 
@@ -120,16 +120,16 @@ node scripts/new-tool.js my-tool    # copies the starter template into test-tool
 
 | File | Purpose |
 |---|---|
-| `manifest.json` | identity: `id`, `name` (trilingual), `version`, `description`, `entry`, `icon`, `permissions` |
+| `manifest.json` | identity: `id`, `name` (four languages), `version`, `description`, `entry`, `icon`, `permissions` |
 | `index.html` | UI; mark text with `data-i18n="key"` |
 | `script.js` | logic + a trilingual `I18N` dictionary |
 
 ```json
 {
   "id": "image-tools",
-  "name": { "en": "Image Converter", "zh-CN": "图片转档工具", "ja": "画像変換ツール" },
+  "name": { "en": "Image Converter", "zh": "图片转档工具", "zh-TW": "圖片轉檔工具", "jp": "画像変換ツール" },
   "version": "1.0.0",
-  "description": { "en": "...", "zh-CN": "...", "ja": "..." },
+  "description": { "en": "...", "zh": "...", "zh-TW": "...", "jp": "..." },
   "entry": "index.html",
   "icon": "logo.png",
   "permissions": ["dialog", "file:read", "file:write", "notify"]
@@ -188,7 +188,7 @@ toolbox/
 ├── renderer.js             # front-end logic & dynamic rendering
 ├── css/style.css           # styles (light/dark theme)
 ├── icon.png / icon.ico     # app icon (exe / taskbar / title bar / brand)
-├── locales/                # i18n (en / zh / jp)
+├── locales/                # i18n (en / zh / zh-TW / jp)
 ├── tools.json              # LIVE catalog served by GitHub (generated)
 ├── update.json             # app update info (authored by hand)
 ├── scripts/
@@ -255,7 +255,7 @@ Toolbox 是一个面向 Windows 的**模块化、轻量级、可扩展的桌面�
 - 💸 **零成本**——整个生态（主程序、`tools.json`、工具 `.zip`）全部托管在免费的 GitHub 仓库 + GitHub Releases 上。
 - 🔒 **本地优先**——数据与运算都在你自己的硬盘上，下载后工具可 **100% 离线**使用。
 - 🛡️ **安全沙盒**——工具在 `<webview>` 内以 `nodeIntegration=off` 运行，只能通过**权限化的 Tool API**访问系统资源。
-- 🌐 **三语支持**——界面与工具皆支持 **英文（en）/ 简体中文（zh-CN）/ 日语（ja）**；安装工具时会**自动下载对应语言的 zip**。
+- 🌐 **四种界面语言**——主界面支持 **英文（en）/ 简体中文（zh）/ 繁體中文（zh-TW）/ 日本語（jp）**，工具名称与说明亦有四语翻译；安装工具时会**自动下载对应语言的 zip**。
 - 🔄 **应用内更新**——自 v1.0.1 起，可在「设置 → 应用更新」里直接检查并安装新版本。
 
 ### 🏗️ 架构总览
@@ -294,7 +294,7 @@ Toolbox 是一个面向 Windows 的**模块化、轻量级、可扩展的桌面�
 2. 运行安装程序并启动 **Toolbox**。
 3. 打开**工具市集**，对任意工具点击**安装**——它会从 GitHub 下载对应语言的 zip，装好即可用。
 
-> 默认语言为**英文**，可随时在「设置 → 语言」切换为简体中文 / 日本語。
+> 默认语言为**英文**，可随时在「设置 → 语言」切换为简体中文 / 繁體中文 / 日本語。
 
 ### 🛠️ 开发与测试（本地，无需 GitHub）
 
@@ -337,16 +337,16 @@ node scripts/new-tool.js my-tool    # 从范本复制一份到 test-tools/my-too
 
 | 文件 | 用途 |
 |---|---|
-| `manifest.json` | 身份：`id`、`name`（三语）、`version`、`description`、`entry`、`icon`、`permissions` |
+| `manifest.json` | 身份：`id`、`name`（四语）、`version`、`description`、`entry`、`icon`、`permissions` |
 | `index.html` | 界面；文字用 `data-i18n="key"` 标记 |
 | `script.js` | 逻辑 + 三语 `I18N` 字典 |
 
 ```json
 {
   "id": "image-tools",
-  "name": { "en": "Image Converter", "zh-CN": "图片转档工具", "ja": "画像変換ツール" },
+  "name": { "en": "Image Converter", "zh": "图片转档工具", "zh-TW": "圖片轉檔工具", "jp": "画像変換ツール" },
   "version": "1.0.0",
-  "description": { "en": "...", "zh-CN": "...", "ja": "..." },
+  "description": { "en": "...", "zh": "...", "zh-TW": "...", "jp": "..." },
   "entry": "index.html",
   "icon": "logo.png",
   "permissions": ["dialog", "file:read", "file:write", "notify"]
@@ -405,7 +405,7 @@ toolbox/
 ├── renderer.js             # 前端逻辑与动态渲染
 ├── css/style.css           # 样式（浅色/深色主题）
 ├── icon.png / icon.ico     # 应用图标（exe / 任务栏 / 标题栏 / 品牌）
-├── locales/                # 多语言（en / zh-CN / ja）
+├── locales/                # 多语言（en / zh / zh-TW / jp）
 ├── scripts/build-tools.js  # 建置脚本（图标、三语言 zip、tools.json）
 ├── test-tools/             # 工具源码
 │   ├── image-tools/
@@ -452,7 +452,7 @@ Toolbox は Windows 向けの**モジュール式・軽量・拡張可能なデ�
 - 💸 **ゼロコスト**——エコシステム全体（ホストアプリ、`tools.json`、ツール `.zip`）を無料の GitHub リポジトリ + GitHub Releases でホスティング。
 - 🔒 **ローカルファースト**——データと演算はすべて自分のディスク上。ダウンロード後は **100% オフライン**で動作。
 - 🛡️ **安全なサンドボックス**——ツールは `nodeIntegration=off` の `<webview>` 内で実行され、**権限制御された Tool API** を通じてのみシステム資源へアクセス。
-- 🌐 **3 言語対応**——UI とツールは **英語（en）/ 簡体字中国語（zh-CN）/ 日本語（ja）** に対応。ツールをインストールすると**言語に合った zip を自動ダウンロード**。
+- 🌐 **4 言語対応**——UI は **英語（en）/ 簡体字中国語（zh）/ 繁体字中国語（zh-TW）/ 日本語（jp）** に対応。ツール名と説明も 4 言語に翻訳済み。ツールをインストールすると**言語に合った zip を自動ダウンロード**。
 - 🔄 **アプリ内アップデート**——v1.0.1 から「設定 → アプリ更新」で新バージョンを直接確認・導入可能。
 
 ### 🏗️ アーキテクチャ
@@ -491,7 +491,7 @@ Toolbox は Windows 向けの**モジュール式・軽量・拡張可能なデ�
 2. インストーラを実行して **Toolbox** を起動。
 3. **ツールショップ**を開き、任意のツールの**インストール**をクリック——GitHub から言語に合った zip をダウンロードし、すぐに使えます。
 
-> デフォルト言語は**英語**。「設定 → 言語」でいつでも简体中文 / 日本語に切り替えられます。
+> デフォルト言語は**英語**。「設定 → 言語」でいつでも简体中文 / 繁體中文 / 日本語に切り替えられます。
 
 ### 🛠️ 開発（ローカル、GitHub 不要）
 
@@ -541,9 +541,9 @@ node scripts/new-tool.js my-tool    # テンプレートを test-tools/my-tool �
 ```json
 {
   "id": "image-tools",
-  "name": { "en": "Image Converter", "zh-CN": "图片转档工具", "ja": "画像変換ツール" },
+  "name": { "en": "Image Converter", "zh": "图片转档工具", "zh-TW": "圖片轉檔工具", "jp": "画像変換ツール" },
   "version": "1.0.0",
-  "description": { "en": "...", "zh-CN": "...", "ja": "..." },
+  "description": { "en": "...", "zh": "...", "zh-TW": "...", "jp": "..." },
   "entry": "index.html",
   "icon": "logo.png",
   "permissions": ["dialog", "file:read", "file:write", "notify"]
@@ -602,7 +602,7 @@ toolbox/
 ├── renderer.js             # フロントエンドのロジックと動的描画
 ├── css/style.css           # スタイル（ライト/ダークテーマ）
 ├── icon.png / icon.ico     # アプリアイコン（exe / タスクバー / タイトルバー / ブランド）
-├── locales/                # i18n（en / zh-CN / ja）
+├── locales/                # i18n（en / zh / zh-TW / jp）
 ├── scripts/build-tools.js  # ビルドスクリプト（アイコン・3言語 zip・tools.json）
 ├── test-tools/             # ツールのソース
 │   ├── image-tools/

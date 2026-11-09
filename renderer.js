@@ -372,6 +372,7 @@ function renderSettings() {
     ['auto', t('settings.lang.auto')],
     ['en', 'English'],
     ['zh', '简体中文'],
+    ['zh-TW', '繁體中文'],
     ['jp', '日本語']
   ];
   c.innerHTML = `

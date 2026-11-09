@@ -3,12 +3,14 @@
   "name": {
     "en": "Simple Expense Tracker",
     "zh": "简易记账",
+    "zh-TW": "簡易記帳",
     "jp": "簡易家計簿"
   },
   "version": "1.0.1",
   "description": {
     "en": "Track income & expenses locally, with totals — data stays on your PC",
     "zh": "本机记录收支与合计，数据保存在你的电脑上",
+    "zh-TW": "本機記錄收支與合計，資料儲存在你的電腦上",
     "jp": "収支をローカル記録して合計まで — データは端末内だけ"
   },
   "entry": "index.html",
