@@ -5,6 +5,8 @@ const I18N = {
     invalid:'❌ Invalid number for this base', bits:'Binary view (8 / 16 / 32-bit)' },
   zh: { title:'🔢 进制转换', subtitle:'在任意进制输入，其他进制实时更新（仅限安全整数范围）。',
     invalid:'❌ 当前进制下不是有效数字', bits:'二进制位视图（8 / 16 / 32 位）' },
+  'zh-TW': { title:'🔢 進位轉換', subtitle:'在任意進位輸入，其他進位即時更新（僅限安全整數範圍）。',
+    invalid:'❌ 目前進位下不是有效數字', bits:'二進位位視圖（8 / 16 / 32 位）' },
   jp: { title:'🔢 進数変換ツール', subtitle:'任意の進数で入力すると他がリアルタイム更新（安全な整数のみ）。',
     invalid:'❌ この進数では無効な数値です', bits:'2 進ビット表示（8 / 16 / 32 ビット）' }
 };
@@ -46,7 +48,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

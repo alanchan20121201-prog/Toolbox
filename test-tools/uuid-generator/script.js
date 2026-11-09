@@ -7,6 +7,9 @@ const I18N = {
   zh: { title:'🆔 UUID 生成器', subtitle:'使用 crypto.getRandomValues 的安全随机 ID，无网络。',
     count:'数量', type:'类型', gen:'🎲 生成', copy:'📋 复制',
     copied:'✅ 已复制', copyErr:'复制失败：' },
+  'zh-TW': { title:'🆔 UUID 產生器', subtitle:'使用 crypto.getRandomValues 的安全隨機 ID，無網路。',
+    count:'數量', type:'類型', gen:'🎲 產生', copy:'📋 複製',
+    copied:'✅ 已複製', copyErr:'複製失敗：' },
   jp: { title:'🆔 UUID 生成ツール', subtitle:'crypto.getRandomValues による安全なランダム ID。ネットワーク不要。',
     count:'個数', type:'種類', gen:'🎲 生成', copy:'📋 コピー',
     copied:'✅ コピーしました', copyErr:'コピー失敗：' }
@@ -66,7 +69,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

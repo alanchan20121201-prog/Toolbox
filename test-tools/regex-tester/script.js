@@ -5,6 +5,8 @@ const I18N = {
     ph:'Test text…', noMatch:'No matches', count:(n)=>n+' match(es)', ok:'✅ Valid', invalid:'❌ Invalid regex: ' },
   zh: { title:'🧪 正则测试器', subtitle:'实时高亮匹配。标志：g / i / m / s / u …',
     ph:'测试文本…', noMatch:'没有匹配', count:(n)=>n+' 个匹配', ok:'✅ 语法正确', invalid:'❌ 无效正则：' },
+  'zh-TW': { title:'🧪 正則測試器', subtitle:'即時高亮比對。標誌：g / i / m / s / u …',
+    ph:'測試文字…', noMatch:'沒有比對', count:(n)=>n+' 個比對', ok:'✅ 語法正確', invalid:'❌ 無效正則：' },
   jp: { title:'🧪 正規表現テスター', subtitle:'マッチ箇所をライブ表示。フラグ：g / i / m / s / u …',
     ph:'テストテキスト…', noMatch:'マッチなし', count:(n)=>n+' 件のマッチ', ok:'✅ 正しい正規表現', invalid:'❌ 無効な正規表現：' }
 };
@@ -69,7 +71,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

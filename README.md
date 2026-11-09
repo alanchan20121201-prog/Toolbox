@@ -38,18 +38,18 @@ Toolbox is a **modular, lightweight, extensible desktop efficiency center** for 
 - 💸 **Zero cost** — the whole ecosystem (host app, `tools.json`, tool `.zip`) is hosted on free GitHub repositories and GitHub Releases.
 - 🔒 **Local-first** — all data and computation stay on your disk; after download, tools work **100% offline**.
 - 🛡️ **Secure sandbox** — tools run inside a `<webview>` with `nodeIntegration=off`; they can only reach system resources through a **permission-gated Tool API**.
-- 🌐 **Four UI languages** — the shell supports **English (en) / Simplified Chinese (zh) / Traditional Chinese (zh-TW) / Japanese (jp)**; tool names and descriptions are translated into all four. Installing a tool automatically downloads the **language-matching zip**.
+- 🌐 **Four UI languages** — the shell supports **English (en) / Simplified Chinese (zh) / Traditional Chinese (zh-TW) / Japanese (jp)**; tool names, descriptions, **and each tool's own UI** are translated into all four. Each tool ships as **one single zip at one single URL** containing all four languages — the tool picks the right one at runtime via `toolbox.getLocale()`.
 - 🔄 **In-app updates** — from v1.0.1, you can check for and install new versions directly from **Settings → App Update**.
 
 ### 🏗️ Architecture
 
 ```
 [ GitHub cloud repository ]
-├── tools.json                # tool catalog (downloadUrl grouped by language)
+├── tools.json                # tool catalog (one downloadUrl per tool)
 ├── update.json               # app self-update info (version / url)
-└── releases/                 # per-language .zip for each tool + exe installer
+└── releases/                 # one .zip per tool (all four languages inside) + exe installer
         │
-        ▼  (user clicks "Install" in the Shop → downloads the matching-language zip)
+        ▼  (user clicks "Install" in the Shop → downloads the single tool zip from the one URL)
 [ Windows client (.exe host) ]
 ├── Left sidebar      dynamically renders "My Tools"
 ├── Right pane        sandboxed tool UI
@@ -58,9 +58,9 @@ Toolbox is a **modular, lightweight, extensible desktop efficiency center** for 
 
 **Installation lifecycle (atomic + rollback):**
 
-1. Pick `downloadUrl[language]` for the current UI language
+1. Read the tool's single `downloadUrl` (the same URL for every language)
 2. Download the `.zip` to a temp area (with progress)
-3. Optional SHA-256 verification (`sha256[language]`)
+3. Optional SHA-256 verification
 4. Safe extraction with **zip-slip path-traversal protection**
 5. Validate `manifest.json`, the `index.html` entry point, and matching `id`
 6. Atomic move from staging into `tools/[id]/`
@@ -75,7 +75,7 @@ Any failure rolls back automatically — no half-installed tools.
    https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.4.exe
    ```
 2. Run the installer and launch **Toolbox**.
-3. Open the **Tool Shop**, click **Install** on any tool — it downloads the language-matching zip from GitHub and is ready to use immediately.
+3. Open the **Tool Shop**, click **Install** on any tool — it downloads the single zip from GitHub (always the same URL) and is ready to use immediately.
 
 > The default language is **English**. You can switch to 简体中文 / 繁體中文 / 日本語 at any time in **Settings → Language**.
 
@@ -83,7 +83,7 @@ Any failure rolls back automatically — no half-installed tools.
 
 ```bash
 npm install           # install dependencies
-npm run build:tools   # generate icons + trilingual zips + tools.json
+npm run build:tools   # generate icons + four-language universal zips + tools.json
 npm start             # launch the app (reads local dev-server/tools.json)
 
 # after uploading the zips to a Release, sync exact package sizes into tools.json:
@@ -96,7 +96,7 @@ node scripts/build-tools.js --base <release-asset-url> --github-sizes <tag>
 
 | Command | What it does |
 |---|---|
-| `npm run smoke` | Headless end-to-end test: fetch catalog → install by language → validate → zip-slip guard → uninstall |
+| `npm run smoke` | Headless end-to-end test: fetch catalog → install → validate → zip-slip guard → uninstall |
 | `npm run smoke:window` | UI load test (requires a real desktop/display) |
 | `npm run dist` | Build the installer (icon auto-applied from `icon.ico`) |
 
@@ -122,7 +122,7 @@ node scripts/new-tool.js my-tool    # copies the starter template into test-tool
 |---|---|
 | `manifest.json` | identity: `id`, `name` (four languages), `version`, `description`, `entry`, `icon`, `permissions` |
 | `index.html` | UI; mark text with `data-i18n="key"` |
-| `script.js` | logic + a trilingual `I18N` dictionary |
+| `script.js` | logic + a four-language `I18N` dictionary |
 
 ```json
 {
@@ -160,7 +160,7 @@ await toolbox.notify({ title: 'OK', body: 'Done' });
 
 See `tool-preload.js` for the full list.
 
-**Trilingual mechanism** (automatic): the build injects `lang.js` (`window.__TOOL_LANG__`) into each zip, and the host downloads the zip matching the user's language — one source, three language builds, no runtime detection needed.
+**Four-language mechanism** (automatic): each tool is published as **one universal zip at one URL** (`<id>-v<version>.zip`). The zip contains an `I18N` dictionary with `en / zh / zh-TW / jp`; at startup the tool calls `toolbox.getLocale()` (falling back to `navigator.language`) and picks the matching language. **Keep the URL unchanged when repackaging** — splitting into per-language zips would break the catalog, since `tools.json` registers exactly one `downloadUrl` per tool.
 
 ### 📦 Publishing to GitHub
 
@@ -174,7 +174,7 @@ See `tool-preload.js` for the full list.
 
 > Since v1.0.4, `tools.json` uses a merged format `{ "update": {…}, "tools": […] }` that also embeds the app-update info (checked first by the host). Keep uploading `update.json` as well — hosts ≤1.0.3 only understand it.
 
-**Zip naming** (automatic): `<tool-id>-<lang>-v<version>.zip`, where `<lang>` is `en` / `zh` / `ja`.
+**Zip naming** (automatic): `<tool-id>-v<version>.zip` — **one zip per tool, one URL**, no language suffix. Repackaging overwrites the same Release asset, so the `downloadUrl` in `tools.json` never changes.
 
 ### 🗂️ Project structure
 
@@ -201,7 +201,7 @@ toolbox/
 └── dev-server/             # local mock of the GitHub cloud
     ├── tools.json          # local catalog (generated)
     ├── update.json         # app update info
-    ├── dist/<id>-<lang>-v<ver>.zip
+    ├── dist/<id>-v<ver>.zip
     └── icons/*.png
 ```
 
@@ -255,18 +255,18 @@ Toolbox 是一个面向 Windows 的**模块化、轻量级、可扩展的桌面�
 - 💸 **零成本**——整个生态（主程序、`tools.json`、工具 `.zip`）全部托管在免费的 GitHub 仓库 + GitHub Releases 上。
 - 🔒 **本地优先**——数据与运算都在你自己的硬盘上，下载后工具可 **100% 离线**使用。
 - 🛡️ **安全沙盒**——工具在 `<webview>` 内以 `nodeIntegration=off` 运行，只能通过**权限化的 Tool API**访问系统资源。
-- 🌐 **四种界面语言**——主界面支持 **英文（en）/ 简体中文（zh）/ 繁體中文（zh-TW）/ 日本語（jp）**，工具名称与说明亦有四语翻译；安装工具时会**自动下载对应语言的 zip**。
+- 🌐 **四种界面语言**——主界面支持 **英文（en）/ 简体中文（zh）/ 繁體中文（zh-TW）/ 日本語（jp）**，工具名称与说明亦有四语翻译，工具内部界面也有四语字典；每个工具**只发布一个 zip、一个网址**，启动时用 `toolbox.getLocale()` 自动挑选语言。
 - 🔄 **应用内更新**——自 v1.0.1 起，可在「设置 → 应用更新」里直接检查并安装新版本。
 
 ### 🏗️ 架构总览
 
 ```
 [ GitHub 云端仓库 ]
-├── tools.json                # 工具清单（downloadUrl 依语言分组）
+├── tools.json                # 工具清单（每个工具一个 downloadUrl）
 ├── update.json               # 应用更新信息（version / url）
-└── releases/                 # 各工具的多语言 .zip + exe 安装包
+└── releases/                 # 每个工具一个 .zip（内含四语）+ exe 安装包
         │
-        ▼  (用户在市集点击「安装」→ 依语言下载对应 zip)
+        ▼  (用户在市集点击「安装」→ 从同一个网址下载该工具的 zip)
 [ Windows 客户端 (.exe 主程序) ]
 ├── 左侧工作列   动态渲染「我的工具」
 ├── 右侧主画面   沙盒化加载工具 UI
@@ -275,9 +275,9 @@ Toolbox 是一个面向 Windows 的**模块化、轻量级、可扩展的桌面�
 
 **安装生命周期（原子安装 + 回滚）：**
 
-1. 依当前界面语言挑选 `downloadUrl[language]`
+1. 读取该工具唯一的 `downloadUrl`（各语言共用同一网址）
 2. 下载 `.zip` 到暂存区（含进度回传）
-3. 可选 SHA-256 校验（`sha256[language]`）
+3. 可选 SHA-256 校验
 4. 安全解压（内置 zip-slip 路径穿越防护）
 5. 校验 `manifest.json`、`index.html` 入口点及 `id` 一致
 6. 原子搬移到 `tools/[id]/`
@@ -292,7 +292,7 @@ Toolbox 是一个面向 Windows 的**模块化、轻量级、可扩展的桌面�
    https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.4.exe
    ```
 2. 运行安装程序并启动 **Toolbox**。
-3. 打开**工具市集**，对任意工具点击**安装**——它会从 GitHub 下载对应语言的 zip，装好即可用。
+3. 打开**工具市集**，对任意工具点击**安装**——它会从 GitHub 的同一个网址下载该工具的 zip，装好即可用。
 
 > 默认语言为**英文**，可随时在「设置 → 语言」切换为简体中文 / 繁體中文 / 日本語。
 
@@ -300,7 +300,7 @@ Toolbox 是一个面向 Windows 的**模块化、轻量级、可扩展的桌面�
 
 ```bash
 npm install           # 安装依赖
-npm run build:tools   # 生成图标 + 三语言 zip + tools.json
+npm run build:tools   # 生成图标 + 四语通用 zip + tools.json
 npm start             # 启动应用（读取本地 dev-server/tools.json）
 
 # 上傳 zip 到 Release 後，同步「實際體積」到 tools.json（市集顯示才精準）：
@@ -313,7 +313,7 @@ node scripts/build-tools.js --base <release-asset-url> --github-sizes <tag>
 
 | 命令 | 作用 |
 |---|---|
-| `npm run smoke` | 无界面端到端测试：抓清单 → 依语言安装 → 校验 → zip-slip 防护 → 卸载 |
+| `npm run smoke` | 无界面端到端测试：抓清单 → 安装 → 校验 → zip-slip 防护 → 卸载 |
 | `npm run smoke:window` | 界面加载测试（需真实桌面/显示环境） |
 | `npm run dist` | 打包安装包（自动套用 `icon.ico`） |
 
@@ -377,7 +377,7 @@ await toolbox.notify({ title: 'OK', body: 'Done' });
 
 完整清单见 `tool-preload.js`。
 
-**三语机制**（自动）：建置时把 `lang.js`（`window.__TOOL_LANG__`）注入每个 zip，主程序按用户语言下载对应 zip——一份源码产出三种语言，无需运行时侦测。
+**四语机制**（自动）：每个工具**只发布一个通用 zip、一个网址**（`<id>-v<版本>.zip`）。zip 内的 `I18N` 含 `en / zh / zh-TW / jp` 四语，工具启动时呼叫 `toolbox.getLocale()`（失败则退回 `navigator.language`）挑选对应语言。**重新打包时务必保持网址不变**——`tools.json` 里每个工具只登记一个 `downloadUrl`，拆成多语言 zip 会让主程序识别不了。
 
 ### 📦 发布到 GitHub
 
@@ -391,7 +391,7 @@ await toolbox.notify({ title: 'OK', body: 'Done' });
 
 > 从 v1.0.4 起，`tools.json` 采用合并格式 `{ "update": {…}, "tools": […] }`，内嵌应用更新信息（主程序优先读取）；仍请照常上传 `update.json`——1.0.3 及更早的主程序只认它。
 
-**Zip 命名**（自动）：`<工具id>-<lang>-v<版本>.zip`，其中 `<lang>` 为 `en` / `zh` / `ja`。
+**Zip 命名**（自动）：`<工具id>-v<版本>.zip`，**每个工具一个 zip、一个网址**，不带语言后缀；重新打包覆盖同一个 Release 资产，`tools.json` 里的网址永不改变。
 
 ### 🗂️ 项目结构
 
@@ -406,14 +406,14 @@ toolbox/
 ├── css/style.css           # 样式（浅色/深色主题）
 ├── icon.png / icon.ico     # 应用图标（exe / 任务栏 / 标题栏 / 品牌）
 ├── locales/                # 多语言（en / zh / zh-TW / jp）
-├── scripts/build-tools.js  # 建置脚本（图标、三语言 zip、tools.json）
+├── scripts/build-tools.js  # 建置脚本（图标、四语通用 zip、tools.json）
 ├── test-tools/             # 工具源码
 │   ├── image-tools/
 │   └── password-generator/
 └── dev-server/             # 本地模拟 GitHub 云端
     ├── tools.json          # 本地清单（自动生成）
     ├── update.json         # 应用更新信息
-    ├── dist/<id>-<lang>-v<ver>.zip
+    ├── dist/<id>-v<ver>.zip
     ├── icons/*.png
     └── serve.js            # 可选的 localhost 静态服务
 ```
@@ -452,18 +452,18 @@ Toolbox は Windows 向けの**モジュール式・軽量・拡張可能なデ�
 - 💸 **ゼロコスト**——エコシステム全体（ホストアプリ、`tools.json`、ツール `.zip`）を無料の GitHub リポジトリ + GitHub Releases でホスティング。
 - 🔒 **ローカルファースト**——データと演算はすべて自分のディスク上。ダウンロード後は **100% オフライン**で動作。
 - 🛡️ **安全なサンドボックス**——ツールは `nodeIntegration=off` の `<webview>` 内で実行され、**権限制御された Tool API** を通じてのみシステム資源へアクセス。
-- 🌐 **4 言語対応**——UI は **英語（en）/ 簡体字中国語（zh）/ 繁体字中国語（zh-TW）/ 日本語（jp）** に対応。ツール名と説明も 4 言語に翻訳済み。ツールをインストールすると**言語に合った zip を自動ダウンロード**。
+- 🌐 **4 言語対応**——UI は **英語（en）/ 簡体字中国語（zh）/ 繁体字中国語（zh-TW）/ 日本語（jp）** に対応。ツール名と説明も 4 言語に翻訳済み。ツール内部の UI も 4 言語化。各ツールは **1 つの zip・1 つの URL** で公開され、起動時に `toolbox.getLocale()` で言語を自動選択。
 - 🔄 **アプリ内アップデート**——v1.0.1 から「設定 → アプリ更新」で新バージョンを直接確認・導入可能。
 
 ### 🏗️ アーキテクチャ
 
 ```
 [ GitHub クラウドリポジトリ ]
-├── tools.json                # ツールカタログ（downloadUrl を言語ごとに分類）
+├── tools.json                # ツールカタログ（ツールごとに 1 つの downloadUrl）
 ├── update.json               # アプリ更新情報（version / url）
-└── releases/                 # 各ツールの言語別 .zip + exe インストーラ
+└── releases/                 # 各ツール 1 つの .zip（4 言語内包）+ exe インストーラ
         │
-        ▼  (ユーザーがショップで「インストール」→ 言語に合う zip をDL)
+        ▼  (ユーザーがショップで「インストール」→ 同じ URL から zip をDL)
 [ Windows クライアント (.exe ホスト) ]
 ├── 左サイドバー    「マイツール」を動的描画
 ├── 右ペイン        サンドボックス化されたツール UI
@@ -472,9 +472,9 @@ Toolbox は Windows 向けの**モジュール式・軽量・拡張可能なデ�
 
 **インストールのライフサイクル（アトミック + ロールバック）：**
 
-1. 現在の UI 言語に応じて `downloadUrl[language]` を選択
+1. ツールの単一 `downloadUrl` を取得（全言語で同じ URL）
 2. `.zip` を一時領域へダウンロード（進捗あり）
-3. 任意の SHA-256 検証（`sha256[language]`）
+3. 任意の SHA-256 検証
 4. **zip-slip パストラバーサル対策**付きの安全な展開
 5. `manifest.json`・`index.html` エントリポイント・`id` の一致を検証
 6. ステージングから `tools/[id]/` へアトミック移動
@@ -489,7 +489,7 @@ Toolbox は Windows 向けの**モジュール式・軽量・拡張可能なデ�
    https://github.com/alanchan20121201-prog/Toolbox/releases/download/exe/Toolbox-Setup-1.0.4.exe
    ```
 2. インストーラを実行して **Toolbox** を起動。
-3. **ツールショップ**を開き、任意のツールの**インストール**をクリック——GitHub から言語に合った zip をダウンロードし、すぐに使えます。
+3. **ツールショップ**を開き、任意のツールの**インストール**をクリック——GitHub の同じ URL から単一の zip をダウンロードし、すぐに使えます。
 
 > デフォルト言語は**英語**。「設定 → 言語」でいつでも简体中文 / 繁體中文 / 日本語に切り替えられます。
 
@@ -497,7 +497,7 @@ Toolbox は Windows 向けの**モジュール式・軽量・拡張可能なデ�
 
 ```bash
 npm install           # 依存関係をインストール
-npm run build:tools   # アイコン + 3言語 zip + tools.json を生成
+npm run build:tools   # アイコン + 4言語ユニバーサル zip + tools.json を生成
 npm start             # アプリを起動（ローカルの dev-server/tools.json を読む）
 
 # zip を Release にアップロード後、実際のサイズを tools.json に同期（ショップ表示が正確になります）:
@@ -510,7 +510,7 @@ node scripts/build-tools.js --base <release-asset-url> --github-sizes <tag>
 
 | コマンド | 内容 |
 |---|---|
-| `npm run smoke` | ヘッドレス E2E：カタログ取得 → 言語別インストール → 検証 → zip-slip 対策 → アンインストール |
+| `npm run smoke` | ヘッドレス E2E：カタログ取得 → インストール → 検証 → zip-slip 対策 → アンインストール |
 | `npm run smoke:window` | UI ロードテスト（実デスクトップ/表示環境が必要） |
 | `npm run dist` | インストーラをビルド（`icon.ico` を自動適用） |
 
@@ -534,9 +534,9 @@ node scripts/new-tool.js my-tool    # テンプレートを test-tools/my-tool �
 
 | ファイル | 役割 |
 |---|---|
-| `manifest.json` | 識別情報：`id`、`name`（3言語）、`version`、`description`、`entry`、`icon`、`permissions` |
+| `manifest.json` | 識別情報：`id`、`name`（4言語）、`version`、`description`、`entry`、`icon`、`permissions` |
 | `index.html` | UI。テキストは `data-i18n="key"` でマーク |
-| `script.js` | ロジック + 3言語の `I18N` 辞書 |
+| `script.js` | ロジック + 4言語の `I18N` 辞書 |
 
 ```json
 {
@@ -574,7 +574,7 @@ await toolbox.notify({ title: 'OK', body: 'Done' });
 
 全リストは `tool-preload.js` を参照。
 
-**3言語メカニズム**（自動）：ビルド時に `lang.js`（`window.__TOOL_LANG__`）を各 zip へ注入し、ホストがユーザー言語に合った zip をダウンロード——1 つのソースで 3 言語ビルドを生成し、実行時の言語判定は不要です。
+**4言語メカニズム**（自動）：各ツールは **1 つのユニバーサル zip・1 つの URL**（`<id>-v<バージョン>.zip`）で公開。zip 内の `I18N` は `en / zh / zh-TW / jp` の 4 言語で、起動時に `toolbox.getLocale()`（失敗時は `navigator.language`）で言語を選択。**再パッケージ時は URL を変えないこと**——`tools.json` はツールごとに 1 つの `downloadUrl` しか登録しておらず、言語別 zip に分割するとホストが認識できません。
 
 ### 📦 GitHub への公開
 
@@ -588,7 +588,7 @@ await toolbox.notify({ title: 'OK', body: 'Done' });
 
 > v1.0.4 から `tools.json` は `{ "update": {…}, "tools": […] }` の統合形式で、アプリ更新情報も内嵌（ホストが優先的に読む）。`update.json` も従来どおりアップロードしてください——1.0.3 以前のホストはこちらのみ解釈します。
 
-**Zip の命名**（自動）：`<ツールid>-<lang>-v<バージョン>.zip`。`<lang>` は `en` / `zh` / `ja`。
+**Zip の命名**（自動）：`<ツールid>-v<バージョン>.zip`——**1 ツール 1 zip・1 URL**、言語サフィックスなし。再パッケージで同じ Release アセットを上書きするため、`tools.json` の URL は変わりません。
 
 ### 🗂️ プロジェクト構成
 
@@ -603,14 +603,14 @@ toolbox/
 ├── css/style.css           # スタイル（ライト/ダークテーマ）
 ├── icon.png / icon.ico     # アプリアイコン（exe / タスクバー / タイトルバー / ブランド）
 ├── locales/                # i18n（en / zh / zh-TW / jp）
-├── scripts/build-tools.js  # ビルドスクリプト（アイコン・3言語 zip・tools.json）
+├── scripts/build-tools.js  # ビルドスクリプト（アイコン・4言語ユニバーサル zip・tools.json）
 ├── test-tools/             # ツールのソース
 │   ├── image-tools/
 │   └── password-generator/
 └── dev-server/             # GitHub クラウドのローカルモック
     ├── tools.json          # ローカルカタログ（自動生成）
     ├── update.json         # アプリ更新情報
-    ├── dist/<id>-<lang>-v<ver>.zip
+    ├── dist/<id>-v<ver>.zip
     ├── icons/*.png
     └── serve.js            # 任意の localhost 静的サーバ
 ```

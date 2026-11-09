@@ -9,6 +9,10 @@ const I18N = {
     drawTitle:'🎟 名单抽奖', namesPh:'每行一个名字…', winners:'中奖者',
     draw:'🎯 抽取', dice:'🎲 掷骰子 ×', coin:'🪙 抛硬币', needNames:'请至少输入一个名字',
     needMore:'名字数量不够', heads:'正面', tails:'反面', diceTotal:'总计' },
+  'zh-TW': { title:'🎲 隨機抽選', subtitle:'密碼學級隨機，全部本地計算。',
+    drawTitle:'🎟 名單抽獎', namesPh:'每行一個名字…', winners:'中獎者',
+    draw:'🎯 抽取', dice:'🎲 擲骰子 ×', coin:'🪙 拋硬幣', needNames:'請至少輸入一個名字',
+    needMore:'名字數量不夠', heads:'正面', tails:'反面', diceTotal:'總計' },
   jp: { title:'🎲 ランダム抽選ツール', subtitle:'暗号学的ランダム、完全ローカル。',
     drawTitle:'🎟 リストから抽選', namesPh:'1 行に 1 名…', winners:'当選者',
     draw:'🎯 抽選', dice:'🎲 サイコロ ×', coin:'🪙 コイン投げ', needNames:'1 名以上入力してください',
@@ -63,7 +67,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

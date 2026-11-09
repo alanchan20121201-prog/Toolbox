@@ -9,6 +9,10 @@ const I18N = {
     inLabel:'输入', inPh:'输入或粘贴文本 / Base64…', outLabel:'输出',
     encode:'→ 编码', decode:'← 解码', copy:'📋 复制', clear:'清空',
     copied:'✅ 已复制', copyErr:'复制失败：', invalid:'❌ 不是有效的 Base64' },
+  'zh-TW': { title:'🔤 Base64 轉換', subtitle:'支援中文的編解碼，全部本地處理。',
+    inLabel:'輸入', inPh:'輸入或貼上文字 / Base64…', outLabel:'輸出',
+    encode:'→ 編碼', decode:'← 解碼', copy:'📋 複製', clear:'清空',
+    copied:'✅ 已複製', copyErr:'複製失敗：', invalid:'❌ 不是有效的 Base64' },
   jp: { title:'🔤 Base64 変換', subtitle:'UTF-8 対応のエンコード / デコード。完全ローカル。',
     inLabel:'入力', inPh:'テキスト / Base64 を貼り付け…', outLabel:'出力',
     encode:'→ エンコード', decode:'← デコード', copy:'📋 コピー', clear:'クリア',
@@ -55,7 +59,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

@@ -9,6 +9,10 @@ const I18N = {
     work:'🍅 专注中', rest:'☕ 休息中', start:'▶ 开始', pause:'⏸ 暂停', reset:'↺ 重置', restBtn:'☕ 直接休息',
     workLen:'专注', restLen:'休息', min:'分钟', doneWork:'🍅 专注结束！休息一下吧。',
     doneRest:'☕ 休息结束——继续加油！', sessions:(n)=>'已完成 '+n+' 个番茄' },
+  'zh-TW': { title:'🍅 番茄鍾', subtitle:'專注-休息循環，結束時彈系統通知。',
+    work:'🍅 專注中', rest:'☕ 休息中', start:'▶ 開始', pause:'⏸ 暫停', reset:'↺ 重置', restBtn:'☕ 直接休息',
+    workLen:'專注', restLen:'休息', min:'分鐘', doneWork:'🍅 專注結束！休息一下吧。',
+    doneRest:'☕ 休息結束——繼續加油！', sessions:(n)=>'已完成 '+n+' 個番茄' },
   jp: { title:'🍅 ポモドーロタイマー', subtitle:'集中と休憩のサイクル。終了時に通知します。',
     work:'🍅 集中中', rest:'☕ 休憩中', start:'▶ 開始', pause:'⏸ 一時停止', reset:'↺ リセット', restBtn:'☕ 休憩する',
     workLen:'集中', restLen:'休憩', min:'分', doneWork:'🍅 集中終了！休憩しましょう。',
@@ -87,7 +91,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

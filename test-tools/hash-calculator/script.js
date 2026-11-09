@@ -7,6 +7,9 @@ const I18N = {
   zh: { title:'🔒 哈希计算器', subtitle:'使用 WebCrypto 在本地计算 SHA 系列哈希。',
     ph:'输入要计算的文本…', calc:'🧮 计算', cmpPh:'粘贴要比对的哈希…', cmp:'比对',
     match:'✅ 一致', diff:'❌ 与任何哈希都不一致', calcFirst:'请先计算哈希' },
+  'zh-TW': { title:'🔒 雜湊計算器', subtitle:'使用 WebCrypto 在本地計算 SHA 系列雜湊。',
+    ph:'輸入要計算的文字…', calc:'🧮 計算', cmpPh:'貼上要比對的雜湊…', cmp:'比對',
+    match:'✅ 一致', diff:'❌ 與任何雜湊都不一致', calcFirst:'請先計算雜湊' },
   jp: { title:'🔒 ハッシュ計算ツール', subtitle:'WebCrypto でローカル計算する SHA 系ハッシュ。',
     ph:'ハッシュ化するテキスト…', calc:'🧮 計算', cmpPh:'比較するハッシュを貼り付け…', cmp:'比較',
     match:'✅ 一致', diff:'❌ どのハッシュとも一致しません', calcFirst:'先にハッシュを計算してください' }
@@ -56,7 +59,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

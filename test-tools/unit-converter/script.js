@@ -7,6 +7,9 @@ const I18N = {
   zh: { title:'📐 单位换算器', subtitle:'长度 · 重量 · 温度 · 数据量 · 面积 · 速度 —— 全部本地计算',
     length:'长度', weight:'重量', temperature:'温度', data:'数据量', area:'面积', speed:'速度',
     unit:'单位', result:'结果', eq:'=' },
+  'zh-TW': { title:'📐 單位換算器', subtitle:'長度 · 重量 · 溫度 · 資料量 · 面積 · 速度 —— 全部本地計算',
+    length:'長度', weight:'重量', temperature:'溫度', data:'資料量', area:'面積', speed:'速度',
+    unit:'單位', result:'結果', eq:'=' },
   jp: { title:'📐 単位変換ツール', subtitle:'長さ・重さ・温度・データ量・面積・速度 — すべてローカル計算',
     length:'長さ', weight:'重さ', temperature:'温度', data:'データ量', area:'面積', speed:'速度',
     unit:'単位', result:'結果', eq:'=' }
@@ -95,7 +98,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;
