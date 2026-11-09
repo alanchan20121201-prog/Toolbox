@@ -5,6 +5,8 @@ const I18N = {
     copied:'✅ Copied', copyErr:'Copy failed: ', invalid:'❌ Invalid color' },
   zh: { title:'🎨 颜色工具', subtitle:'HEX / RGB / HSL 互转，可复制任意格式，也可用取色器。',
     copied:'✅ 已复制', copyErr:'复制失败：', invalid:'❌ 无效的颜色值' },
+  'zh-TW': { title:'🎨 顏色工具', subtitle:'HEX / RGB / HSL 互轉，可複製任意格式，也可用取色器。',
+    copied:'✅ 已複製', copyErr:'複製失敗：', invalid:'❌ 無效的顏色值' },
   jp: { title:'🎨 カラー変換ツール', subtitle:'HEX / RGB / HSL の相互変換。カラーピッカーにも対応。',
     copied:'✅ コピーしました', copyErr:'コピー失敗：', invalid:'❌ 無効な色です' }
 };
@@ -78,7 +80,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

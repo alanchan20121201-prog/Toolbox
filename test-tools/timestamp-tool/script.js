@@ -11,6 +11,11 @@ const I18N = {
     s2dLabel:'时间戳 → 日期（秒或毫秒，自动识别）',
     d2sLabel:'日期 → 时间戳',
     invalid:'无效的时间戳', local:'本地', utc:'UTC' },
+  'zh-TW': { title:'⏱ 時間戳轉換', subtitle:'Unix 時間戳與日期互轉，全部本地計算。',
+    now:'目前時間（每秒更新）', stampPh:'例如 1727500000 或 1727500000123', convert:'轉換',
+    s2dLabel:'時間戳 → 日期（秒或毫秒，自動識別）',
+    d2sLabel:'日期 → 時間戳',
+    invalid:'無效的時間戳', local:'本地', utc:'UTC' },
   jp: { title:'⏱ タイムスタンプ変換', subtitle:'Unix タイムスタンプと日付の相互変換。すべてローカル。',
     now:'現在時刻（1秒ごと更新）', stampPh:'例：1727500000 または 1727500000123', convert:'変換',
     s2dLabel:'タイムスタンプ → 日付（秒/ミリ秒を自動判別）',
@@ -66,7 +71,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

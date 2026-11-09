@@ -82,6 +82,41 @@ const I18N = {
     tipDigitsOnly: '纯数字——太容易被暴力破解',
     tipOk: '未发现明显弱点，不错的密码！'
   },
+  'zh-TW': {
+    title: '🔑 密碼工具箱',
+    subtitle: '產生 · 本機加密儲存庫 · 強度偵測 —— 一切都在你的電腦上',
+    tabGen: '🎲 產生', tabVault: '🔐 儲存庫', tabCheck: '🛡️ 強度偵測',
+    placeholder: '點擊「產生密碼」',
+    length: '長度', upper: '大寫字母 A-Z', lower: '小寫字母 a-z', digits: '數字 0-9', symbols: '符號 !@#$…',
+    generate: '🎲 產生密碼', copy: '📋 複製', toVault: '💾 儲存',
+    emptySet: '請至少勾選一種字元',
+    generated: '已產生，點「複製」可複製到剪貼板',
+    generateFirst: '請先產生密碼',
+    copyDone: '✅ 已複製到剪貼板', copyError: '複製失敗：',
+    vaultHint: '儲存在本機並加密（綁定 Windows 用戶帳戶），不會上傳到任何地方。',
+    vaultUserPh: '用戶名稱 / 網站名稱', vaultPassPh: '密碼',
+    vaultSearchPh: '🔍 輸入用戶名稱查找…',
+    vaultSave: '💾 儲存',
+    vaultEmpty: '還沒有儲存的記錄',
+    vaultSaved: '✅ 已儲存到儲存庫',
+    vaultNeedUser: '請輸入用戶名稱 / 網站名稱',
+    vaultNeedPass: '請輸入密碼',
+    vaultDeleted: '🗑️ 已刪除',
+    vaultLoadError: '儲存庫讀取失敗：',
+    vaultSaveError: '儲存庫寫入失敗：',
+    checkPh: '輸入要偵測的密碼',
+    vVeryWeak: '🚨 非常弱', vWeak: '⚠️ 弱', vFair: '🤔 一般', vStrong: '💪 強', vVeryStrong: '🏆 非常強',
+    entropy: '熵值', guessesPerSec: '按每秒 1000 億次離線暴力破解估算',
+    crackTime: '破解所需時間',
+    tipLength: '建議至少 12 個字元',
+    tipClass: '混合大小寫、數字和符號',
+    tipCommon: '這是最常見的密碼之一，請避免使用',
+    tipSeq: '包含連續字元，如 "abc"、"123"',
+    tipRepeat: '包含重複字元，如 "aaa"',
+    tipKeyboard: '包含鍵盤排列，如 "qwerty"',
+    tipDigitsOnly: '純數字——太容易被暴力破解',
+    tipOk: '未發現明顯弱點，不錯的密碼！'
+  },
   jp: {
     title: '🔑 パスワードツールボックス',
     subtitle: '生成・ローカル暗号化ボールト・強度チェック —— すべて端末内で完結',
@@ -486,7 +521,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

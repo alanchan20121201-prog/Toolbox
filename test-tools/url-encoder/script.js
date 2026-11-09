@@ -9,6 +9,10 @@ const I18N = {
     inLabel:'输入', ph:'网址或文本…', outLabel:'输出', enc:'编码组件', dec:'解码',
     copy:'📋 复制', copied:'✅ 已复制', copyErr:'复制失败：', invalid:'❌ 编码格式错误',
     key:'参数', val:'值' },
+  'zh-TW': { title:'🔗 URL 編解碼', subtitle:'百分號編解碼 + 查詢參數解析，全部本地處理。',
+    inLabel:'輸入', ph:'網址或文字…', outLabel:'輸出', enc:'編碼組件', dec:'解碼',
+    copy:'📋 複製', copied:'✅ 已複製', copyErr:'複製失敗：', invalid:'❌ 編碼格式錯誤',
+    key:'參數', val:'值' },
   jp: { title:'🔗 URL エンコード / デコード', subtitle:'パーセントエンコード / デコード + クエリ解析。すべてローカル。',
     inLabel:'入力', ph:'URL またはテキスト…', outLabel:'出力', enc:'コンポーネントをエンコード', dec:'デコード',
     copy:'📋 コピー', copied:'✅ コピーしました', copyErr:'コピー失敗：', invalid:'❌ 不正なエンコーディング',
@@ -71,7 +75,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

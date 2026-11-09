@@ -50,6 +50,22 @@ const I18N = {
     notifyTitle: '图片转档工具',
     notifyBody: '转换完成！'
   },
+  'zh-TW': {
+    title: '🖼️ 圖片轉檔工具',
+    subtitle: '選擇圖片，快速轉成 WebP / JPG / PNG / BMP / ICO（100% 本地處理，不上傳）',
+    open: '📂 選擇圖片',
+    format: '輸出格式',
+    quality: '品質',
+    convert: '轉換並儲存',
+    loaded: '圖片已加載',
+    readError: '讀取失敗：',
+    convertError: '轉換失敗',
+    saveError: '儲存失敗：',
+    saved: '已儲存：',
+    cantRead: '無法讀取圖片',
+    notifyTitle: '圖片轉檔工具',
+    notifyBody: '轉換完成！'
+  },
   jp: {
     title: '🖼️ 画像変換ツール',
     subtitle: '画像を選択して WebP / JPG / PNG / BMP / ICO に変換（100% ローカル処理、アップロードなし）',
@@ -271,7 +287,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

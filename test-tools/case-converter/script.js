@@ -7,6 +7,9 @@ const I18N = {
   zh: { title:'🔤 命名格式转换', subtitle:'输入任意文字，所有命名格式实时更新。',
     ph:'例如 "hello world example" 或 "HelloWorld_Example"', copy:'复制',
     copied:'✅ 已复制', copyErr:'复制失败：' },
+  'zh-TW': { title:'🔤 命名格式轉換', subtitle:'輸入任意文字，所有命名格式即時更新。',
+    ph:'例如 "hello world example" 或 "HelloWorld_Example"', copy:'複製',
+    copied:'✅ 已複製', copyErr:'複製失敗：' },
   jp: { title:'🔤 ケース変換ツール', subtitle:'入力すると全ケースがリアルタイム更新。',
     ph:'例："hello world example" など', copy:'コピー',
     copied:'✅ コピーしました', copyErr:'コピー失敗：' }
@@ -72,7 +75,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

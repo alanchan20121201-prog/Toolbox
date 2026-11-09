@@ -99,7 +99,7 @@ function getManifestUrl() {
   return PROD_MANIFEST_URL;
 }
 
-/** 解析語系：auto → 依系統；否則直接用設定值（en / zh / jp） */
+/** 解析語系：auto → 依系統；否則直接用設定值（en / zh / zh-TW / jp） */
 function resolveLanguage() {
   // 舊版設定值遷移（1.0.4 以前使用 zh-CN / ja）
   if (config.language === 'zh-CN') return 'zh';
@@ -107,7 +107,11 @@ function resolveLanguage() {
   if (config.language && config.language !== 'auto') return config.language;
   const loc = (app.getLocale() || 'en-US').toLowerCase();
   if (loc.startsWith('ja')) return 'jp';
-  if (loc.startsWith('zh')) return 'zh';
+  if (loc.startsWith('zh')) {
+    // 繁體中文系統（台灣 / 香港 / 澳門 / zh-Hant）自動選繁體
+    if (/tw|hk|mo|hant/.test(loc)) return 'zh-TW';
+    return 'zh';
+  }
   return 'en';
 }
 
@@ -183,12 +187,14 @@ function pickLang(obj, lang) {
   if (obj == null) return null;
   if (typeof obj === 'string') return obj;
   if (typeof obj === 'object') {
-    return obj[lang] || obj.en || obj[Object.keys(obj)[0]] || null;
+    // 繁體中文（zh-TW）沒有獨立工具包時，優先沿用簡體中文包，避免退回英文
+    return obj[lang] || (lang === 'zh-TW' ? obj.zh : null) ||
+      obj.en || obj[Object.keys(obj)[0]] || null;
   }
   return null;
 }
 
-/** 支援 name / description 為純字串或 {en, zh, jp} 物件 */
+/** 支援 name / description 為純字串或 {en, zh, zh-TW, jp} 物件 */
 function normalizeLocalized(v) {
   if (v == null) return {};
   if (typeof v === 'string') {

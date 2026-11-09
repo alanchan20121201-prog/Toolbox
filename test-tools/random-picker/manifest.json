@@ -3,12 +3,14 @@
   "name": {
     "en": "Random Picker",
     "zh": "随机抽选",
+    "zh-TW": "隨機抽選",
     "jp": "ランダム抽選ツール"
   },
   "version": "1.0.1",
   "description": {
     "en": "Draw winners from a list, roll dice, flip a coin — crypto-random",
     "zh": "从名单抽奖、掷骰子、抛硬币，密码学级随机",
+    "zh-TW": "從名單抽獎、擲骰子、拋硬幣，密碼學級隨機",
     "jp": "リストから抽選、サイコロ、コイン投げ — 暗号学的ランダム"
   },
   "entry": "index.html",

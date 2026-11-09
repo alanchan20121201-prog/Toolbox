@@ -3,12 +3,14 @@
   "name": {
     "en": "Regex Tester",
     "zh": "正则测试器",
+    "zh-TW": "正則測試器",
     "jp": "正規表現テスター"
   },
   "version": "1.0.1",
   "description": {
     "en": "Test regular expressions with live highlighting and match lists",
     "zh": "实时测试正则表达式，高亮匹配并列出结果",
+    "zh-TW": "即時測試正則運算式，高亮比對並列出結果",
     "jp": "正規表現をライブでテスト、マッチ箇所のハイライトと一覧表示"
   },
   "entry": "index.html",

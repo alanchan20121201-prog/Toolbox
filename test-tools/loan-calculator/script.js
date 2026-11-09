@@ -9,6 +9,10 @@ const I18N = {
     principal:'贷款金额', rate:'年利率 (%)', years:'期限（年）', calc:'计算',
     monthly:'每月月供', totalPay:'还款总额', totalInt:'总利息', year:'年份',
     interest:'支付利息', remain:'剩余本金', needValid:'请输入有效数字' },
+  'zh-TW': { title:'🏦 貸款計算器', subtitle:'等額本息月供計算，全部本地處理。',
+    principal:'貸款金額', rate:'年利率 (%)', years:'期限（年）', calc:'計算',
+    monthly:'每月月供', totalPay:'還款總額', totalInt:'總利息', year:'年份',
+    interest:'支付利息', remain:'剩餘本金', needValid:'請輸入有效數字' },
   jp: { title:'🏦 ローン計算ツール', subtitle:'元利均等返済の計算。完全ローカル。',
     principal:'借入金額', rate:'年利 (%)', years:'期間（年）', calc:'計算',
     monthly:'月々の返済額', totalPay:'支払総額', totalInt:'総利息', year:'年',
@@ -67,7 +71,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

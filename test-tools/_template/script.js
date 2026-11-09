@@ -2,7 +2,7 @@
 
 /**
  * 工具範本 — 展示標準寫法：
- *   1. 三語 I18N（語系由主程式注入的 lang.js 決定，工具不需自己偵測）
+ *   1. 四語 I18N（語系由主程式注入的 lang.js 決定，工具不需自己偵測）
  *   2. Tool API 呼叫（window.toolbox.*，需在 manifest.json 宣告對應 permissions）
  *   3. 統一的錯誤處理（把錯誤顯示在工具自己的狀態列，不該拋給使用者看到）
  *
@@ -10,7 +10,7 @@
  */
 
 const tb = window.toolbox || {};
-const LANG = window.__TOOL_LANG__ || 'en';
+let LANG = window.__TOOL_LANG__ || 'en';
 
 const I18N = {
   en: {
@@ -42,6 +42,21 @@ const I18N = {
     saved: '✅ 已保存',
     emptyInput: '没有内容可处理',
     error: '错误：'
+  },
+  'zh-TW': {
+    title: '🧩 我的新工具',
+    subtitle: '用一句話描述這個工具的用途',
+    inputPlaceholder: '在此貼上文字，或打開文件…',
+    open: '📂 打開文件',
+    run: '⚡ 執行',
+    copy: '📋 複製',
+    save: '💾 儲存',
+    opened: '文件已載入',
+    runDone: '完成 — 已處理 {{n}} 行',
+    copied: '✅ 已複製到剪貼板',
+    saved: '✅ 已儲存',
+    emptyInput: '沒有內容可處理',
+    error: '錯誤：'
   },
   jp: {
     title: '🧩 新しいツール',
@@ -151,7 +166,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

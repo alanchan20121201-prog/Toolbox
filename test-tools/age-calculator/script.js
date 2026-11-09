@@ -13,6 +13,12 @@ const I18N = {
     diffTitle:'📆 两个日期相差', diffResult:(d,w)=>`相差 <b>${d}</b> 天（约 ${w} 周）`,
     addTitle:'➕ 日期加减', days:'天', weeks:'周', months:'月', years:'年',
     needDate:'请选择日期', future:'（还没出生哦！）' },
+  'zh-TW': { title:'📅 日期計算器', subtitle:'年齡 · 日期相差 · 日期加減。',
+    ageTitle:'🎂 生日算年齡', birth:'生日', calc:'計算',
+    ageResult:(y,m,d,days)=>`<b>${y}</b> 歲 <b>${m}</b> 個月 <b>${d}</b> 天 —— 已生活 ${days} 天`,
+    diffTitle:'📆 兩個日期相差', diffResult:(d,w)=>`相差 <b>${d}</b> 天（約 ${w} 周）`,
+    addTitle:'➕ 日期加減', days:'天', weeks:'周', months:'月', years:'年',
+    needDate:'請選擇日期', future:'（還沒出生哦！）' },
   jp: { title:'📅 日付計算ツール', subtitle:'年齢 · 日数差 · 日付の加減算。',
     ageTitle:'🎂 誕生日から年齢', birth:'誕生日', calc:'計算',
     ageResult:(y,m,d,days)=>`<b>${y}</b> 歳 <b>${m}</b> か月 <b>${d}</b> 日 — 生まれてから ${days} 日`,
@@ -75,7 +81,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

@@ -7,6 +7,9 @@ const I18N = {
   zh: { title:'✅ 待办清单', subtitle:'任务自动保存在本机，重启后仍在。', ph:'新任务…', add:'添加',
     empty:'没有待办——享受吧！', meta:(a,b)=>'未完成 '+a+' 项 · 已完成 '+b+' 项', clearDone:'清除已完成',
     saved:'✅ 已保存', loadError:'读取失败：', saveError:'保存失败：' },
+  'zh-TW': { title:'✅ 待辦清單', subtitle:'工作自動儲存在本機，重啟後仍在。', ph:'新工作…', add:'添加',
+    empty:'沒有待辦——享受吧！', meta:(a,b)=>'未完成 '+a+' 項 · 已完成 '+b+' 項', clearDone:'清除已完成',
+    saved:'✅ 已儲存', loadError:'讀取失敗：', saveError:'儲存失敗：' },
   jp: { title:'✅ ToDo リスト', subtitle:'タスクは自動的に端末に保存され、再起動後も残ります。', ph:'新しいタスク…', add:'追加',
     empty:'タスクなし — ゆっくりどうぞ！', meta:(a,b)=>'未完了 '+a+' 件 · 完了 '+b+' 件', clearDone:'完了を削除',
     saved:'✅ 保存しました', loadError:'読み込み失敗：', saveError:'保存失敗：' }
@@ -81,7 +84,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

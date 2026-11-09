@@ -3,12 +3,14 @@
   "name": {
     "en": "Date Calculator",
     "zh": "日期计算器",
+    "zh-TW": "日期計算器",
     "jp": "日付計算ツール"
   },
   "version": "1.0.1",
   "description": {
     "en": "Age from birthdate, days between dates, and date add/subtract",
     "zh": "根据生日算年龄、两个日期相差天数、日期加减天数",
+    "zh-TW": "根據生日算年齡、兩個日期相差天數、日期加減天數",
     "jp": "誕生日から年齢、日数差、日付の加減算をまとめて計算"
   },
   "entry": "index.html",

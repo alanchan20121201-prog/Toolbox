@@ -11,6 +11,11 @@ const I18N = {
     totalIn:'收入', totalOut:'支出', balance:'结余', searchPh:'🔍 按备注筛选…',
     empty:'还没有记录', needAmount:'请输入有效金额', saved:'✅ 已保存', deleted:'🗑️ 已删除',
     loadError:'读取失败：', saveError:'保存失败：' },
+  'zh-TW': { title:'💰 簡易記帳', subtitle:'收支記錄在本機並加密儲存，不會上傳到任何地方。',
+    expense:'支出', income:'收入', notePh:'備註（如：午餐）', amountPh:'金額', add:'添加',
+    totalIn:'收入', totalOut:'支出', balance:'結餘', searchPh:'🔍 按備註篩選…',
+    empty:'還沒有記錄', needAmount:'請輸入有效金額', saved:'✅ 已儲存', deleted:'🗑️ 已刪除',
+    loadError:'讀取失敗：', saveError:'儲存失敗：' },
   jp: { title:'💰 簡易家計簿', subtitle:'収支を端末内に暗号化保存。アップロードは一切ありません。',
     expense:'支出', income:'収入', notePh:'メモ（例：昼食）', amountPh:'金額', add:'追加',
     totalIn:'収入', totalOut:'支出', balance:'残高', searchPh:'🔍 メモで絞り込み…',
@@ -93,7 +98,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

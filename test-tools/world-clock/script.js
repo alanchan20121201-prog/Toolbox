@@ -5,6 +5,8 @@ const I18N = {
     today:'Today' },
   zh: { title:'🌍 世界时钟', subtitle:'全球主要城市实时时间（依你电脑的系统时钟）。',
     today:'今天' },
+  'zh-TW': { title:'🌍 世界時鐘', subtitle:'全球主要城市即時時間（依你電腦的系統時鐘）。',
+    today:'今天' },
   jp: { title:'🌍 世界時計', subtitle:'世界の主要都市のライブ時刻（端末の時計ベース）。',
     today:'今日' }
 };
@@ -65,7 +67,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;

@@ -7,6 +7,9 @@ const I18N = {
   zh: { title:'📊 文字统计', subtitle:'边输入边统计。',
     ph:'输入或粘贴文本…', chars:'字符数', charsNs:'不含空格', words:'单词数',
     cjk:'中文字数', lines:'行数', read:'阅读时间(分)', unit:'分钟' },
+  'zh-TW': { title:'📊 文字統計', subtitle:'邊輸入邊統計。',
+    ph:'輸入或貼上文字…', chars:'字元數', charsNs:'不含空格', words:'單詞數',
+    cjk:'中文字數', lines:'行數', read:'閱讀時間(分)', unit:'分鐘' },
   jp: { title:'📊 文字数カウンター', subtitle:'入力しながらリアルタイム集計。',
     ph:'テキストを入力・貼り付け…', chars:'文字数', charsNs:'空白除く', words:'単語数',
     cjk:'漢字かな文字数', lines:'行数', read:'読了時間(分)', unit:'分' }
@@ -49,7 +52,8 @@ async function detectLang() {
   if (!l) { try { l = navigator.language; } catch (_e) { l = null; } }
   if (!l) return;
   const n = String(l).toLowerCase();
-  const code = n.indexOf('zh') === 0 ? 'zh'   // zh / zh-CN / zh-TW…
+  const code = n.indexOf('zh') === 0 && /tw|hk|mo|hant/.test(n) ? 'zh-TW'  // 繁體：zh-TW / zh-HK / zh-MO / zh-Hant…
+    : n.indexOf('zh') === 0 ? 'zh'                                          // 簡體：zh / zh-CN…
     : (n.indexOf('ja') === 0 || n.indexOf('jp') === 0) ? 'jp'
     : n.indexOf('en') === 0 ? 'en' : null;
   if (code && I18N[code]) LANG = code;
